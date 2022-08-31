@@ -1,0 +1,141 @@
+/*partials*/
+@import "./components/nav.scss";
+@import "./components/grid.scss";
+@import "./components/register.scss";
+@import "./components/login.scss";
+@import "./components/footer.scss";
+
+/* Color Palette */
+
+:root {
+  /**primary**/
+  --color-primary: #3798f8; /*cornflower*/
+  --color-primary-dark: #002950; /*cornflower*/
+  --color-secondary: #553d62;
+  --color-dark-charchoal: #2b4353; /*faux charchoal*/
+  /*black*/
+  --color-black: black;
+  /* gray start */
+  --color-medium-gray: #7d8184;
+  --color-dark-gray: #5e6164;
+  --color-darkest-gray: #111111; /* very dark shade of gray.*/
+  --color-light-gray: #a9a9a9;
+  --color-lightest-gray: #d3d3d3;
+  /* gray end */
+  --color-dark-pearl: #00070e; /**/
+  --color-dark-navyblue: #00162a;
+  --color-white: #ffffff;
+
+  /*Red*/
+  --color-red: #700000;
+
+  /**Transitions**/
+  --transition-slow: all 3s ease-in-out;
+  --transition-medium: all 1.5s ease-in-out;
+  --transition-fast: all 0.3s ease-in-out;
+
+  /**backgrounds**/
+  --background-light: linear-gradient(
+    to left var(--color-lightest-gray),
+    var(--color-white)
+  );
+  --background-dark: linear-gradient(
+    to left var(--color-dark-pearl),
+    var(--color-white)
+  );
+}
+
+/* ---- Base Rules ---- */
+html {
+  background: linear-gradient(
+    var(--color-dark-pearl),
+    var(--color-dark-navyblue)
+  );
+
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-primary);
+}
+
+/*Typegroaphy General*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* ---- Layout Rules ---- */
+//main, section for examples
+
+/* ---- Module Rules ---- */
+
+.btn {
+  border-radius: 0.4rem;
+  padding: 0.7rem 1rem 0.7rem 1rem;
+  width: 100%;
+  max-width: 15rem;
+  max-height: 7rem;
+  min-height: 2rem;
+  min-width: 2rem;
+  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem var(--color-primary);
+  background: var(--color-lightest-gray);
+  transition: var(--transition-fast);
+}
+
+.btn:hover {
+  background: var(--color-dark-navyblue);
+  color: var(--color-lightest-gray);
+}
+
+//app__alert-error
+
+.app__alert-error {
+  background-color: red;
+  color: white;
+  border-radius: 0.9rem;
+  padding: 1rem 1rem 1rem 1rem;
+}
+
+.app__alert-p {
+  font-size: 2rem;
+  @media screen and (max-width: 900px) {
+    font-size: 1.4rem;
+  }
+}
+
+/*App register success*/
+.app__alert-success {
+  background-color: green;
+  color: white;
+  border-radius: 0.8rem;
+  padding: 1rem 1rem 1rem 1rem;
+}
+
+.app__alert-success-p {
+  color: white;
+  font-size: 1.5rem;
+}
+
+/* ---- Theme State Rules ---- */
+.app__footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--color-dark-pearl);
+  background-image: var(--color-dark-pearl);
+  padding: 1rem 4rem 1rem 1rem;
+  box-shadow: 0.1rem 0.4rem 0.7rem 0.1rem var(--color-primary);
+  word-spacing: 1rem;
+  border-radius: 0.7rem;
+  overflow: hidden;
+}

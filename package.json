@@ -1,0 +1,26 @@
+{
+  "name": "portfolio-learning",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "laravel-mix": "^6.0.49"
+  },
+  "scripts": {
+    "dev": "npm run development",
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "prod": "npm run production",
+    "production": "mix --production"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.27.10",
+    "browser-sync-webpack-plugin": "2.3.0",
+    "resolve-url-loader": "5.0.0",
+    "sass": "^1.54.3",
+    "sass-loader": "12.1.0",
+    "webpack-livereload-plugin": "^3.0.2"
+  }
+}

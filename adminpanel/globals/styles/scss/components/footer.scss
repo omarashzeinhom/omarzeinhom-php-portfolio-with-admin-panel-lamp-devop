@@ -1,0 +1,21 @@
+.app__footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--color-blackpearl);
+  //trbl
+  padding: 1rem 4rem 1rem 1rem;
+  box-shadow: 0.1rem 0.4rem 0.7rem 0.1rem var(--color-primary);
+  width: 100%;
+  max-width: 99%;
+  border-radius: 0.4rem;
+  word-spacing: 1rem;
+  box-shadow: 0.1rem 0.3rem 0.1rem 0.1rem var(--color-primary);
+  border-radius: 0.7rem;
+  overflow: hidden;
+}
+
+
+.app__footer-small {
+  font-size: 1.5rem;
+}

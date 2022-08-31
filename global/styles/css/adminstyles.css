@@ -1,0 +1,472 @@
+/*partials*/
+.app__admin__nav-avatar {
+  border-radius: 90%;
+  max-width: 1.5rem;
+  max-height: 1.4rem;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-color: black;
+  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem var(--color-primary);
+}
+
+.app__sidenav-closed {
+  top: 0;
+  background-color: var(--color-blackpearl);
+  padding: 1rem 7rem 1rem 1rem;
+  box-shadow: 0.1rem 0.4rem 0.7rem 0.1rem var(--color-primary);
+  width: 100%;
+  max-width: 100%;
+  border-radius: 0.4rem;
+  height: 100%;
+}
+
+.app__sidenav-openBtn {
+  position: absolute;
+  top: 0;
+  right: 0.25rem;
+  font-size: 1.4rem;
+  margin-top: 0.7rem;
+  margin-right: 1.5rem;
+  cursor: pointer;
+  font-size: 1.7rem;
+  color: var(--color-pictonblue);
+}
+@media screen and (max-width: 900px) {
+  .app__sidenav-openBtn {
+    position: absolute;
+    top: 0;
+    right: 0.25rem;
+    font-size: 1.4rem;
+    margin-top: 0.5rem;
+    margin-right: 0.8rem;
+    cursor: pointer;
+    font-size: 1.7rem;
+    color: var(--color-pictonblue);
+  }
+}
+
+.app__sidenav {
+  height: 100%;
+  width: 0%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  /*https://hexcolor.co/gradient/EAE0C8*/
+  background: #eae0c8;
+  background: linear-gradient(to bottom, #053d57 0%, #0b004b 100%);
+  background: -ms-linear-gradient(top, #457e99 0%, #00114e 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#457e99", endColorstr="#00114e", GradientType=0);
+  border: 0.1rem solid #ccc2aa;
+  box-shadow: inset 0 1px 0 #f9efd7;
+  -webkit-box-shadow: inset 0 1px 0 #f9efd7;
+  -moz-box-shadow: inset 0 1px 0 #f9efd7;
+  top: 0;
+  z-index: 1;
+  position: fixed;
+  overflow-x: hidden;
+  background-color: rgba(17, 17, 17, 0.0666666667);
+  padding-top: 1.5rem;
+  transition: 0.4s ease-in-out;
+}
+@media screen and (max-width: 720px) {
+  .app__sidenav {
+    height: 100%;
+  }
+}
+
+.app__sidenav-items {
+  list-style: none;
+  display: inline-block;
+}
+
+.app__sidenav-item {
+  display: inline-block;
+}
+
+.app__sidenav-itemLink {
+  text-decoration: none;
+  transition: 0.3s all ease-in-out;
+  color: whitesmoke;
+  padding: 0.1rem 0.1rem 0.3rem 0.7rem;
+  transition: 0.3s ease-in-out;
+}
+
+.app__sidenav-itemLink:hover {
+  text-decoration: none;
+  color: var(--color-secondary);
+}
+
+.app__sidenav-closeBtn {
+  position: absolute;
+  top: 0;
+  right: 0.25rem;
+  font-size: 3rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  color: var(--color-pictonblue);
+}
+
+.app__dashboard-link {
+  text-decoration: none;
+  font-size: 1.7rem;
+  color: var(--color-primary-dark);
+  transition: 0.3s all ease-in-out;
+}
+
+.app__dashboard-link:hover {
+  color: green;
+}
+
+.app__dashboard-items {
+  display: inline-block;
+}
+
+.app__footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--color-blackpearl);
+  padding: 1rem 4rem 1rem 1rem;
+  box-shadow: 0.1rem 0.4rem 0.7rem 0.1rem var(--color-primary);
+  width: 100%;
+  max-width: 99%;
+  border-radius: 0.4rem;
+  word-spacing: 1rem;
+  box-shadow: 0.1rem 0.3rem 0.1rem 0.1rem var(--color-primary);
+  border-radius: 0.7rem;
+  overflow: hidden;
+}
+
+.app__footer-small {
+  font-size: 1.5rem;
+}
+
+.app__inputs-label {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.app__adduser-input {
+  background-color: var(--color-blackpearl);
+  color: var(--color-primary);
+  font-size: 1rem;
+  width: 100%;
+  text-align: center;
+  transition: 0.7s ease-in-out;
+  padding: 0.7rem;
+  border-radius: 0.8rem;
+}
+.app__adduser-input:hover {
+  color: var(--color-primary-dark);
+  background-color: var(--color-primary);
+}
+
+.app__form-card {
+  border-radius: 1rem;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  box-shadow: 0.1rem 0.1rem 0.7rem 0.1rem var(--color-primary);
+  background-image: linear-gradient(to right, var(--color-primary-dark), var(--color-blackpearl));
+  max-width: 50vw;
+  margin-left: 25vw;
+}
+
+/**
+//TODO : ADD DROPDOWN ALTERNATIVE MENU 
+
+.app__dropdown-altmenu{
+
+}
+**/
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  grid-template-rows: 1;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+}
+
+.col-1 {
+  width: 8.33%;
+}
+
+.col-2 {
+  width: 16.66%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.33%;
+}
+
+.col-5 {
+  width: 41.66%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.33%;
+}
+
+.col-8 {
+  width: 66.66%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 83.33%;
+}
+
+.col-11 {
+  width: 91.66%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+/**APP TABLE**/
+.app__table {
+  background-color: var(--color-dark-pearl);
+  text-align: center;
+  box-shadow: 0.1rem 0.1rem 0.4rem 0.1rem var(--color-cerulean);
+  border-radius: 0.9rem;
+  width: 100%;
+  height: 100%;
+  font-size: 1.7rem;
+}
+@media screen and (max-width: 900px) {
+  .app__table {
+    font-size: 0.8rem;
+  }
+}
+
+.app__tr {
+  background-color: var(--color-dark-navyblue);
+  width: 100%;
+}
+
+.app_th {
+  background-color: var(--color-primary-dark);
+  border-radius: 0.2rem;
+  font-size: 2.7rem;
+  color: var(--color-primary);
+}
+@media screen and (max-width: 900px) {
+  .app_th {
+    font-size: 0.9rem;
+  }
+}
+
+.app__tbody {
+  background-color: var(--color-darkest-gray);
+  color: var(--color-cerulean);
+}
+
+@media screen and (max-width: 900px) {
+  .app__td {
+    font-size: 0.8rem;
+  }
+}
+
+.app__section-form {
+  width: 100%;
+  max-width: 50vw;
+  margin-left: 25vw;
+}
+
+.app__inputs-label {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.app__input {
+  background-color: var(--color-primary);
+  color: var(--color-primary);
+  font-size: 1rem;
+  width: 100%;
+  text-align: center;
+  transition: 0.7s ease-in-out;
+  padding: 0.7rem;
+  border-radius: 0.8rem;
+}
+.app__input:hover {
+  color: var(--color-primary-dark);
+  background-color: var(--color-primary);
+}
+
+/* Color Palette */
+:root {
+  --color-primary: #31abed;
+  --color-alternative: #08405e;
+  --color-primary-dark: #1e4154;
+  --color-bgprimary: #053d57;
+  --color-bgwhitefoam: #ecf7fd;
+  --color-blackpearl: #04202f;
+  --color-tiber: #052638;
+  --color-tarawera: #08405e;
+  --color-greenblue: #0e6da0;
+  --color-cerulean: #1499e1;
+  --color-pictonblue: #31abed;
+  --color-malibu: #72c6f3;
+  --color-sail: #b4e0f8;
+  --color-selago: #f6fbfe;
+  /*black*/
+  --color-black: black;
+  /* gray start */
+  --color-medium-gray: #7d8184;
+  --color-dark-gray: #5e6164;
+  --color-darkest-gray: #111111; /* very dark shade of gray.*/
+  --color-light-gray: #a9a9a9;
+  --color-lightest-gray: #d3d3d3;
+  /* gray end */
+  --color-dark-pearl: #00070e; /**/
+  --color-dark-navyblue: #00162a;
+  --color-white: #ffffff;
+  /*Red*/
+  --color-red: #a80101;
+  --color-dark-red: #700000;
+  /**Transitions**/
+  --transition-slow: all 3s ease-in-out;
+  --transition-medium: all 1.5s ease-in-out;
+  --transition-fast: all 0.3s ease-in-out;
+}
+
+body {
+  background-color: var(--color-bgwhitefoam);
+  color: var(--color-primary-dark);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/*Typegroaphy General*/
+/* ---- Layout Rules ---- */
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- Module Rules ---- */
+.btn {
+  border-radius: 0.4rem;
+  padding: 0.7rem 1rem 0.7rem 1rem;
+  width: 100%;
+  max-width: 15rem;
+  max-height: 7rem;
+  min-height: 2rem;
+  min-width: 2rem;
+  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem var(--color-primary);
+  background: var(--color-lightest-gray);
+  transition: var(--transition-fast);
+}
+
+.btn:hover {
+  background: var(--color-dark-navyblue);
+  color: var(--color-lightest-gray);
+}
+
+/* ---- Theme State Rules ---- */
+.app__alert-error {
+  background-color: var(--color-red);
+  color: white;
+  border-radius: 0.9rem;
+  padding: 1rem 1rem 1rem 1rem;
+}
+
+.app__alert-p {
+  font-size: 2rem;
+}
+@media screen and (max-width: 900px) {
+  .app__alert-p {
+    font-size: 1.4rem;
+  }
+}
+
+/*App alert success*/
+.app__alert-success {
+  background-color: green;
+  color: white;
+  border-radius: 0.8rem;
+  padding: 1rem 1rem 1rem 1rem;
+}
+
+.app__alert-success-p {
+  color: white;
+  font-size: 1.5rem;
+}
+
+/*App alert success*/
+/*App Link */
+.app__link {
+  text-decoration: none;
+  color: var(--color-primary-dark);
+  transition: 0.3s ease-in all;
+}
+
+.app__link:hover {
+  color: var(--color-primary);
+  background-color: #00070e;
+}
+
+/*App Link */
+/*App Buttons */
+.app__link-btn {
+  text-decoration: none;
+  color: var(--color-primary-dark);
+  transition: 0.3s ease-in all;
+  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem var(--color-dark-gray);
+  border-radius: 0.9rem;
+  padding: 0.4rem 0.4rem 0.4rem 0.4rem;
+}
+
+.app__link-btn:hover {
+  color: var(--color-primary);
+  background-color: #00070e;
+  border-radius: 0.9rem;
+  box-shadow: 0.4rem 0.1rem 0.1rem 0.1rem var(--color-primary);
+  transform: scale(1.1);
+  border: #00070e 4rem;
+}
+
+.app__alert-btn-sm {
+  text-decoration: none;
+  color: var(--color-lightest-gray);
+  background-color: var(--color-red);
+  transition: 0.3s ease-in all;
+  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem var(--color-primary-dark);
+  border-radius: 0.9rem;
+  padding: 0.4rem 0.4rem 0.4rem 0.4rem;
+}
+
+.app__alert-btn-sm:hover {
+  text-decoration: none;
+  color: var(--color-dark-pearl);
+  background-color: var(--color-dark-red);
+  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem var(--color-dark-pearl);
+  border-radius: 0.9rem;
+}
+
+/*App Buttons */

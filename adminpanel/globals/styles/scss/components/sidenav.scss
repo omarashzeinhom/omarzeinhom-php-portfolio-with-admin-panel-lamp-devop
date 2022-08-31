@@ -1,0 +1,67 @@
+.app__sidenav {
+  height: 100%;
+  width: 0%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  /*https://hexcolor.co/gradient/EAE0C8*/
+  background: #eae0c8;
+  background: linear-gradient(to bottom, #053d57 0%, #0b004b 100%);
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, #eae0c8),
+    color-stop(100%, #dbd1b9)
+  );
+  background: -webkit-linear-gradient(top, #457e99 0%, #00114e 100%);
+  background: -moz-linear-gradient(top, #457e99 0%, #00114e 100%);
+  background: -o-linear-gradient(top, #457e99 0%, #00114e 100%);
+  background: -ms-linear-gradient(top, #457e99 0%, #00114e 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#457e99', endColorstr='#00114e', GradientType=0);
+  border: 0.1rem solid #ccc2aa;
+  box-shadow: inset 0 1px 0 #f9efd7;
+  -webkit-box-shadow: inset 0 1px 0 #f9efd7;
+  -moz-box-shadow: inset 0 1px 0 #f9efd7;
+  top: 0;
+  z-index: 1; //stay on top
+  position: fixed; //stays in pla
+  overflow-x: hidden;
+  background-color: #1111;
+  padding-top: 1.5rem;
+  transition: 0.4s ease-in-out;
+  @media screen and (max-width: 720px) {
+    height: 100%;
+  }
+}
+
+.app__sidenav-items {
+  list-style: none;
+  display: inline-block;
+}
+
+.app__sidenav-item {
+  display: inline-block;
+}
+
+.app__sidenav-itemLink {
+  text-decoration: none;
+  transition: 0.3s all ease-in-out;
+  color: whitesmoke;
+  padding: 0.1rem 0.1rem 0.3rem 0.7rem;
+  transition: 0.3s ease-in-out;
+}
+
+.app__sidenav-itemLink:hover {
+  text-decoration: none;
+  color: var(--color-secondary);
+}
+
+.app__sidenav-closeBtn {
+  position: absolute;
+  top: 0;
+  right: 0.25rem;
+  font-size: 3rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  color: var(--color-pictonblue);
+}

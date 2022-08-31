@@ -1,0 +1,14 @@
+.app__dashboard-link {
+  text-decoration: none;
+  font-size: 1.7rem;
+  color: var(--color-primary-dark);
+  transition: 0.3s all ease-in-out;
+}
+
+.app__dashboard-link:hover {
+  color: green;
+}
+
+.app__dashboard-items{
+  display: inline-block;
+}

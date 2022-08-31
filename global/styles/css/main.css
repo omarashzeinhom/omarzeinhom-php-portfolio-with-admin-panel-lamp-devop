@@ -1,0 +1,333 @@
+/*partials*/
+.app__nav {
+  left: 0;
+  width: 100%;
+  top: 0;
+  background-color: var(--color-pearl-black);
+  background-image: var(--color-pearl-black);
+  word-spacing: 1rem;
+  box-shadow: 0.1rem 0.3rem 0.1rem 0.1rem var(--color-primary);
+  border-radius: 0.7rem;
+  overflow: hidden;
+}
+@media screen and (max-width: 900px) {
+  .app__nav {
+    display: block;
+    float: right;
+  }
+  .app__nav .app__nav,
+.app__nav .app__nav-link,
+.app__nav .app__nav-items :not(:first-child) {
+    display: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  .app__nav .app__nav.responsive .icon {
+    position: relative;
+  }
+}
+
+.app__nav-openBtn {
+  display: none;
+}
+@media screen and (max-width: 900px) {
+  .app__nav-openBtn {
+    display: inline-block;
+    float: right;
+    font-size: 1.4rem;
+    color: var(--color-primary);
+  }
+}
+
+.app__nav-items {
+  list-style: none;
+}
+
+.app__nav-item {
+  display: inline-block;
+  font-size: 1.5rem;
+}
+@media screen and (max-width: 900px) {
+  .app__nav-item {
+    font-size: 1.3rem;
+  }
+}
+
+.app__nav-link {
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: 0.3s all ease-in-out;
+  padding: 0.4rem 0.7rem;
+  color: var(--color-primary);
+}
+.app__nav-link:hover {
+  /*burgundy red*/
+  color: var(--color-secondary);
+  background-color: var(--color-darkest-gray);
+  box-shadow: 0.1rem 0.1rem 0.4rem 0.1rem var(--color-primary);
+  border-radius: 0.9rem;
+  opacity: 90%;
+}
+
+.app__nav-avatar {
+  border-radius: 90%;
+  max-width: 1.5rem;
+  max-height: 1.4rem;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-color: black;
+  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem var(--color-primary);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  grid-template-rows: 1;
+}
+
+.col-1 {
+  width: 8.33%;
+}
+
+.col-2 {
+  width: 16.66%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.33%;
+}
+
+.col-5 {
+  width: 41.66%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.33%;
+}
+
+.col-8 {
+  width: 66.66%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 83.33%;
+}
+
+.col-11 {
+  width: 91.66%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+.app__register-card {
+  border-radius: 1rem;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  box-shadow: 0.1rem 0.1rem 0.7rem 0.1rem var(--color-primary);
+  background-image: linear-gradient(to right, var(--color-dark-pearl), var(--color-darkest-gray));
+}
+
+.app__register-label {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.app__register-input {
+  background-color: var(--color-darkest-gray);
+  color: var(--color-primary);
+  font-size: 1rem;
+  width: 97%;
+  text-align: center;
+  transition: 0.7s ease-in-out;
+  padding: 0.7rem;
+  border-radius: 0.8rem;
+}
+.app__register-input:hover {
+  color: var(--color-primary-dark);
+  background-color: var(--color-primary);
+}
+
+.app__login-section {
+  border-radius: 1rem;
+  width: 70%;
+  text-align: center;
+  align-items: center;
+  box-shadow: 0.1rem 0.1rem 0.7rem 0.1rem var(--color-primary);
+  background-image: linear-gradient(to right, var(--color-dark-pearl), var(--color-darkest-gray));
+}
+@media screen and (max-width: 900px) {
+  .app__login-section {
+    width: 75%;
+    padding: 1rem 1rem 1rem 1rem;
+  }
+}
+
+.app__login-label {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.app__login-input {
+  background-color: var(--color-darkest-gray);
+  color: var(--color-primary);
+  font-size: 1rem;
+  width: 97%;
+  text-align: center;
+  transition: 0.7s ease-in-out;
+  padding: 0.7rem;
+  border-radius: 0.8rem;
+}
+.app__login-input:hover {
+  color: var(--color-primary-dark);
+  background-color: var(--color-primary);
+}
+
+.app__footer {
+  width: 100%;
+}
+
+.app__footer-small {
+  font-size: 1.5rem;
+} /* Color Palette */
+:root {
+  /**primary**/
+  --color-primary: #3798f8; /*cornflower*/
+  --color-primary-dark: #002950; /*cornflower*/
+  --color-secondary: #553d62;
+  --color-dark-charchoal: #2b4353; /*faux charchoal*/
+  /*black*/
+  --color-black: black;
+  /* gray start */
+  --color-medium-gray: #7d8184;
+  --color-dark-gray: #5e6164;
+  --color-darkest-gray: #111111; /* very dark shade of gray.*/
+  --color-light-gray: #a9a9a9;
+  --color-lightest-gray: #d3d3d3;
+  /* gray end */
+  --color-dark-pearl: #00070e; /**/
+  --color-dark-navyblue: #00162a;
+  --color-white: #ffffff;
+  /*Red*/
+  --color-red: #700000;
+  /**Transitions**/
+  --transition-slow: all 3s ease-in-out;
+  --transition-medium: all 1.5s ease-in-out;
+  --transition-fast: all 0.3s ease-in-out;
+  /**backgrounds**/
+  --background-light: linear-gradient(
+    to left var(--color-lightest-gray),
+    var(--color-white)
+  );
+  --background-dark: linear-gradient(
+    to left var(--color-dark-pearl),
+    var(--color-white)
+  );
+}
+
+/* ---- Base Rules ---- */
+html {
+  background: linear-gradient(var(--color-dark-pearl), var(--color-dark-navyblue));
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-primary);
+}
+
+/*Typegroaphy General*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* ---- Layout Rules ---- */
+/* ---- Module Rules ---- */
+.btn {
+  border-radius: 0.4rem;
+  padding: 0.7rem 1rem 0.7rem 1rem;
+  width: 100%;
+  max-width: 15rem;
+  max-height: 7rem;
+  min-height: 2rem;
+  min-width: 2rem;
+  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem var(--color-primary);
+  background: var(--color-lightest-gray);
+  transition: var(--transition-fast);
+}
+
+.btn:hover {
+  background: var(--color-dark-navyblue);
+  color: var(--color-lightest-gray);
+}
+
+.app__alert-error {
+  background-color: red;
+  color: white;
+  border-radius: 0.9rem;
+  padding: 1rem 1rem 1rem 1rem;
+}
+
+.app__alert-p {
+  font-size: 2rem;
+}
+@media screen and (max-width: 900px) {
+  .app__alert-p {
+    font-size: 1.4rem;
+  }
+}
+
+/*App register success*/
+.app__alert-success {
+  background-color: green;
+  color: white;
+  border-radius: 0.8rem;
+  padding: 1rem 1rem 1rem 1rem;
+}
+
+.app__alert-success-p {
+  color: white;
+  font-size: 1.5rem;
+}
+
+/* ---- Theme State Rules ---- */
+.app__footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--color-dark-pearl);
+  background-image: var(--color-dark-pearl);
+  padding: 1rem 4rem 1rem 1rem;
+  box-shadow: 0.1rem 0.4rem 0.7rem 0.1rem var(--color-primary);
+  word-spacing: 1rem;
+  border-radius: 0.7rem;
+  overflow: hidden;
+}

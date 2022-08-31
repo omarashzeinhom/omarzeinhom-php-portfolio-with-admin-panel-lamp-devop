@@ -1,0 +1,180 @@
+/*partials*/
+
+@import './index.scss';
+
+/* Color Palette */
+
+:root {
+  --color-primary: #31abed;
+  --color-alternative: #08405e;
+  --color-primary-dark: #1e4154;
+  //bg colors
+  --color-bgprimary: #053d57; //https://hexcolor.co/hex/053d57  (Teal Blue)
+  --color-bgwhitefoam: #ecf7fd; //https://hexcolor.co/hex/ecf7fd
+  //palette colors
+  --color-blackpearl: #04202f; //(Black Pearl)https://hexcolor.co/hex/04202f
+  --color-tiber: #052638; /// (Tiber) https://hexcolor.co/hex/052638
+  --color-tarawera: #08405e; //(Tarawera) https://hexcolor.co/hex/08405e
+  --color-greenblue: #0e6da0; //(Green Blue) https://hexcolor.co/hex/0e6da0
+  --color-cerulean: #1499e1; // (Cerulean)https://hexcolor.co/hex/1499e1
+  --color-pictonblue: #31abed; //  (Picton Blue) https://hexcolor.co/hex/31abed
+  --color-malibu: #72c6f3; // (Malibu)https://hexcolor.co/hex/72c6f3
+  --color-sail: #b4e0f8; // (Sail) https://hexcolor.co/hex/b4e0f8
+  --color-selago: #f6fbfe; //(Selago) https://hexcolor.co/hex/f6fbfe
+  /*black*/
+  --color-black: black;
+  /* gray start */
+  --color-medium-gray: #7d8184;
+  --color-dark-gray: #5e6164;
+  --color-darkest-gray: #111111; /* very dark shade of gray.*/
+  --color-light-gray: #a9a9a9;
+  --color-lightest-gray: #d3d3d3;
+  /* gray end */
+  --color-dark-pearl: #00070e; /**/
+  --color-dark-navyblue: #00162a;
+  --color-white: #ffffff;
+
+  /*Red*/
+  --color-red: #a80101;
+  --color-dark-red: #700000;
+
+  /**Transitions**/
+  --transition-slow: all 3s ease-in-out;
+  --transition-medium: all 1.5s ease-in-out;
+  --transition-fast: all 0.3s ease-in-out;
+}
+
+body {
+  background-color: var(--color-bgwhitefoam);
+  color: var(--color-primary-dark);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/*Typegroaphy General*/
+
+/* ---- Layout Rules ---- */
+//main, section for examples
+
+
+
+
+
+.container{
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+/* ---- Module Rules ---- */
+
+.btn {
+  border-radius: 0.4rem;
+  padding: 0.7rem 1rem 0.7rem 1rem;
+  width: 100%;
+  max-width: 15rem;
+  max-height: 7rem;
+  min-height: 2rem;
+  min-width: 2rem;
+  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem var(--color-primary);
+  background: var(--color-lightest-gray);
+  transition: var(--transition-fast);
+}
+
+.btn:hover {
+  background: var(--color-dark-navyblue);
+  color: var(--color-lightest-gray);
+}
+
+/* ---- Theme State Rules ---- */
+
+//app__alert-error
+
+.app__alert-error {
+  background-color: var(--color-red);
+  color: white;
+  border-radius: 0.9rem;
+  padding: 1rem 1rem 1rem 1rem;
+}
+
+.app__alert-p {
+  font-size: 2rem;
+  @media screen and (max-width: 900px) {
+    font-size: 1.4rem;
+  }
+}
+//app__alert-error
+
+/*App alert success*/
+.app__alert-success {
+  background-color: green;
+  color: white;
+  border-radius: 0.8rem;
+  padding: 1rem 1rem 1rem 1rem;
+}
+
+.app__alert-success-p {
+  color: white;
+  font-size: 1.5rem;
+}
+/*App alert success*/
+
+/*App Link */
+
+.app__link {
+  text-decoration: none;
+  color: var(--color-primary-dark);
+  transition: 0.3s ease-in all;
+}
+
+.app__link:hover {
+  color: var(--color-primary);
+  background-color: #00070e;
+}
+/*App Link */
+
+/*App Buttons */
+
+
+.app__link-btn {
+  text-decoration: none;
+  color: var(--color-primary-dark);
+  transition: 0.3s ease-in all;
+  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem var(--color-dark-gray);
+  border-radius: 0.9rem;
+  padding: 0.4rem 0.4rem 0.4rem 0.4rem;
+}
+
+.app__link-btn:hover {
+  color: var(--color-primary);
+  background-color: #00070e;
+  border-radius: 0.9rem;
+  box-shadow: 0.4rem 0.1rem 0.1rem 0.1rem var(--color-primary);
+  transform: scale(1.1);
+  border: #00070e 04rem;
+}
+
+.app__alert-btn-sm {
+  text-decoration: none;
+  color: var(--color-lightest-gray);
+  background-color: var(--color-red);
+  transition: 0.3s ease-in all;
+  box-shadow: 00.1rem 0.1rem 0.1rem 0.1rem var(--color-primary-dark);
+  border-radius: 0.9rem;
+  padding: 0.4rem 0.4rem 0.4rem 0.4rem;
+}
+
+.app__alert-btn-sm:hover {
+  text-decoration: none;
+  color: var(--color-dark-pearl);
+  background-color: var(--color-dark-red);
+  box-shadow: 00.1rem 0.1rem 0.1rem 0.1rem var(--color-dark-pearl);
+  border-radius: 0.9rem;
+}
+
+/*App Buttons */
+
+
+
