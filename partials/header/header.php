@@ -22,15 +22,12 @@ include('partials/seo/seo.php');
         '" />';
     }
     ?>
-    <!---
-    
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; 
+    <!--- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; 
     img-src  'self' https://res.cloudinary.com; 
     media-src https://res.cloudinary.com; 
     script-src 'self' 'unsafe-inline'; 
     style-src 'self' 'unsafe-inline'; 
-    font-src  'self' data:;" />
-    --->
+    font-src  'self' data:;" />--->
     <title><?php
             if (isset($page__title)) {
                 echo "$page__title";

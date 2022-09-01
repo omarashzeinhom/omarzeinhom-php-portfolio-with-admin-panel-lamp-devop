@@ -28,34 +28,32 @@ unset($_SESSION['login-data']);
 <section id="login" class="app__login-section section__center">
     <?php
     if (isset($_SESSION['register-success'])) : ?>
-    <div class="app__alert-success">
-        <p class="app__alert-success-p">
-            <?= $_SESSION['register-success'];
+        <div class="app__alert-success">
+            <p class="app__alert-success-p">
+                <?= $_SESSION['register-success'];
                 unset($_SESSION['register-success']); ?>
-        </p>
-    </div>
+            </p>
+        </div>
     <?php elseif (isset($_SESSION['login'])) : ?>
-    <div class="app__alert-error">
-        <p class="app__alert-p">
-            <?= $_SESSION['login'];
+        <div class="app__alert-error">
+            <p class="app__alert-p">
+                <?= $_SESSION['login'];
                 unset($_SESSION['login']); ?>
-        </p>
-    </div>
+            </p>
+        </div>
     <?php endif ?>
 
     <!-- App login form start -->
-    <form action="<?= HOME_URL ?>login__logic.php" method="POST" >
+    <form action="<?= HOME_URL ?>login__logic.php" method="POST">
 
         <div class="app__inputs-wrap">
             <label class="app__login-label">Email</label>
-            <input name="username__email" value="<?= $username__email ?>" type="text" class="app__login-input"
-                placeholder="Enter Email Here" />
+            <input name="username__email" value="<?= $username__email ?>" type="text" class="app__login-input" placeholder="Enter Email Here" />
         </div>
 
         <div class="app__inputs-wrap">
             <label class="app__login-label">Password</label>
-            <input name="password" value="<?= $password ?>" type="password" class="app__login-input"
-                placeholder="Enter password here..." />
+            <input name="password" value="<?= $password ?>" type="password" class="app__login-input" placeholder="Enter password here..." />
         </div>
 
         <br />

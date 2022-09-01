@@ -1,6 +1,6 @@
 <?php
 
-require './config/constants.php';
+
 
 // fetch the current user from the db 
 
@@ -22,17 +22,16 @@ if (isset($_SESSION['user-id'])) {
         <!--RESTRICT SIGN IN IF LOGGGED IN SESSION Start -->
         <!--Avatar Start -->
         <?php if (isset($_SESSION['user-id'])) : ?>
-        <a href="<?= ADMIN_URL ?>" class="app__nav-link">
-            <img alt="avatar" class="app__nav-avatar" loading="lazy"
-                src="<?= HOME_URL . 'images/' . $avatar['avatar'] ?>" />
-        </a>
+            <a href="<?= ADMIN_URL ?>" class="app__nav-link">
+                <img alt="avatar" class="app__nav-avatar" loading="lazy" src="<?= HOME_URL . 'images/' . $avatar['avatar'] ?>" />
+            </a>
 
-        <li class='app__nav-item'><a href="<?= HOME_URL ?>logout.php" class="app__nav-link">🧧Logout</a>
+            <li class='app__nav-item'><a href="<?= HOME_URL ?>logout.php" class="app__nav-link">🧧Logout</a>
 
-            <!--Avatar End -->
+                <!--Avatar End -->
             <?php else : ?>
-        <li class='app__nav-item'><a href="<?= HOME_URL ?>login.php" class="app__nav-link">🚪</a></li>
-        <!--Login end-->
+            <li class='app__nav-item'><a href="<?= HOME_URL ?>login.php" class="app__nav-link">🚪</a></li>
+            <!--Login end-->
         <?php endif; ?>
         <!-- RESTRICT SIGN IN IF LOGGGED IN SESSION End-->
 
@@ -47,12 +46,12 @@ if (isset($_SESSION['user-id'])) {
 NOTE: < ? = HOME_URL ?> is the same as echo  HOME__URL ?>
 -->
 <script>
-function openNav() {
-    var topNav = document.getElementById('appMainNav');
-    if (topNav.className === 'app__nav') {
-        topNav.className += 'responsive';
-    } else {
-        topNav.className = 'app__nav';
+    function openNav() {
+        var topNav = document.getElementById('appMainNav');
+        if (topNav.className === 'app__nav') {
+            topNav.className += 'responsive';
+        } else {
+            topNav.className = 'app__nav';
+        }
     }
-}
 </script>
