@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <?php
 //Connect to My Sql DataBase
 require('./config/database.php');
 //Seo VARS
 include('partials/seo/seo.php');
 ?>
-
-
 <head>
     <meta charset="UTF-8">
     <link rel='stylesheet' href='global/styles/css/main.css'>
@@ -36,7 +32,5 @@ include('partials/seo/seo.php');
             } ?>
     </title>
 </head>
-
-
 
 <body>

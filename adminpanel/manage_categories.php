@@ -98,15 +98,17 @@ $categories = mysqli_query($connect__db, $category__db__query);
 
                     <tbody class="app__tbody">
                         <!---LOOP THROUGH AND DISPLAY USER -->
-                        <?php while ($categories = mysqli_fetch_assoc(($categories))) : ?>
-                            <tr clas="app__tr">
+                        <tr clas="app__tr">
+                            <?php while ($category = mysqli_fetch_assoc($categories)) : ?>
+
                                 <td class="app__td"><?= $categories['title']  ?></td>
                                 <td class="app__td"><?= $categories['description'] ?? null ?></td>
                                 <td class="app__td"><a href="<?= ADMIN_URL ?>edit_category.php?id=<?= $categories['id'] ?>" class="app__link-btn">Edit</a></td>
                                 <td class="app__td"><a href="<?= ADMIN_URL ?>delete_category.php?id=<?= $categories['id'] ?>" class="app__alert-btn-sm">Delete</a>
                                 </td>
-                            </tr>
-                        <?php endwhile; ?>
+                            <?php endwhile; ?>
+
+                        </tr>
                     </tbody>
                 </table>
             </div>
