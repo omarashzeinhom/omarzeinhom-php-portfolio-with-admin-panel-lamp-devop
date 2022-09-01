@@ -25,7 +25,7 @@ unset($_SESSION['login-data']);
 <!--- Dynamic Page Title --->
 
 
-<section id="login" class="app__login-section">
+<section id="login" class="app__login-section section__center">
     <?php
     if (isset($_SESSION['register-success'])) : ?>
     <div class="app__alert-success">
@@ -44,12 +44,12 @@ unset($_SESSION['login-data']);
     <?php endif ?>
 
     <!-- App login form start -->
-    <form action="<?= HOME_URL ?>login__logic.php" method="POST" class="app__login-form">
+    <form action="<?= HOME_URL ?>login__logic.php" method="POST" >
 
         <div class="app__inputs-wrap">
             <label class="app__login-label">Email</label>
             <input name="username__email" value="<?= $username__email ?>" type="text" class="app__login-input"
-                placeholder="email@global.com" />
+                placeholder="Enter Email Here" />
         </div>
 
         <div class="app__inputs-wrap">

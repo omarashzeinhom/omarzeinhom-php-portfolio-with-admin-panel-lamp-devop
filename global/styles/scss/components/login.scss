@@ -1,12 +1,14 @@
 .app__login-section{
     border-radius: 1rem;
-    width: 70%;
-    text-align: center;
-    align-items: center;
+    overflow: x-auto; 
+    margin: auto; 
+    max-width: 1700px; 
+    width:100%; 
+    height:100%;
     box-shadow: 0.1rem 0.1rem 0.7rem 0.1rem var(--color-primary);
     background-image: linear-gradient(to right, var(--color-dark-pearl) , var(--color-darkest-gray));
     @media screen and (max-width: 900px) {
-      width: 75%;
+      width: 100%;
       padding: 1rem 1rem 1rem 1rem;
 
     }
