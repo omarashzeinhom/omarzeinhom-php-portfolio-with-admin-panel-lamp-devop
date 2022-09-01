@@ -13,3 +13,4 @@ define('DB_HOST', 'localhost');
 define('DB_USERNAME', 'portfolio__username');
 define('DB_PASSWORD', 'This_Is_Just_My_P0rtf0li0_P@ssw0rd_98.');
 define('DB_NAME', 'portfolio__php__db');
+define('ADMIN_URL', 'http://localhost/portfolio/adminpanel/');

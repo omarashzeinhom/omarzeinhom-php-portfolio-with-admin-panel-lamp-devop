@@ -1,7 +1,4 @@
 <?php
-
-
-
 // fetch the current user from the db 
 
 if (isset($_SESSION['user-id'])) {
