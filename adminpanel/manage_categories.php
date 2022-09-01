@@ -4,7 +4,7 @@ include('./partials/sidenav/sidenav.php');
 require('./config/database.php');
 
 // QUERY
-$category__db__query = "SELECT * FROM categories ORDER BY title ";
+$category__db__query = "SELECT * FROM categories ORDER BY title";
 // RESULTS OF QUERY 
 $categories = mysqli_query($connect__db, $category__db__query);
 ?>
@@ -70,11 +70,8 @@ $categories = mysqli_query($connect__db, $category__db__query);
         <p class="app__alert-success-p">
             <?= $_SESSION['delete-category-success'];
                     unset($_SESSION['delete-category-success']); ?>
-
         </p>
     </div>
-
-
     <?php endif; ?>
     <!-- Alert success End -->
 
@@ -119,13 +116,7 @@ $categories = mysqli_query($connect__db, $category__db__query);
 
         </p>
     </div>
-
-
-
     <?php endif; ?>
-
-
-
     <!--- Table and While Loop End -->
     <?php endif; ?>
     <!-- if @uth End -->
@@ -133,6 +124,5 @@ $categories = mysqli_query($connect__db, $category__db__query);
 
 
 <?php
-
 include('./partials/footer/footer.php');
 ?>

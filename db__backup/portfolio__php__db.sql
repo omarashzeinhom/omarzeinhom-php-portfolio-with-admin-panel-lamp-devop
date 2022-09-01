@@ -2,8 +2,8 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Aug 28, 2022 at 04:23 AM
+-- Host: 127.0.0.1
+-- Generation Time: Sep 01, 2022 at 07:41 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -39,6 +39,23 @@ CREATE TABLE `categories` (
 
 INSERT INTO `categories` (`id`, `title`, `description`) VALUES
 (5, 'JavaScript ', 'JavaScript is a beautiful language with some limitations.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `posts`
+--
+
+CREATE TABLE `posts` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `body` text NOT NULL,
+  `thumbnail` varchar(255) NOT NULL,
+  `date_time` timestamp NOT NULL DEFAULT current_timestamp(),
+  `category_id` int(11) UNSIGNED DEFAULT NULL,
+  `author_id` int(11) UNSIGNED NOT NULL,
+  `is_featured` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -79,6 +96,12 @@ ALTER TABLE `categories`
   ADD KEY `id` (`id`);
 
 --
+-- Indexes for table `posts`
+--
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -93,6 +116,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `categories`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `posts`
+--
+ALTER TABLE `posts`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
