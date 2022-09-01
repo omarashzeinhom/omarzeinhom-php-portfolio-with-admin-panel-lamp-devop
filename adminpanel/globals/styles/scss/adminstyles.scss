@@ -65,61 +65,22 @@ body {
   height: 100%;
 }
 
+.section__center {
+  overflow: x-auto; 
+  margin: auto; 
+  max-width: 1700px; 
+  width:100%; 
+  height:100%; 
+}
 
-
+ 
 
 /* ---- Module Rules ---- */
 
-.btn {
-  border-radius: 0.4rem;
-  padding: 0.7rem 1rem 0.7rem 1rem;
-  width: 100%;
-  max-width: 15rem;
-  max-height: 7rem;
-  min-height: 2rem;
-  min-width: 2rem;
-  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem var(--color-primary);
-  background: var(--color-lightest-gray);
-  transition: var(--transition-fast);
-}
-
-.btn:hover {
-  background: var(--color-dark-navyblue);
-  color: var(--color-lightest-gray);
-}
 
 /* ---- Theme State Rules ---- */
 
-//app__alert-error
 
-.app__alert-error {
-  background-color: var(--color-red);
-  color: white;
-  border-radius: 0.9rem;
-  padding: 1rem 1rem 1rem 1rem;
-}
-
-.app__alert-p {
-  font-size: 2rem;
-  @media screen and (max-width: 900px) {
-    font-size: 1.4rem;
-  }
-}
-//app__alert-error
-
-/*App alert success*/
-.app__alert-success {
-  background-color: green;
-  color: white;
-  border-radius: 0.8rem;
-  padding: 1rem 1rem 1rem 1rem;
-}
-
-.app__alert-success-p {
-  color: white;
-  font-size: 1.5rem;
-}
-/*App alert success*/
 
 /*App Link */
 
@@ -135,46 +96,6 @@ body {
 }
 /*App Link */
 
-/*App Buttons */
-
-
-.app__link-btn {
-  text-decoration: none;
-  color: var(--color-primary-dark);
-  transition: 0.3s ease-in all;
-  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem var(--color-dark-gray);
-  border-radius: 0.9rem;
-  padding: 0.4rem 0.4rem 0.4rem 0.4rem;
-}
-
-.app__link-btn:hover {
-  color: var(--color-primary);
-  background-color: #00070e;
-  border-radius: 0.9rem;
-  box-shadow: 0.4rem 0.1rem 0.1rem 0.1rem var(--color-primary);
-  transform: scale(1.1);
-  border: #00070e 04rem;
-}
-
-.app__alert-btn-sm {
-  text-decoration: none;
-  color: var(--color-lightest-gray);
-  background-color: var(--color-red);
-  transition: 0.3s ease-in all;
-  box-shadow: 00.1rem 0.1rem 0.1rem 0.1rem var(--color-primary-dark);
-  border-radius: 0.9rem;
-  padding: 0.4rem 0.4rem 0.4rem 0.4rem;
-}
-
-.app__alert-btn-sm:hover {
-  text-decoration: none;
-  color: var(--color-dark-pearl);
-  background-color: var(--color-dark-red);
-  box-shadow: 00.1rem 0.1rem 0.1rem 0.1rem var(--color-dark-pearl);
-  border-radius: 0.9rem;
-}
-
-/*App Buttons */
 
 
 

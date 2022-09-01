@@ -1,8 +1,10 @@
 <?php
 $page__title = 'Edit User👥';
-include('./partials/header/header.php');
 include('./partials/sidenav/sidenav.php');
+?>
 
+
+<?php
 if (isset($_GET['id'])) {
     $id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
     $query = "SELECT * FROM users WHERE id=$id";
@@ -10,15 +12,8 @@ if (isset($_GET['id'])) {
     $user = mysqli_fetch_assoc($result);
 } else {
     header('location:' . ADMIN_URL . 'manage_users.php');
-    die();
-}
-
-
-
-
-
-
-?>
+    die("");
+}; ?>
 
 <h1><?php echo $page__title; ?></h1>
 
@@ -43,7 +38,7 @@ if (isset($_SESSION['edit-user'])) : ?>
 <?php endif; ?>
 
 
-<section>
+<section style="overflow: x-auto; margin: auto; max-width: 1700px; width:100%; height:100%;">
     <form class="app__form-section" action="<?= HOME_URL ?>edit_user-logic.php" method="POST" enctype="multipart/form-data">
 
         <!--- HIDDEN ID --->
@@ -71,13 +66,6 @@ if (isset($_SESSION['edit-user'])) : ?>
 </section>
 
 
-
-
-
-
-
-
 <?php
-
 include('./partials/footer/footer.php');
 ?>

@@ -3,13 +3,13 @@ $page__title = 'Manage Categories✨';
 include('./partials/sidenav/sidenav.php');
 
 // QUERY
-$category__db__query = "SELECT * FROM categories ORDER BY title ";
+$category__db__query = "SELECT * FROM categories ORDER BY title";
 // RESULTS OF QUERY 
 $categories = mysqli_query($connect__db, $category__db__query);
 ?>
 
 
-<section class="app_section-form" style="overflow: x-auto; margin: auto; max-width: 500px; width:100%; height:100%; ">
+<section class="app_section-form" style="overflow: x-auto; margin: auto; max-width: 1700px; width:100%; height:100%;">
     <h1><?php echo $page__title; ?></h1>
     <!-- if @uth start -->
 
@@ -94,7 +94,7 @@ $categories = mysqli_query($connect__db, $category__db__query);
             </thead>
             <tbody class="app__tbody">
                 <!---LOOP THROUGH AND DISPLAY USER -->
-                <?php while ($categories = mysqli_fetch_assoc($categories)) : ?>
+                <?php while ($categories = mysqli_fetch_assoc(($categories))) : ?>
                 <tr clas="app__tr">
                     <td class="app__td"><?= $categories['title']  ?></td>
                     <td class="app__td"><?= $categories['description'] ?? null ?></td>

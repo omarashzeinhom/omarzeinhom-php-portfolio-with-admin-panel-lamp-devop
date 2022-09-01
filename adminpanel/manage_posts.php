@@ -12,7 +12,7 @@ include('./partials/sidenav/sidenav.php'); ?>
 </ul>
 
 
-<table class="app__table">
+<table class="app__table" style="overflow: x-auto; margin: auto; max-width: 1700px; width:100%; height:100%;">
         <thead class="app__thead">
 
                 <tr clas="app__tr">
