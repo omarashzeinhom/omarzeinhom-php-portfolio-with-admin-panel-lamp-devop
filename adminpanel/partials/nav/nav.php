@@ -41,7 +41,7 @@ if (!isset($_SESSION['user-id'])) {
     <!--RESTRICT SIGN IN IF LOGGGED IN SESSION Start -->
     <?php if (isset($_SESSION['user-id'])) : ?>
         <li class='app__sidenav-item'>
-            <a href="<?= ADMIN_URL ?>logout.php" class="app__sidenav-itemLink"><small>
+            <a href="<?= ROOT_URL ?>logout.php" class="app__sidenav-itemLink"><small>
                     <i> Logout</i>
                 </small>
                 <img alt="avatar" class="app__admin__nav-avatar" loading="lazy" src="<?= ROOT_URL . 'images/' . $avatar['avatar'] ?>" />

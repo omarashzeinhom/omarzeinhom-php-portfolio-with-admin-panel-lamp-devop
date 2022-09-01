@@ -1,6 +1,5 @@
 <?php
 $page__title = 'Index';
-include('./partials/header/header.php');
 include('./partials/sidenav/sidenav.php');
 
 

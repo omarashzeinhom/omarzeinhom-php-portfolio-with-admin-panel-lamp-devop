@@ -1,6 +1,6 @@
 <?php
 
-include('./partials/header/header.php');
+include('./partials/sidenav/sidenav.php');
 
 ?>
 

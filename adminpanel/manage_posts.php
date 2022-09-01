@@ -1,6 +1,5 @@
 <?php
 $page__title = 'Manage Posts📝';
-include('./partials/header/header.php');
 include('./partials/sidenav/sidenav.php'); ?>
 
 

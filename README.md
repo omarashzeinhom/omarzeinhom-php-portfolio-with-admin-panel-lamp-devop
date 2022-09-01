@@ -57,3 +57,4 @@ define('HOME__URL', 'http://localhost:3000/home.php');
 ALTER TABLE posts ADD CONSTRAINT FK_blog_category FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE SET NULL;
 ALTER TABLE posts ADD CONSTRAINT FK_blog_author FOREIGN KEY (author_id) REFERENCES users(id) ON DELETE CASCADE;
 ```
+[13.1.9 ALTER TABLE Statement](https://dev.mysql.com/doc/refman/8.0/en/alter-table.html)

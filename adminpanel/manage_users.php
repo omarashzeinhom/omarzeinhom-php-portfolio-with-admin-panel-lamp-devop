@@ -1,6 +1,5 @@
 <?php
 $page__title = 'Manage Users👥';
-include('./partials/header/header.php');
 include('./partials/sidenav/sidenav.php');
 
 //FETCH ALL THE OTHER USERS ASIDE FROM THE CURRENT USER
