@@ -10,7 +10,7 @@ if (isset($_POST['submit__editcategory'])) {
     if (!$title) {
         $_SESSION['edit-category'] = "Invalid form input on edit category page";
     } else {
-        $query = "UPDATE categories SET title='$title' description='$description' WHERE id=$id LIMIT 1";
+        $query = "UPDATE categories SET title='$title', description='$description' WHERE id=$id LIMIT 1";
         $result = mysqli_query($connect__db, $query);
         if (mysqli_errno($connect__db)) {
             $_SESSION['edit-category'] = "Updating Category wasnt succssful";

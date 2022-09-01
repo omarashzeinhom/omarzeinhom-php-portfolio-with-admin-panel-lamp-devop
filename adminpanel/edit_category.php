@@ -1,6 +1,6 @@
 <?php
 $page__title = 'Edit Category✨';
-include('./partials/header/header.php');
+//header already included in nav which is included in sidenav
 include('./partials/sidenav/sidenav.php');
 ?>
 

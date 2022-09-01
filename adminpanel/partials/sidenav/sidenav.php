@@ -1,5 +1,6 @@
 <?php
 include('./partials/nav/nav.php');
+
 ?>
 <span onclick='openAppSideNav()' class="app__sidenav-openBtn" href='javascript:void(0)'>☰</span>
 

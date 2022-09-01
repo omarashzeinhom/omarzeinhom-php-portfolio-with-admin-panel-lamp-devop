@@ -55,7 +55,7 @@ if (isset($_POST['submit__register'])) {
                 //DEBUG 
                 // if file is an image
                 //allowed_images files 
-                $allowed_images = ['png', 'jpg', 'jpeg', 'svg', 'webp'];
+                $allowed_images = ['png', 'jpg', 'jpeg', 'svg', 'webp', 'png'];
                 $extension = explode('.', $avatar_new_name);
                 $extension = end($extension);
                 if (in_array($extension, $allowed_images)) {

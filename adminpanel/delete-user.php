@@ -23,7 +23,7 @@ if (isset($_GET['id'])) {
 
 
     $delete__user__query = "DELETE FROM users WHERE id=$id";
-    $delete_user_result = mysqli_query($connection, $delete__user__query);
+    $delete_user_result = mysqli_query($connect__db, $delete__user__query);
     if (mysqli_errno($connect__db)) {
         $_SESSION['delete-user'] = "'{$user['firstname']}' '{$user['lastname']}' Deletion was not successful ";
     } else {

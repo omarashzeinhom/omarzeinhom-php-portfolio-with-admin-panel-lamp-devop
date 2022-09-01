@@ -6,7 +6,7 @@
 //Connect to My Sql DataBase
 require('./config/database.php');
 //Seo VARS
-include('../seo/seo.php');
+include('partials/seo/seo.php');
 ?>
 
 

@@ -1,12 +1,8 @@
 <?php
 $page__title = 'Dashboard 🏠';
-
-
-?>
-
-
-<?php
+//header already included in nav which is included in sidenav
 include('./partials/dashboard/dashboard.php');
+
 ?>
 
 <h1><?php echo $page__title; ?></h1>

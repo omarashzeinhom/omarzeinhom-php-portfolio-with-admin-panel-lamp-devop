@@ -1,6 +1,5 @@
 <?php
 $page__title = 'Add User👥';
-include('./partials/header/header.php');
 include('./partials/sidenav/sidenav.php');
 
 //return back form data if there was add-user-data error 
