@@ -1,10 +1,7 @@
 <?php
 $page__title = 'Add Category✨';
-include('../config/constants.php');
 include('./partials/sidenav/sidenav.php');
-
-
-
+//SESSION VARS
 $title = $_SESSION['add-category-data']['title'] ?? null;
 $description = $_SESSION['add-category-data']['description'] ?? null;
 ?>
@@ -24,18 +21,13 @@ $description = $_SESSION['add-category-data']['description'] ?? null;
         <label class="app__inputs-label"></label>
         <input name='title' placeholder="Title" type="text" class="app__adduser-input" />
         <br />
-        <textarea name='description' rows="4" placeholder="Description" style="resize: none;"
-            class="app__adduser-input">
+        <textarea name='description' rows="4" placeholder="Description" style="resize: none;" class="app__adduser-input">
 </textarea>
         <br />
         <button name="submit__adduser" class="btn" type="submit">
             Add New Category
         </button>
     </form>
-
-
-
-
 </section>
 
 

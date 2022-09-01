@@ -19,9 +19,7 @@ $categories = mysqli_query($connect__db, $category__db__query);
         <li class='app__sidenav-item'><a href="<?= ADMIN_URL ?>add_category.php" class="app__link-btn">Add
                 Category✨</a>
         </li>
-        <li class='app__sidenav-item'><a href="<?= ADMIN_URL ?>edit_category.php" class="app__link-btn">Edit
-                Category✨</a>
-        </li>
+
 
     </ul>
 
