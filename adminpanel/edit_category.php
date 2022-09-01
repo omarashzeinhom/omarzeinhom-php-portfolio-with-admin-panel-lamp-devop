@@ -39,7 +39,8 @@ if (isset($_GET['id'])) {
 
         <div class="app__inputs-wrap">
             <textarea placeholder="<?= $category['description'] ?>" name='description' rows="4" style="resize: none;" class="app__adduser-input">
-</textarea>
+            <?= $category['description'] ?>
+        </textarea>
         </div>
 
 

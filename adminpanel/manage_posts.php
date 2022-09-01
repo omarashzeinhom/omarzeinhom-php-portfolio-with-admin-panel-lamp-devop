@@ -9,9 +9,6 @@ include('./partials/sidenav/sidenav.php'); ?>
 <ul class='app__sidenav-items'>
         <li class='app__sidenav-item'><a class="app__link-btn" href="<?= ADMIN_URL ?>add_post.php">Add
                         Post📝</a></li>
-        <li class='app__sidenav-item'><a class="app__link-btn" href="<?= ADMIN_URL ?>edit_post.php">Edit
-                        Post📝</a></li>
-
 </ul>
 
 
