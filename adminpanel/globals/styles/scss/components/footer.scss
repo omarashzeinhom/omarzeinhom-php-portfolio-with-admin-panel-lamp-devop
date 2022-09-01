@@ -1,16 +1,17 @@
 .app__footer {
+  position: fixed;
+
   left: 0;
   bottom: 0;
   width: 100%;
   background-color: var(--color-blackpearl);
   //trbl
   padding: 1rem 4rem 1rem 1rem;
-  box-shadow: 0.1rem 0.4rem 0.7rem 0.1rem var(--color-primary);
+  box-shadow: 0.7rem 0.4rem 5rem 0.1rem var(--color-primary);
   width: 100%;
-  max-width: 99%;
+  max-width: 100%;
   border-radius: 0.4rem;
   word-spacing: 1rem;
-  box-shadow: 0.1rem 0.3rem 0.1rem 0.1rem var(--color-primary);
   border-radius: 0.7rem;
   overflow: hidden;
 }

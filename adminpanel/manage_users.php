@@ -38,7 +38,7 @@ $users = mysqli_query($connect__db, $query);
 
 
 
-<div class="container" style="overflow: x-auto; margin: auto; max-width: 500px; width:100%; height:100%; ">
+<div class="section__center" >
     <table class="app__table">
         <thead class="app__thead">
 

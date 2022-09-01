@@ -23,7 +23,7 @@
   .app_th {
     background-color: var(--color-primary-dark);
     border-radius: 0.2rem;
-    font-size: 2.7rem;
+    font-size: rem;
     color: var(--color-primary);
     @media screen and (max-width: 900px) {
       font-size: 0.9rem;
@@ -33,9 +33,11 @@
   .app__tbody {
     background-color: var(--color-darkest-gray);
     color: var(--color-cerulean);
+    padding: 1rem 1rem 1rem 1rem;
   }
   
   .app__td {
+    font-size: 1.3rem;
     @media screen and (max-width: 900px) {
       font-size: 0.8rem;
     }

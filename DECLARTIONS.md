@@ -14,6 +14,7 @@
 5. [Responsive Web Design - Grid-View](https://www.w3schools.com/css/css_rwd_grid.asp)
 6. [Kilobytes Megabytes Gigabytes Terabytes - web.stanford.edu ](https://web.stanford.edu/class/cs101/bits-gigabytes.html)
 7. [(Loncan,T 2013) - PHP SEO: Page-Level Titles, Meta Descriptions & More](https://www.bounteous.com/insights/2013/02/19/php-seo-page-level-titles-meta-descriptions-more/)
+8. [W3Schools-Fixed-Footer](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_fixed_footer)
 
 ### gists 
 
