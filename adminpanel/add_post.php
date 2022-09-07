@@ -47,7 +47,7 @@ $categories = mysqli_query($connect__db, $query);
         <div class="col-12">
             <!-- Col Start   --->
 
-            <!-- First Name  --->
+            <!-- Title  --->
             <div class="app__inputs-wrap">
                 <label class="app__inputs-label" for="title">Title</label>
                 <input name="title" class="app__adduser-input" type="text" id="firstName"

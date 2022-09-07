@@ -6,6 +6,7 @@ require('./config/database.php');
 //Seo VARS
 include('partials/seo/seo.php');
 ?>
+
 <head>
     <meta charset="UTF-8">
     <link rel='stylesheet' href='global/styles/css/main.css'>
@@ -18,12 +19,7 @@ include('partials/seo/seo.php');
         '" />';
     }
     ?>
-    <!--- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; 
-    img-src  'self' https://res.cloudinary.com; 
-    media-src https://res.cloudinary.com; 
-    script-src 'self' 'unsafe-inline'; 
-    style-src 'self' 'unsafe-inline'; 
-    font-src  'self' data:;" />--->
+
     <title><?php
             if (isset($page__title)) {
                 echo "$page__title";
@@ -31,6 +27,8 @@ include('partials/seo/seo.php');
                 echo "@OmarZeinhom2023";
             } ?>
     </title>
+
 </head>
+<br />
 
 <body>
