@@ -411,6 +411,31 @@
 
 }
 **/
+.app__thumbnail-avatar {
+  max-width: 50px;
+  max-height: 50px;
+  width: 100%;
+  height: 100%;
+  padding-top: 0.4rem;
+  border-radius: 15%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem gray;
+}
+
+/*App Link */
+.app__link {
+  text-decoration: none;
+  color: var(--color-primary-dark);
+  transition: 0.3s ease-in all;
+}
+
+.app__link:hover {
+  color: var(--color-primary);
+  background-color: #00070e;
+}
+
+/*App Link */
 /* Color Palette */
 :root {
   --color-primary: #31abed;
@@ -491,16 +516,3 @@ a {
 
 /* ---- Module Rules ---- */
 /* ---- Theme State Rules ---- */
-/*App Link */
-.app__link {
-  text-decoration: none;
-  color: var(--color-primary-dark);
-  transition: 0.3s ease-in all;
-}
-
-.app__link:hover {
-  color: var(--color-primary);
-  background-color: #00070e;
-}
-
-/*App Link */

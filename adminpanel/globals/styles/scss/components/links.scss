@@ -1,0 +1,14 @@
+/*App Link */
+
+.app__link {
+    text-decoration: none;
+    color: var(--color-primary-dark);
+    transition: 0.3s ease-in all;
+  }
+  
+  .app__link:hover {
+    color: var(--color-primary);
+    background-color: #00070e;
+  }
+  /*App Link */
+  
