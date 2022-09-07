@@ -29,7 +29,7 @@ if (isset($_POST['submit__newpost'])) {
         $thumbnail_newname = $time . $thumbnail['name'];
         //var_dump($thumbnail_newname);
         $thumbnail_tmp_name = $thumbnail['tmp_name'];
-        $thumbnail__destination_path = '../images' . $thumbnail_newname;
+        $thumbnail__destination_path =  '../../images/' . $thumbnail_newname;
 
         //CHECK IF FILE IS AN IMG 
 

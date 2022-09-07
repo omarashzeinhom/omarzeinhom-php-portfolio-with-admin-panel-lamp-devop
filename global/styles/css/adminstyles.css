@@ -341,7 +341,7 @@
   box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem var(--color-dark-gray);
   border-radius: 0.9rem;
   padding: 0.4rem 0.4rem 0.4rem 0.4rem;
-  background-color: white;
+  background-color: var(--color-dark-navyblue);
 }
 
 .app__link-btn:hover {
