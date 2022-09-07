@@ -33,7 +33,9 @@ $posts = mysqli_query($connect__db, $query);
                         <h5 id="postsTitle"><?= $single_post['title']; ?></h5>
                         <!--- Posts Title  -->
 
-                        <h6 class="app__td" id="postsBody"><?= $single_post['body']; ?></h6>
+                        <h6 class="app__td" id="postsBody" maxlength="25">
+                            <?= substr($single_post['body'], 0, 25)  . " ..."; ?>
+                        </h6>
                     </div>
 
 
