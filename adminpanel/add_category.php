@@ -12,7 +12,7 @@ $description = $_SESSION['add-category-data']['description'] ?? null;
 <h1><?php echo $page__title; ?></h1>
 
 
-<?php if (isset($_SESSION['add-category'])) : ?>
+<?php if (isset($_SESSION['add-category-data'])) : ?>
 <?php endif; ?>
 
 <section style=" width: 50vw; margin-left : 25vw;">
@@ -21,7 +21,8 @@ $description = $_SESSION['add-category-data']['description'] ?? null;
         <label class="app__inputs-label"></label>
         <input name='title' placeholder="Title" type="text" class="app__adduser-input" />
         <br />
-        <textarea name='description' rows="4" placeholder="Description" style="resize: none;" class="app__adduser-input">
+        <textarea name='description' rows="4" placeholder="Description" style="resize: none;"
+            class="app__adduser-input">
 </textarea>
         <br />
         <button name="submit__adduser" class="btn" type="submit">

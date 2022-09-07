@@ -3,9 +3,9 @@ $page__title = 'Manage Categories✨';
 include('./partials/sidenav/sidenav.php');
 
 // QUERY
-$category__db__query = "SELECT * FROM categories ORDER BY title";
+$query = "SELECT * FROM categories ORDER BY title";
 // RESULTS OF QUERY 
-$categories = mysqli_query($connect__db, $category__db__query);
+$categories = mysqli_query($connect__db, $query);
 ?>
 
 
@@ -99,7 +99,8 @@ $categories = mysqli_query($connect__db, $category__db__query);
                     <tbody class="app__tbody">
                         <!---LOOP THROUGH AND DISPLAY USER -->
                         <tr clas="app__tr">
-                            <?php while ($category = mysqli_fetch_assoc($categories)) : ?>
+                                                    <!--- TODO: FIX ERRORS  -->
+                            <?php while ($categories = mysqli_fetch_assoc($categories)) : ?>
 
                                 <td class="app__td"><?= $categories['title']  ?></td>
                                 <td class="app__td"><?= $categories['description'] ?? null ?></td>

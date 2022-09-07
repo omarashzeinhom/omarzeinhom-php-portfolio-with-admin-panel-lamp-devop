@@ -5,9 +5,9 @@ if (isset($_POST['submit__adduser'])) {
     $title = filter_var($_POST['title'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $description = filter_var($_POST['description'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     if (!$title) {
-        $_SESSION['add-category'] = "Enter Title";
+        $_SESSION['add-category'] = "Kindly ,Enter The Title For Category";
     } elseif (!$description) {
-        $_SESSION['add-category'] = "Enter Description";
+        $_SESSION['add-category'] = "Kindly ,Enter The Description For the category";
     };
 
 
