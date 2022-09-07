@@ -227,6 +227,78 @@
   font-size: 1.5rem;
 }
 
+.app__row ::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.app__col {
+  float: left;
+  width: 33.33%;
+  padding: 0.5rem;
+}
+
+.app__cards::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.app__card-img {
+  padding-left: 10%;
+  width: 100%;
+  height: 100%;
+  max-width: 20vw;
+  max-height: 25vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem gray;
+}
+
+.app__card {
+  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem var(--color-primary);
+  border-radius: 5rem;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 1rem 1rem 1rem;
+  max-height: 50vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.app__card-header {
+  text-align: center;
+}
+
+.app__card-btnwrap {
+  padding-top: 5rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.app__btn {
+  padding: 0.1rem 0.1rem 0.1rem 0.1rem;
+  border: 0.1rem 0.1rem 0.1rem 0.1rem var(--color-primary);
+  border-radius: 0.9rem;
+  color: var(--color-primary);
+  transition: 0.3s all ease-in-out;
+}
+
+.app__btn:hover {
+  padding: 0.1rem 0.1rem 0.1rem 0.1rem;
+  border: 0.1rem 0.1rem 0.1rem 0.1rem var(--color-primary);
+  border-radius: 0.9rem;
+  background: var(--color-primary);
+  background-color: var(--color-primary);
+  background-image: var(--color-primary);
+  color: white;
+}
+
 /* Color Palette */
 :root {
   /**primary**/
