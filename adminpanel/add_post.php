@@ -5,6 +5,7 @@ include('./partials/sidenav/sidenav.php');
 //FETCH CATEGORIES FROM DATABASE
 $query = "SELECT * FROM categories";
 $categories = mysqli_query($connect__db, $query);
+
 ?>
 
 <h1><?php echo $page__title; ?></h1>
@@ -49,7 +50,7 @@ $categories = mysqli_query($connect__db, $query);
             <!-- First Name  --->
             <div class="app__inputs-wrap">
                 <label class="app__inputs-label" for="title">Title</label>
-                <input name="title" value="" class="app__adduser-input" type="text" id="firstName"
+                <input name="title" class="app__adduser-input" type="text" id="firstName"
                     placeholder="Enter Post Title here..." />
             </div>
             <!-- Post Text --->
@@ -89,9 +90,10 @@ $categories = mysqli_query($connect__db, $query);
             <div class="app__inputs-wrap">
                 <!-- Post Categories Options  Start  --->
                 <label class="app__inputs-label" for="avatar">Category</label>
-                <select name="category" value="" class="app__adduser-input">
+                <select name="category" class="">
                     <?php while ($category = mysqli_fetch_assoc($categories)) : ?>
-                    <option value="<? $category['id'] ?>"><?= $category['title'] ?></option>
+                    <option value="<? $category['id'] ?>">
+                        <?= $category['title'] ?></option>
                     <?php endwhile; ?>
                 </select>
             </div>

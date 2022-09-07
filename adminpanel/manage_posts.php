@@ -1,6 +1,13 @@
 <?php
 $page__title = 'Manage Posts📝';
-include('./partials/sidenav/sidenav.php'); ?>
+include('./partials/sidenav/sidenav.php');
+
+
+$query = "SELECT * FROM posts";
+$posts = mysqli_query($connect__db, $query);
+$queryc = "SELECT * FROM categories";
+$categories = mysqli_query($connect__db, $queryc);
+?>
 
 
 <h1><?php echo $page__title; ?></h1>
@@ -10,7 +17,16 @@ include('./partials/sidenav/sidenav.php'); ?>
         <li class='app__sidenav-item'><a class="app__link-btn" href="<?= ADMIN_URL ?>add_post.php">Add
                         Post📝</a></li>
 </ul>
-
+<!-- Add Post Alert success Start -->
+<?php if (isset($SESSION_['add-post-success'])) : ?>
+        <div class="app__alert-success">
+                <p class="app__alert-success-p">
+                        <?= $_SESSION['add-post-success'];
+                        unset($_SESSION['add-post-success']); ?>
+                </p>
+        </div>
+<?php endif; ?>
+<!-- Add Post Alert success End  -->
 
 <table class="app__table" style="overflow: x-auto; margin: auto; max-width: 1700px; width:100%; height:100%;">
         <thead class="app__thead">
@@ -18,6 +34,9 @@ include('./partials/sidenav/sidenav.php'); ?>
                 <tr clas="app__tr">
                         <th class="app_th">Title</th>
                         <th class="app_th">Post</th>
+                        <th class="app_th">Thumbnail</th>
+                        <th class="app_th">Featured ?</th>
+                        <th class="app_th">Category</th>
                         <th class="app_th">Edit</th>
                         <th class="app_th">Delete</th>
 
@@ -25,20 +44,29 @@ include('./partials/sidenav/sidenav.php'); ?>
 
         </thead>
         <tbody class="app__tbody">
-                <!---LOOP THROUGH AND DISPLAY USER -->
-                <tr clas="app__tr">
+                <?php while ($post = mysqli_fetch_assoc($posts)) : ?>
+                        <!---LOOP THROUGH AND DISPLAY POSTS -->
+                        <tr clas="app__tr">
+                                <td class="app__td" id="postsTitle"><?= $post['title']; ?></td>
+                                <!--- Posts Title  -->
 
-                        <td class="app__td"></td>
-                        <td class="app__td"></td>
+                                <td class="app__td" id="postsBody"><?= $post['body']; ?></td>
+                                <!--- Posts Body -->
 
-                        <td class="app__td"><a href="" class="app__link-btn">Edit</a></td>
-                        <td class="app__td"><a href="" class="app__alert-btn-sm">Delete</a>
-                        </td>
+                                <td class="app__td" id="postsThumbnail"> <img style="border-radius: 90%;" width="50px" height="50px" alt="admin_post_thumbnail" src="<?= $post['thumbnail'] ?>" /></td>
+                                <!--- Posts Thumbnail -->
+                                <td class="app__td" id="postsFeatured"><input type="checkbox" value="" checked disabled /></td>
+                                <!--- Posts Featured -->
+                                <td class="app__td" id="postsCategory"><select>
+                                                <!--- Posts Category -->
+                                                <option value="<?= $post['category'] ?>">1</option>
+                                        </select></td>
 
-                </tr>
+                                <td class="app__td"><a href="<?= ADMIN_URL . "edit_post.php" ?>" class="app__link-btn">Edit</a></td>
+                                <td class="app__td"><a href="<?= ADMIN_URL . "delete_post.php" ?>" class="app__alert-btn-sm">Delete</a></td>
 
-
-
+                        </tr>
+                <?php endwhile; ?>
         </tbody>
 </table>
 

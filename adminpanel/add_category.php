@@ -12,11 +12,8 @@ $description = $_SESSION['add-category-data']['description'] ?? null;
 <h1><?php echo $page__title; ?></h1>
 
 
-<?php if (isset($_SESSION['add-category-data'])) : ?>
-<?php endif; ?>
-
+<?php if (isset($_SESSION['user_is_admin'])) : ?>
 <section style=" width: 50vw; margin-left : 25vw;">
-
     <form action="add_category-logic.php" method="POST">
         <label class="app__inputs-label"></label>
         <input name='title' placeholder="Title" type="text" class="app__adduser-input" />
@@ -30,6 +27,7 @@ $description = $_SESSION['add-category-data']['description'] ?? null;
         </button>
     </form>
 </section>
+<?php endif; ?>
 
 
 <?php
