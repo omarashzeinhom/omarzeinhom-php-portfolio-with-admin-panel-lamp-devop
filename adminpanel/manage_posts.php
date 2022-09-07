@@ -5,8 +5,7 @@ include('./partials/sidenav/sidenav.php');
 
 $query = "SELECT * FROM posts";
 $posts = mysqli_query($connect__db, $query);
-$queryc = "SELECT * FROM categories";
-$categories = mysqli_query($connect__db, $queryc);
+
 
 ?>
 
@@ -23,7 +22,7 @@ $categories = mysqli_query($connect__db, $queryc);
 <div class="app__alert-success">
     <p class="app__alert-success-p">
         <?= $_SESSION['add-post-success'];
-                        unset($_SESSION['add-post-success']); ?>
+            unset($_SESSION['add-post-success']); ?>
     </p>
 </div>
 <?php endif; ?>
