@@ -88,7 +88,7 @@ if (isset($_POST['submit__register'])) {
         if (!mysqli_errno($connect__db)) {
             //redirecting to login page
             $_SESSION['register-success'] = "Registered Successfully ! please Login In";
-            header('location:' . HOME_URL . 'register.php');
+            header('location:' . HOME_URL . 'login.php');
             die();
         }
     }
