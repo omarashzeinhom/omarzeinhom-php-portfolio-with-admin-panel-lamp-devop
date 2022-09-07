@@ -20,11 +20,11 @@
 }
 
 .app__card-img {
-  padding-left: 10%;
-  width: 100%;
+ 
+  width: 90%;
   height: 100%;
-  max-width: 20vw;
-  max-height: 25vh;
+  max-height: 20vh;
+  border-radius: 0.28rem;
   object-fit: cover;
   box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem gray;
 }
@@ -36,7 +36,7 @@
   height: 100%;
   padding: 1rem 1rem 1rem 1rem;
   max-height: 50vh;
-  object-fit: cover;
+ 
 }
 
 .app__card-header {

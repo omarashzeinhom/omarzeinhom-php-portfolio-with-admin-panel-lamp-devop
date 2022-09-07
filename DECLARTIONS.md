@@ -15,6 +15,7 @@
 6. [Kilobytes Megabytes Gigabytes Terabytes - web.stanford.edu ](https://web.stanford.edu/class/cs101/bits-gigabytes.html)
 7. [(Loncan,T 2013) - PHP SEO: Page-Level Titles, Meta Descriptions & More](https://www.bounteous.com/insights/2013/02/19/php-seo-page-level-titles-meta-descriptions-more/)
 8. [W3Schools-Fixed-Footer](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_fixed_footer)
+9. [pakainfo - php limit string to 50 characters – 3 Ways to display first 50 characters from text filed](https://www.pakainfo.com/php-limit-string-to-50-characters/)
 
 ### gists 
 
@@ -36,6 +37,7 @@
 8. [unset() — Unset a given variable](https://www.php.net/manual/en/function.unset.php)
 9. [session_start()  Start new or resume existing session](https://www.php.net/manual/en/function.session-start.php)
 10. [mysqli_fetch_assoc() - mysqli_result::fetch_assoc -- mysqli_fetch_assoc — Fetch the next row of a result set as an associative array](https://www.php.net/manual/en/mysqli-result.fetch-assoc.php)
+11. [substr()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
 
 - Reserved Variables 
 1. [$_POST](https://www.php.net/manual/en/reserved.variables.post.php)
