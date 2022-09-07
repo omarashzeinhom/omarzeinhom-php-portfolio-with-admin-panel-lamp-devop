@@ -29,6 +29,12 @@ include('partials/seo/seo.php');
     </title>
 
 </head>
-<br />
+<!-- CSP Medium Security
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; 
+    img-src  'self' https://res.cloudinary.com; 
+    media-src https://res.cloudinary.com; 
+    script-src 'self' 'unsafe-inline'; 
+    style-src 'self' 'unsafe-inline'; 
+    font-src  'self' data:;" -->
 
 <body>

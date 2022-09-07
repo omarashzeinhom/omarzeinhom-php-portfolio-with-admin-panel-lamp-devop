@@ -45,7 +45,7 @@ NOTE: < ? = HOME_URL ?> is the same as echo  HOME__URL ?>
 -->
 <script>
 function openNav() {
-    var topNav = document.querySelectorAll("appMainNav");
+    var topNav = document.getElementById("appMainNav");
     if (topNav.className === 'app__nav') {
         topNav.className += 'responsive';
     } else {
