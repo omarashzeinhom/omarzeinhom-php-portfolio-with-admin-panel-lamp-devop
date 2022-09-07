@@ -10,20 +10,19 @@ $posts = mysqli_query($connect__db, $query);
 
 
 <?php while ($single_post = mysqli_fetch_assoc($posts)) : ?>
-<!---LOOP THROUGH AND DISPLAY POSTS -->
-<h5 id="postsTitle"><?= $single_post['title']; ?></h5>
-<!--- Posts Title  -->
+    <!---LOOP THROUGH AND DISPLAY POSTS -->
+    <h5 id="postsTitle"><?= $single_post['title']; ?></h5>
+    <!--- Posts Title  -->
 
-<h6 class="app__td" id="postsBody"><?= $single_post['body']; ?></h6>
-<!--- Posts Body -->
+    <h6 class="app__td" id="postsBody"><?= $single_post['body']; ?></h6>
+    <!--- Posts Body -->
 
-<img src="<?= HOME_URL . 'images/' . $single_post['thumbnail'] ?>" style="border-radius: 90%;" width="50px"
-    height="50px" alt="admin_post_thumbnail" />
-<!--- Posts Featured -->
-<button>
-    <!--- Posts Category -->
-    <?= $single_post['category'] ?? null; ?>
-</button>
+    <img src="<?= HOME_URL . 'images/' . $single_post['thumbnail'] ?>" style="border-radius: 90%;" width="50px" height="50px" alt="admin_post_thumbnail" />
+    <!--- Posts Featured -->
+    <button>
+        <!--- Posts Category -->
+        <?= $single_post['category'] ?? null; ?>
+    </button>
 <?php endwhile; ?>
 
 

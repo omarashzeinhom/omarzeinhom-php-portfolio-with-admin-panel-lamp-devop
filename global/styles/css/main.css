@@ -9,8 +9,6 @@
   box-shadow: 0.1rem 0.3rem 0.1rem 0.1rem var(--color-primary);
   border-radius: 0.7rem;
   overflow: hidden;
-  height: 100%;
-  max-height: 10vh;
 }
 @media screen and (max-width: 900px) {
   .app__nav {
