@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 01, 2022 at 08:01 AM
+-- Generation Time: Sep 07, 2022 at 06:42 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -38,7 +38,8 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `title`, `description`) VALUES
-(5, 'JavaScript ', 'JavaScript is a beautiful language with some limitations.');
+(6, 'JavaScript  ', 'JavaScript Posts '),
+(7, 'TypeScript  ', 'TypeScript Posts');
 
 -- --------------------------------------------------------
 
@@ -56,6 +57,13 @@ CREATE TABLE `posts` (
   `author_id` int(11) UNSIGNED NOT NULL,
   `is_featured` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `posts`
+--
+
+INSERT INTO `posts` (`id`, `title`, `body`, `thumbnail`, `date_time`, `category_id`, `author_id`, `is_featured`) VALUES
+(1, 'Post 1', 'Post 1             ', '1662568117quran search api with ionic 6 -react-youtube-thumbnail TODO-LIST-APP-1.png', '2022-09-07 16:28:37', 6, 8, 0);
 
 -- --------------------------------------------------------
 
@@ -80,9 +88,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `username`, `email`, `password`, `avatar`, `is_admin`) VALUES
 (8, 'Verification', 'User', 'verifyuser', 'verifyuser123@email.com', '$2y$10$JWJXwmKgQ./3LdqxJzgvdukfeD8S1zeq3tdgQRpWZzzuMRtMrwcAq', '16611419011660857274952.jpg', 1),
-(9, 'Author', 'John', 'authorjohn', 'authorjohn@email.com', '$2y$10$T7PJO.s0rNe3wNF1TZOC1OM.yLCzUFIs2xWTAZzyNrD/HmZahVnR.', '1661199667ANDGO_MENU_ICON_zokgob.svg', 0),
-(11, 'Omar', 'Zeinhom', 'omarashrafzeinhom', 'omar.ashraf.zeinhom@hotmail.com', '$2y$10$nWw8W0hLShbKkPmZTKA64.b0Ts6Q1lljitAjSGVLfsDDp/358vQeC', '1661201786WP-COURSE-30.png', 1),
-(13, 'Marcus', 'Xavier', 'marcusxavier', 'marcusxavier@email.com', '$2y$10$oxjDrqWiPYb0SB2/O834OeEiLWe6lJYu5QvO2OBL.MTgAzoy7Jw6u', '1661217201WP-COURSE-30.png', 0);
+(9, 'Author', 'John', 'authorjohn', 'authorjohn@email.com', '$2y$10$T7PJO.s0rNe3wNF1TZOC1OM.yLCzUFIs2xWTAZzyNrD/HmZahVnR.', '1661199667ANDGO_MENU_ICON_zokgob.svg', 0);
 
 --
 -- Indexes for dumped tables
@@ -117,13 +123,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
