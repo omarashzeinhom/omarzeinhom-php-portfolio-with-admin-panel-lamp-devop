@@ -1,7 +1,6 @@
 <?php
 require('./config/database.php');
 
-//TODO : DEBUG AND FIX EDIT USER NOT WORKING ON SUBMIT
 
 if (isset($_POST['submit__edituser'])) {
     $id = filter_var($_POST['id'], FILTER_SANITIZE_NUMBER_INT);

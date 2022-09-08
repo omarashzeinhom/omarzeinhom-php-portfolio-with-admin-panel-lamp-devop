@@ -31,18 +31,14 @@ $categories = mysqli_query($connect__db, $queryc);
 
 <table class="app__table" style="overflow: x-auto; margin: auto; max-width: 1700px; width:100%; height:100%;">
     <thead class="app__thead">
-
         <tr clas="app__tr">
             <th class="app_th">Title</th>
             <th class="app_th">Post</th>
             <th class="app_th">Thumbnail</th>
             <th class="app_th">Featured ?</th>
-            <th class="app_th">Category</th>
             <th class="app_th">Edit</th>
             <th class="app_th">Delete</th>
-
         </tr>
-
     </thead>
     <tbody class="app__tbody">
         <?php while ($single_post = mysqli_fetch_assoc($posts)) : ?>
@@ -50,25 +46,17 @@ $categories = mysqli_query($connect__db, $queryc);
         <tr clas="app__tr">
             <td class="app__td" id="postsTitle"><?= $single_post['title']; ?></td>
             <!--- Posts Title  -->
-
             <td class="app__td" id="postsBody"> <?= substr($single_post['body'], 0, 50)  . " ..."; ?></td>
             <!--- Posts Body -->
-
             <td class="app__td" id="postsThumbnail"> <img src="<?= ROOT_URL . 'images/' . $single_post['thumbnail'] ?>"
                     style="padding-top: 0.4rem;border-radius: 15%; object-fit:cover; box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem gray;"
                     class="app__thumbnail-avatar" width="50px" height="50px" alt="admin_post_thumbnail" /></td>
             <!--- Posts Thumbnail -->
             <td class="app__td" id="postsFeatured"><input type="checkbox" value="" checked disabled /></td>
             <!--- Posts Featured -->
-            <td class="app__td" id="postsCategory"><select>
-                    <!--- Posts Category -->
-                    <option value="<?= $single_post['category'] ?? null; ?>"></option>
-                </select></td>
-
             <td class="app__td"><a href="<?= ADMIN_URL ?>edit_post.php?id=<?= $single_post['id'] ?? null; ?>"
                     class="app__link-btn">Edit</a></td>
             <td class="app__td"><a href="<?= ADMIN_URL . "delete_post.php" ?>" class="app__alert-btn-sm">Delete</a></td>
-
         </tr>
         <?php endwhile; ?>
     </tbody>
