@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 07, 2022 at 06:42 PM
+-- Generation Time: Sep 09, 2022 at 01:56 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -63,7 +63,25 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `title`, `body`, `thumbnail`, `date_time`, `category_id`, `author_id`, `is_featured`) VALUES
-(1, 'Post 1', 'Post 1             ', '1662568117quran search api with ionic 6 -react-youtube-thumbnail TODO-LIST-APP-1.png', '2022-09-07 16:28:37', 6, 8, 0);
+(1, 'Post 1 Test Update', '                &quot;But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that proasdadadasdasdasdasdadadadasdasdduces no resultant pleasure?&quot;                ', '1662568117quran search api with ionic 6 -react-youtube-thumbnail TODO-LIST-APP-1.png', '2022-09-07 16:28:37', 6, 8, 6),
+(2, 'Post 2', '\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\"', '1662573003Capture.PNG', '2022-09-07 17:50:03', 7, 8, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `products`
+--
+
+CREATE TABLE `products` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `description` text NOT NULL,
+  `price` decimal(7,2) NOT NULL,
+  `retailprice` int(7) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `img` time NOT NULL,
+  `date_added` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -88,7 +106,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `username`, `email`, `password`, `avatar`, `is_admin`) VALUES
 (8, 'Verification', 'User', 'verifyuser', 'verifyuser123@email.com', '$2y$10$JWJXwmKgQ./3LdqxJzgvdukfeD8S1zeq3tdgQRpWZzzuMRtMrwcAq', '16611419011660857274952.jpg', 1),
-(9, 'Author', 'John', 'authorjohn', 'authorjohn@email.com', '$2y$10$T7PJO.s0rNe3wNF1TZOC1OM.yLCzUFIs2xWTAZzyNrD/HmZahVnR.', '1661199667ANDGO_MENU_ICON_zokgob.svg', 0);
+(9, 'Author', 'Johns', 'authorjohn', 'authorjohn@email.com', '$2y$10$T7PJO.s0rNe3wNF1TZOC1OM.yLCzUFIs2xWTAZzyNrD/HmZahVnR.', '1661199667ANDGO_MENU_ICON_zokgob.svg', 0);
 
 --
 -- Indexes for dumped tables
@@ -110,6 +128,12 @@ ALTER TABLE `posts`
   ADD KEY `FK_blog_author` (`author_id`);
 
 --
+-- Indexes for table `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -129,13 +153,19 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Constraints for dumped tables
