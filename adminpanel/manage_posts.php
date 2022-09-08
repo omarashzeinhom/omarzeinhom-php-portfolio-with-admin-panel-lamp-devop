@@ -51,12 +51,14 @@ $categories = mysqli_query($connect__db, $queryc);
             <td class="app__td" id="postsThumbnail"> <img src="<?= ROOT_URL . 'images/' . $single_post['thumbnail'] ?>"
                     style="padding-top: 0.4rem;border-radius: 15%; object-fit:cover; box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem gray;"
                     class="app__thumbnail-avatar" width="50px" height="50px" alt="admin_post_thumbnail" /></td>
+            s
             <!--- Posts Thumbnail -->
             <td class="app__td" id="postsFeatured"><input type="checkbox" value="" checked disabled /></td>
             <!--- Posts Featured -->
             <td class="app__td"><a href="<?= ADMIN_URL ?>edit_post.php?id=<?= $single_post['id'] ?? null; ?>"
                     class="app__link-btn">Edit</a></td>
-            <td class="app__td"><a href="<?= ADMIN_URL . "delete_post.php" ?>" class="app__alert-btn-sm">Delete</a></td>
+            <td class="app__td"><a href="<?= ADMIN_URL ?>delete_post.php?id=<?= $single_post['id'] ?? null; ?>"
+                    class="app__alert-btn-sm">Delete</a></td>
         </tr>
         <?php endwhile; ?>
     </tbody>
