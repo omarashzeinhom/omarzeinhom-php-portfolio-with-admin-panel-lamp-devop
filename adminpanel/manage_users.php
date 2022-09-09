@@ -18,21 +18,21 @@ $users = mysqli_query($connect__db, $query);
 <!--- DISPLAY USERS -->
 
 
-
+<br />
 <!--- User Options --->
 <ul>
     <li class='app__sidenav-item'><a href="<?= HOME_URL ?>add_user.php" class="app__link-btn">Add
             User👥</a></li>
 
 </ul>
-
+<br />
 <?php if (isset($SESSION_['add-user-success'])) : ?>
-<div class="app__alert-success">
-    <p class="app__alert-success-p">
-        <?= $_SESSION['add-user-success'];
+    <div class="app__alert-success">
+        <p class="app__alert-success-p">
+            <?= $_SESSION['add-user-success'];
             unset($_SESSION['add-user-success']); ?>
-    </p>
-</div>
+        </p>
+    </div>
 
 <?php endif; ?>
 
@@ -54,19 +54,17 @@ $users = mysqli_query($connect__db, $query);
         <tbody class="app__tbody">
             <!---LOOP THROUGH AND DISPLAY USER -->
             <?php while ($user = mysqli_fetch_assoc($users)) : ?>
-            <tr clas="app__tr">
+                <tr clas="app__tr">
 
-                <td class="app__td"><?= " {$user['firstname']} {$user['lastname']}" ?></td>
-                <td class="app__td"><?= "{$user['username']}" ?></td>
+                    <td class="app__td"><?= " {$user['firstname']} {$user['lastname']}" ?></td>
+                    <td class="app__td"><?= "{$user['username']}" ?></td>
 
-                <td class="app__td"><a href="<?= ADMIN_URL ?>edit_user.php?id=<?= $user['id'] ?>"
-                        class="app__link-btn">Edit</a></td>
-                <td class="app__td"><a href="<?= ADMIN_URL ?>delete-user.php?id=<?= $user['id'] ?>"
-                        class="app__alert-btn-sm">Delete</a>
-                </td>
-                <td class="app__td"><?= $user['is_admin'] ? 'Yes' : 'No' ?></td>
+                    <td class="app__td"><a href="<?= ADMIN_URL ?>edit_user.php?id=<?= $user['id'] ?>" class="app__link-btn">Edit</a></td>
+                    <td class="app__td"><a href="<?= ADMIN_URL ?>delete-user.php?id=<?= $user['id'] ?>" class="app__alert-btn-sm">Delete</a>
+                    </td>
+                    <td class="app__td"><?= $user['is_admin'] ? 'Yes' : 'No' ?></td>
 
-            </tr>
+                </tr>
 
             <?php endwhile; ?>
 

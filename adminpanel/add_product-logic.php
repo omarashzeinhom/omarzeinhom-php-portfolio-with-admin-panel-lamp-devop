@@ -33,7 +33,7 @@ if (isset($_POST['submit__newuser'])) {
     } else {
         //check if confirm password matches the createdpassword
         if ($createpassword !== $confirmpassword) {
-            $_SESSION['add-user'] = 'Passwors Entered do not match';
+            $_SESSION['add-product'] = 'Passwors Entered do not match';
         } else {
             //hashed password
             $hashed_pass =  password_hash($createpassword, PASSWORD_DEFAULT);
@@ -44,7 +44,7 @@ if (isset($_POST['submit__newuser'])) {
             username = '$username' OR email='$email'";
             $username_check_results = mysqli_query($connect__db, $username_check_query);
             if (mysqli_num_rows($username_check_results) > 0) {
-                $_SESSION['add-user'] = 'UserName or Email already exists';
+                $_SESSION['add-product'] = 'UserName or Email already exists';
             } else {
                 // adduser avatar picture name to be unique
                 $time = time();
@@ -64,10 +64,10 @@ if (isset($_POST['submit__newuser'])) {
                         //UPLOAD AVATAR
                         move_uploaded_file($avatar_tmp_name, $avatar_destination_path);
                     } else {
-                        $_SESSION['add-user'] = 'File Size is too Big Please Use an Image converter to make the image below 0.5mb , since it differs in the websites performance ';
+                        $_SESSION['add-product'] = 'File Size is too Big Please Use an Image converter to make the image below 0.5mb , since it differs in the websites performance ';
                     }
                 } else {
-                    $_SESSION['add-user'] = 'Files Accepted are jpeg, png, jpg , .svg and .webp';
+                    $_SESSION['add-product'] = 'Files Accepted are jpeg, png, jpg , .svg and .webp';
                 }
             }
         }
@@ -75,11 +75,11 @@ if (isset($_POST['submit__newuser'])) {
 
     //DEBUG AVATAR Using var_dump();
     //var_dump($avatar);
-    if (isset($_SESSION['add-user'])) {
+    if (isset($_SESSION['add-product'])) {
         // passing the form data back to the add_user page
         //sends all invalid details to add_user page make sure its the session add-user-data
-        $_SESSION['add-user-data'] = $_POST;
-        header('location:' . ADMIN_URL . 'add_user.php');
+        $_SESSION['add-product'] = $_POST;
+        header('location:' . ADMIN_URL . 'add_product.php');
         die();
     } else {
         //insert new user into users table 
@@ -88,12 +88,12 @@ if (isset($_POST['submit__newuser'])) {
         $insert_user_results = mysqli_query($connect__db, $insert_user_query);
         if (!mysqli_errno($connect__db)) {
             //redirecting to login page
-            $_SESSION['add-user-success'] = "A new user $firstname $lastname has been added successfully";
+            $_SESSION['add-product-success'] = "A new user $firstname $lastname has been added successfully";
             header('location:' . ADMIN_URL . 'manage_users.php');
             die();
         }
     }
 } else {
-    header('location:' . ADMIN_URL . 'add_user.php');
+    header('location:' . ADMIN_URL . 'add_product.php');
     die();
 }
