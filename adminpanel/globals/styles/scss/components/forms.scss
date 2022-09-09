@@ -10,7 +10,11 @@
   text-align: center;
   align-items: center;
   box-shadow: 0.1rem 0.1rem 0.7rem 0.1rem var(--color-primary);
-  background-image: linear-gradient(to right, var(--color-primary-dark), var(--color-blackpearl));
+  background-image: linear-gradient(
+    to right,
+    var(--color-primary-dark),
+    var(--color-blackpearl)
+  );
   max-width: 50vw;
   margin-left: 25vw;
 }

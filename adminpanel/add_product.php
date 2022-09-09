@@ -85,7 +85,7 @@ $products = mysqli_query($connect__db, $query);
             </div>
             <div class="app__inputs-wrap">
                 <label class="app__inputs-label" for="retailprice">Retail Price</label>
-                <input name="retailprice" value="" class="app__adduser-input" type="number" />
+                <input name="retailprice" value="" class="app__input" type="number" />
             </div>
             <div class="app__inputs-wrap">
                 <label class="app__inputs-label" for="quantity">Quantity</label>
