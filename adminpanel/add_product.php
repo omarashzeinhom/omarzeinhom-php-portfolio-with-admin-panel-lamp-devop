@@ -1,5 +1,5 @@
 <?php
-$page__title = 'Add Product 📝';
+$page__title = 'Add Product 🛍️';
 include('./partials/sidenav/sidenav.php');
 
 //FETCH CATEGORIES FROM DATABASE
@@ -56,6 +56,7 @@ $products = mysqli_query($connect__db, $query);
                 <div class="app__inputs-wrap">
                     <label class="app__inputs-label" for="body">Description</label>
                     <textarea name="description" class="app__input" id="postcontent" style="resize:none; padding-bottom: 2.5rem; color:white;" rows="8" placeholder="Enter Post Body here..." required maxlength="500000" autofocus>
+
                 </textarea>
                 </div>
 
