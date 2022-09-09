@@ -1,6 +1,6 @@
-.app__admin__nav-avatar{
+.app__admin__nav-avatar {
   border-radius: 90%;
-  max-width:1.5rem;
+  max-width: 1.5rem;
   max-height: 1.4rem;
   width: 100%;
   height: 100%;
@@ -9,40 +9,37 @@
   box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem var(--color-primary);
 }
 
+.app__sidenav-closed {
+  top: 0;
+  background-color: var(--color-blackpearl);
+  //trbl
+  padding: 1rem 1rem 1rem 1rem;
+  box-shadow: 0.1rem 0.4rem 0.7rem 0.1rem var(--color-primary);
+  width: 100%;
+  max-width: 100%;
+  border-radius: 0.4rem;
+  height: 100%;
+}
 
-
-.app__sidenav-closed{
-    top: 0;
-    background-color: var(--color-blackpearl);
-    //trbl
-    padding: 1rem 1rem 1rem 1rem;
-    box-shadow: 0.1rem 0.4rem 0.7rem 0.1rem var(--color-primary);
-    width: 100%;
-    max-width: 100%;
-    border-radius: 0.4rem;
-    height: 100%;
-  }
-
-
-  .app__sidenav-openBtn {
+.app__sidenav-openBtn {
+  position: absolute;
+  top: 0;
+  right: 0.25rem;
+  font-size: 1.4rem;
+  margin-top: 0.7rem;
+  margin-right: 1.5rem;
+  cursor: pointer;
+  font-size: 1.7rem;
+  color: var(--color-pictonblue);
+  @media screen and (max-width: 900px) {
     position: absolute;
     top: 0;
     right: 0.25rem;
     font-size: 1.4rem;
-    margin-top: 0.7rem;
-    margin-right: 1.5rem;
+    margin-top: 0.5rem;
+    margin-right: 0.8rem;
     cursor: pointer;
     font-size: 1.7rem;
     color: var(--color-pictonblue);
-    @media screen and (max-width: 900px) {
-      position: absolute;
-      top: 0;
-      right: 0.25rem;
-      font-size: 1.4rem;
-      margin-top: 0.5rem;
-      margin-right: 0.8rem;
-      cursor: pointer;
-      font-size: 1.7rem;
-      color: var(--color-pictonblue);
-    }
   }
+}

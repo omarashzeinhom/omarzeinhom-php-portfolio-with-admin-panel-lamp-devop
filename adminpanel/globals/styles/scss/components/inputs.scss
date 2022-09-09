@@ -1,36 +1,5 @@
-.app__inputs-label {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--color-primary);
-    
-}
 
-.app__input {
-    background-color: var(--color-blackpearl);
-    color: var(--color-white);
-    font-size: 1rem;
-    width: 100%;
-    text-align: center;
-    transition: 0.7s ease-in-out;
-    padding: 0.7rem;
-    border-radius: 0.8rem;
 
-    &:hover {
-        color: var(--color-primary-dark);
-        background-color: var(--color-primary);
-    }
-}
-
-.app__form-card {
-    border-radius: 1rem;
-    width: 100%;
-    text-align: center;
-    align-items: center;
-    box-shadow: 0.1rem 0.1rem 0.7rem 0.1rem var(--color-primary);
-    background-image: linear-gradient(to right, var(--color-primary-dark), var(--color-blackpearl));
-    max-width: 50vw;
-    margin-left: 25vw;
-}
 
 /**
 //TODO : ADD DROPDOWN ALTERNATIVE MENU 
@@ -39,3 +8,24 @@
   
 }
 **/
+.app__inputs-label {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+  
+  .app__input {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-size: 1rem;
+    width: 100%;
+    text-align: center;
+    transition: 0.7s ease-in-out;
+    padding: 0.7rem;
+    border-radius: 0.8rem;
+    &:hover {
+      color: var(--color-white);
+      background-color: var(--color-blackpearl);
+    }
+  }
+  
