@@ -8,9 +8,9 @@ if (isset($_POST['submit__newuser'])) {
     //GET ALL THE VALUES IN THE POST SUPER GLOBAL
     $title = filter_var($_POST['title'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $description = filter_var($_POST['description'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $price = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
-    $retailprice = filter_var($_POST['retailprice'], FILTER_VALIDATE_EMAIL);
-    $quantity = filter_var($_POST['user__role'], FILTER_SANITIZE_NUMBER_INT);
+    $price = filter_var($_POST['email'], FILTER_SANITIZE_NUMBER_INT);
+    $retailprice = filter_var($_POST['retailprice'],  FILTER_SANITIZE_NUMBER_INT);
+    $quantity = filter_var($_POST['quantity'], FILTER_SANITIZE_NUMBER_INT);
     $image = $_FILES['image'];
 
 

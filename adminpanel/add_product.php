@@ -80,12 +80,16 @@ $products = mysqli_query($connect__db, $query);
 
             <!-- Is Featured? --->
             <div class="app__inputs-wrap">
-                <label class="app__inputs-label" for="is_featured">Price</label>
+                <label class="app__inputs-label" for="price">Price</label>
                 <input name="price" value="" class="app__input" type="number" />
             </div>
             <div class="app__inputs-wrap">
-                <label class="app__inputs-label" for="is_featured">Retail Price</label>
+                <label class="app__inputs-label" for="retailprice">Retail Price</label>
                 <input name="retailprice" value="" class="app__adduser-input" type="number" />
+            </div>
+            <div class="app__inputs-wrap">
+                <label class="app__inputs-label" for="quantity">Quantity</label>
+                <input name="quantity" value="" class="app__input" type="number" />
             </div>
             <?php endif; ?>
 
