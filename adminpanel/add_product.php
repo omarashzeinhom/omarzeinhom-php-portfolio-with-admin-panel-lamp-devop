@@ -40,7 +40,7 @@ $products = mysqli_query($connect__db, $query);
 
 <!-- App Add User Start  -->
 <form class="" action="<?= HOME_URL ?>add_product-logic.php" enctype="multipart/form-data" method="POST"
-    style=" width: 90vw; margin-left : 5vw;">
+    style="width: 90vw; margin-left : 5vw;">
     <div class="row">
         <!-- Row Start   --->
         <?php

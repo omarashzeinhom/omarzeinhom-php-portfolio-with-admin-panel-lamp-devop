@@ -25,95 +25,102 @@ unset($_SESSION['add-user-data']);
 
             <?php
             if (isset($_SESSION['add-user'])) : ?>
-                <div class="app__alert-error">
-                    <p class="app__alert-p">
-                        <?= $_SESSION['add-user'];
+            <div class="app__alert-error">
+                <p class="app__alert-p">
+                    <?= $_SESSION['add-user'];
                         unset($_SESSION['add-user']); ?>
-                    </p>
+                </p>
 
-                </div>
-                <!--- DEBUG ERROR MSG IN SESSION  END  --->
+            </div>
+            <!--- DEBUG ERROR MSG IN SESSION  END  --->
             <?php endif; ?>
             <!-- App Add User Start  -->
             <!-- @uth Check start if  --->
             <?php if (isset($_SESSION['user_is_admin'])) : ?>
 
-                <form class="app__adduser-form" action="<?= HOME_URL ?>add_user-logic.php" enctype="multipart/form-data" method="POST">
-                    <div class="row ">
-                        <div class="col-12">
-                            <!-- First Name  --->
-                            <div class="app__inputs-wrap">
-                                <label class="app__inputs-label">First Name</label>
-                                <input name="firstname" value="<?= $firstname ?>" class="app__adduser-input" type="text" id="firstName" placeholder="Enter Name here..." />
-                            </div>
-                            <!-- Last Name  --->
+            <form class="app__adduser-form" action="<?= HOME_URL ?>add_user-logic.php" enctype="multipart/form-data"
+                method="POST">
+                <div class="row ">
+                    <div class="col-12">
+                        <!-- First Name  --->
+                        <div class="app__inputs-wrap">
+                            <label class="app__inputs-label">First Name</label>
+                            <input name="firstname" value="<?= $firstname ?>" class="app__input" type="text"
+                                id="firstName" placeholder="Enter Name here..." />
+                        </div>
+                        <!-- Last Name  --->
 
-                            <div class="app__inputs-wrap">
-                                <label class="app__inputs-label">Last Name</label>
-                                <input name="lastname" value="<?= $lastname ?>" class="app__adduser-input" type="text" id="lastName" placeholder="Enter Last Name here..." />
-                            </div>
-                            <!-- User Name  --->
+                        <div class="app__inputs-wrap">
+                            <label class="app__inputs-label">Last Name</label>
+                            <input name="lastname" value="<?= $lastname ?>" class="app__input" type="text" id="lastName"
+                                placeholder="Enter Last Name here..." />
+                        </div>
+                        <!-- User Name  --->
 
-                            <div class="app__inputs-wrap">
-                                <label class="app__inputs-label">User Name</label>
-                                <input name="username" value="<?= $username ?>" type="text" class="app__adduser-input" id="userName" placeholder="Enter User Name here..." />
-                            </div>
+                        <div class="app__inputs-wrap">
+                            <label class="app__inputs-label">User Name</label>
+                            <input name="username" value="<?= $username ?>" type="text" class="app__input" id="userName"
+                                placeholder="Enter User Name here..." />
+                        </div>
 
-                            <!-- Email  --->
+                        <!-- Email  --->
 
-                            <div class="app__inputs-wrap">
-                                <label class="app__inputs-label">Email</label>
-                                <input name="email" value="<?= $email ?>" type="email" class="app__adduser-input" id="email" name="email" placeholder="email@global.com" />
-                            </div>
-                            <!-- Password --->
+                        <div class="app__inputs-wrap">
+                            <label class="app__inputs-label">Email</label>
+                            <input name="email" value="<?= $email ?>" type="email" class="app__input" id="email"
+                                name="email" placeholder="email@global.com" />
+                        </div>
+                        <!-- Password --->
 
-                            <div class="app__inputs-wrap">
-                                <label class="app__inputs-label">Password</label>
-                                <input name="createpassword" value="<?= $createpassword ?>" class="app__adduser-input" type="password" id="createpassword" placeholder="Enter password here..." />
-                            </div>
-                            <!-- Confirm Password  --->
+                        <div class="app__inputs-wrap">
+                            <label class="app__inputs-label">Password</label>
+                            <input name="createpassword" value="<?= $createpassword ?>" class="app__-input"
+                                type="password" id="createpassword" placeholder="Enter password here..." />
+                        </div>
+                        <!-- Confirm Password  --->
 
-                            <div class="app__inputs-wrap">
-                                <label class="app__inputs-label">Confirm Password</label>
-                                <input name="confirmpassword" value="<?= $confirmpassword ?>" class="app__adduser-input" type="password" id="confirmpassword" placeholder="Confrim password here..." />
-                            </div>
+                        <div class="app__inputs-wrap">
+                            <label class="app__inputs-label">Confirm Password</label>
+                            <input name="confirmpassword" value="<?= $confirmpassword ?>" class="app__-input"
+                                type="password" id="confirmpassword" placeholder="Confrim password here..." />
+                        </div>
 
-                            <!-- Avatar --->
+                        <!-- Avatar --->
 
-                            <div class="app__inputs-wrap">
-                                <label class="app__inputs-label" for="avatar">Avatar</label>
-                                <input name="avatar" class="app__adduser-input" type="file" id="avatar" />
-                                <!-- TODO AFTER FINISHING PROJECT ADD DEFAULT AVATAR IMAGES TO SELECT FROM-->
-                                <small>
-                                    Make sure your image is less than 0.5mb use an image converter
-                                </small>
-
-                            </div>
-
-                            <br />
-
-                            <!-- Author or Admin Options  --->
-                            <label class="app__inputs-label" for="avatar">User Role</label>
-                            <select name="user__role" value="<?= $user__role ?>" class="app__adduser-input">
-                                <option value="0">Author</option>
-                                <option value="1">Admin</option>
-                            </select>
-
-
-                            <!-- Author or Admin Options  --->
-
-                            <br />
-
-                            <!-- Add new user Button key of name -->
-                            <button class="btn" name="submit__newuser">
-                                Add New User
-                            </button>
-                            <!-- Add new user Button -->
-
+                        <div class="app__inputs-wrap">
+                            <label class="app__inputs-label" for="avatar">Avatar</label>
+                            <input name="avatar" class="app__input" type="file" id="avatar" />
+                            <!-- TODO AFTER FINISHING PROJECT ADD DEFAULT AVATAR IMAGES TO SELECT FROM-->
+                            <small>
+                                Make sure your image is less than 0.5mb use an image converter
+                            </small>
 
                         </div>
+
+                        <br />
+
+                        <!-- Author or Admin Options  --->
+                        <label class="app__inputs-label" for="avatar">User Role</label>
+                        <select name="user__role" value="<?= $user__role ?>" class="app__adduser-input">
+                            <option value="0">Author</option>
+                            <option value="1">Admin</option>
+                        </select>
+
+
+                        <!-- Author or Admin Options  --->
+
+                        <br />
+
+                        <!-- Add new user Button key of name -->
+                        <button class="btn" name="submit__newuser">
+                            Add New User
+                        </button>
+                        <!-- Add new user Button -->
+
+
                     </div>
-                </form>
+                </div>
+            </form>
             <?php endif; ?>
             <!-- @uth Check endif --->
 
