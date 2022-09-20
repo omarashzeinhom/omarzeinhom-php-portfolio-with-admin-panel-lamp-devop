@@ -12,7 +12,9 @@ $categories = mysqli_query($connect__db, $queryc);
 
 
 <h1><?php echo $page__title; ?></h1>
-
+<note>
+    Still under Development
+</note>
 <br />
 <ul class=''>
     <li class='app__sidenav-item'><a class="app__link-btn" href="<?= ADMIN_URL ?>add_product.php">Add

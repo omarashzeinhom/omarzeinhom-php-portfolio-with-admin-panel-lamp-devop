@@ -27,7 +27,8 @@ $products = mysqli_query($connect__db, $query);
 <?php elseif (isset($_SESSION['add-product'])) : ?>
 <div class="app__alert-error">
     <p class="app__alert-p">
-        <?= $_SESSION['add-post'];
+        <?=
+            implode($_SESSION['add-product']);
             unset($_SESSION['add-product']); ?>
 
     </p>
@@ -39,7 +40,7 @@ $products = mysqli_query($connect__db, $query);
 
 
 <!-- App Add User Start  -->
-<form class="" action="<?= HOME_URL ?>add_product-logic.php" enctype="multipart/form-data" method="POST"
+<form class="" action="<?= ADMIN_URL ?>add_product-logic.php" enctype="multipart/form-data" method="POST"
     style="width: 90vw; margin-left : 5vw;">
     <div class="row">
         <!-- Row Start   --->
@@ -51,7 +52,7 @@ $products = mysqli_query($connect__db, $query);
             <!-- Title  --->
             <div class="app__inputs-wrap">
                 <label class="app__inputs-label" for="title">Title</label>
-                <input name="title" class="app__input" type="text" id="firstName"
+                <input name="name" class="app__input" type="text" id="firstName"
                     placeholder="Enter Product Title here..." />
             </div>
             <!-- Post Text --->
@@ -68,7 +69,7 @@ $products = mysqli_query($connect__db, $query);
             <!-- Post Thumbnail --->
             <div class="app__inputs-wrap">
                 <label class="app__inputs-label" for="thumbnail">Image</label>
-                <input name="image" class="app__input" type="file" id="avatar" />
+                <input name="img" class="app__input" type="file" id="image" />
                 <!-- TODO AFTER FINISHING PROJECT ADD DEFAULT AVATAR IMAGES TO SELECT FROM-->
                 <br />
                 <small>
@@ -91,7 +92,6 @@ $products = mysqli_query($connect__db, $query);
                 <label class="app__inputs-label" for="quantity">Quantity</label>
                 <input name="quantity" value="" class="app__input" type="number" />
             </div>
-            <?php endif; ?>
 
             <!-- Author or Admin Options  --->
             <br />
@@ -100,10 +100,11 @@ $products = mysqli_query($connect__db, $query);
             <!-- Post Categories Options  End --->
 
             <!-- Add new user Button key of name -->
-            <button class="btn" name="submit__newproduct">
+            <button class="btn" name="submit__newproduct" type="submit">
                 Add New Product
             </button>
             <!-- Add new user Button -->
+            <?php endif; ?>
 
         </div><!-- Column End  -->
     </div> <!-- Row End  -->

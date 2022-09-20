@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 09, 2022 at 01:56 AM
+-- Generation Time: Sep 20, 2022 at 11:10 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -80,7 +80,7 @@ CREATE TABLE `products` (
   `retailprice` int(7) NOT NULL,
   `quantity` int(11) NOT NULL,
   `img` time NOT NULL,
-  `date_added` datetime DEFAULT current_timestamp()
+  `date_added` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------

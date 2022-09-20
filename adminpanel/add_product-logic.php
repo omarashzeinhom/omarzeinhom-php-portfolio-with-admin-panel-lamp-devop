@@ -6,13 +6,13 @@ require './config/database.php';
 
 if (isset($_POST['submit__newproduct'])) {
     //GET ALL THE VALUES IN THE POST SUPER GLOBAL
-    $title = filter_var($_POST['title'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $name = filter_var($_POST['name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $description = filter_var($_POST['description'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $price = filter_var($_POST['price'], FILTER_SANITIZE_NUMBER_INT);
-    $retailprice = filter_var($_POST['retailprice'],  FILTER_SANITIZE_NUMBER_INT);
-    $quantity = filter_var($_POST['quantity'], FILTER_VALIDATE_INT);
-    $image = $_FILES['image'];
-
+    $price = filter_var($_POST['price'], FILTER_SANITIZE_NUMBER_FLOAT);
+    $retailprice = filter_var($_POST['retailprice'], FILTER_SANITIZE_NUMBER_FLOAT);
+    $quantity = filter_var($_POST['quantity'], FILTER_SANITIZE_NUMBER_FLOAT);
+    $img = $_FILES['img'];
+    var_dump($title);
 
     //DEBUG Inputs
     //echo $firstname, $lastname, $username, $email, $password, $confirmpassword;
@@ -20,7 +20,7 @@ if (isset($_POST['submit__newproduct'])) {
     var_dump($image);
 
     //VALIDATING Input Values
-    if (!$title) {
+    if (!$name) {
         $_SESSION['add-product'] = "Your Product Title is missing ⁉️";
     } elseif (!$description) {
         $_SESSION['add-product'] = "Your Description is missing ⁉️";
@@ -28,22 +28,24 @@ if (isset($_POST['submit__newproduct'])) {
         $_SESSION['add-product'] = "Your Price is missing ⁉️";
     } elseif (!$retailprice) {
         $_SESSION['add-product'] = "Your Retail Price is missing ⁉️";
+    } elseif (!$name || !$description || !$price || !$retailprice) {
+        $_SESSION['add-product'] = "Your Product info is missing please add it in again ⁉️";
     } else {
         //check if confirm password matches the createdpassword
 
 
         //check if username or the email already exists in the database
         $product_check_query = "SELECT * FROM products WHERE
-            title = '$title' OR description='$description'";
+            name= '$name' OR description='$description'";
         $product_check_results = mysqli_query($connect__db, $product_check_query);
         if (mysqli_num_rows($product_check_results) > 0) {
             $_SESSION['add-product'] = 'Product already exists';
         } else {
             // adduser avatar picture name to be unique
             $time = time();
-            $image_new_name = $time . $image['image'];
-            $imagetmp_name = $product['tmp_name'];
-            $image_destination_path = '../images/' . $image_new_name;
+            $img_new_name = $time . $img['img'];
+            $imgtmp_name = $product['tmp_name'];
+            $img_destination_path = '../images/' . $img_new_name;
 
             //DEBUG 
             // if file is an image
@@ -76,17 +78,18 @@ if (isset($_POST['submit__newproduct'])) {
         die();
     } else {
         //insert new user into users table 
-        $insert_user_query = "INSERT INTO products SET title='$title', description='$description', price=$price, retailprice=$retailprice, quantity=$quantity image='$image'";
+        $insert_user_query = "INSERT INTO products SET name='$name', description='$description', price=$price, retailprice=$retailprice, quantity=$quantity image='$image'";
         //passing mysqli_query using the insert userquery
         $insert_user_results = mysqli_query($connect__db, $insert_user_query);
         if (!mysqli_errno($connect__db)) {
             //redirecting to login page
-            $_SESSION['add-product-success'] = "A new product $title $lastname has been added successfully";
+            $_SESSION['add-product-success'] = "A new product $name $lastname has been added successfully";
             header('location:' . ADMIN_URL . 'manage_products.php');
             die();
         }
     }
 } else {
+    header('location:' . ADMIN_URL . 'manage_products.php');
 
     die();
 }
