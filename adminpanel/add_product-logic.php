@@ -30,42 +30,39 @@ if (isset($_POST['submit__newproduct'])) {
         $_SESSION['add-product'] = "Your Retail Price is missing ⁉️";
     } elseif (!$name || !$description || !$price || !$retailprice) {
         $_SESSION['add-product'] = "Your Product info is missing please add it in again ⁉️";
-    } else {
-        //check if confirm password matches the createdpassword
+    }
 
-
-        //check if username or the email already exists in the database
-        $product_check_query = "SELECT * FROM products WHERE
+    $product_check_query = "SELECT * FROM products WHERE
             name= '$name' OR description='$description'";
-        $product_check_results = mysqli_query($connect__db, $product_check_query);
-        if (mysqli_num_rows($product_check_results) > 0) {
-            $_SESSION['add-product'] = 'Product already exists';
-        } else {
-            // adduser avatar picture name to be unique
-            $time = time();
-            $img_new_name = $time . $img['img'];
-            $imgtmp_name = $product['tmp_name'];
-            $img_destination_path = '../images/' . $img_new_name;
+    $product_check_results = mysqli_query($connect__db, $product_check_query);
+    if (mysqli_num_rows($product_check_results) > 0) {
+        $_SESSION['add-product'] = 'Product already exists';
+    } else {
+        // adduser avatar picture name to be unique
+        $time = time();
+        $img_new_name = $time . $img['img'];
+        $imgtmp_name = $product['tmp_name'];
+        $img_destination_path = '../images/' . $img_new_name;
 
-            //DEBUG 
-            // if file is an image
-            //allowed_images files 
-            $allowed_images = ['png', 'jpg', 'jpeg', 'svg', 'webp'];
-            $extension = explode('.', $product_new_name);
-            $extension = end($extension);
-            if (in_array($extension, $allowed_images)) {
-                //CHECK : if image size is not too large (500kb+)
-                if ($product['size'] < 500000) /*avatar size is less than 500k bytes = 0.5 mb  */ {
-                    //UPLOAD AVATAR
-                    move_uploaded_file($product_tmp_name, $product_destination_path);
-                } else {
-                    $_SESSION['add-product'] = 'File Size is too Big Please Use an Image converter to make the image below 0.5mb , since it differs in the websites performance ';
-                }
+        //DEBUG 
+        // if file is an image
+        //allowed_images files 
+        $allowed_images = ['png', 'jpg', 'jpeg', 'svg', 'webp'];
+        $extension = explode('.', $product_new_name);
+        $extension = end($extension);
+        if (in_array($extension, $allowed_images)) {
+            //CHECK : if image size is not too large (500kb+)
+            if ($product['size'] < 500000) /*avatar size is less than 500k bytes = 0.5 mb  */ {
+                //UPLOAD AVATAR
+                move_uploaded_file($product_tmp_name, $product_destination_path);
             } else {
-                $_SESSION['add-product'] = 'Files Accepted are jpeg, png, jpg , .svg and .webp';
+                $_SESSION['add-product'] = 'File Size is too Big Please Use an Image converter to make the image below 0.5mb , since it differs in the websites performance ';
             }
+        } else {
+            $_SESSION['add-product'] = 'Files Accepted are jpeg, png, jpg , .svg and .webp';
         }
     }
+
 
 
     //DEBUG AVATAR Using var_dump();
@@ -93,3 +90,5 @@ if (isset($_POST['submit__newproduct'])) {
 
     die();
 }
+
+//TODO Fix or Change LOGIC 
