@@ -15,7 +15,7 @@ if (isset($_POST['submit__newproduct'])) {
     var_dump($title);
 
     //DEBUG Inputs
-    //echo $firstname, $lastname, $username, $email, $password, $confirmpassword;
+    echo $name, $description, $price, $retailprice, $quantity, $img;
     //DEBUG Avatar Var
     var_dump($image);
 
@@ -48,7 +48,7 @@ if (isset($_POST['submit__newproduct'])) {
         // if file is an image
         //allowed_images files 
         $allowed_images = ['png', 'jpg', 'jpeg', 'svg', 'webp'];
-        $extension = explode('.', $product_new_name);
+        $extension = explode('.', $img_new_name);
         $extension = end($extension);
         if (in_array($extension, $allowed_images)) {
             //CHECK : if image size is not too large (500kb+)
@@ -75,12 +75,12 @@ if (isset($_POST['submit__newproduct'])) {
         die();
     } else {
         //insert new user into users table 
-        $insert_user_query = "INSERT INTO products SET name='$name', description='$description', price=$price, retailprice=$retailprice, quantity=$quantity image='$image'";
+        $insert_product_query = "INSERT INTO products SET name='$name', description='$description', price=$price, retailprice=$retailprice, quantity=$quantity image='$img_new_name'";
         //passing mysqli_query using the insert userquery
-        $insert_user_results = mysqli_query($connect__db, $insert_user_query);
+        $insert_user_results = mysqli_query($connect__db, $insert_product_query);
         if (!mysqli_errno($connect__db)) {
             //redirecting to login page
-            $_SESSION['add-product-success'] = "A new product $name $lastname has been added successfully";
+            $_SESSION['add-product-success'] = "A new product $name has been added successfully";
             header('location:' . ADMIN_URL . 'manage_products.php');
             die();
         }

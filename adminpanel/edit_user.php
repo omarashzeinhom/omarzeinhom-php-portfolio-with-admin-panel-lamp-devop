@@ -43,21 +43,21 @@ if (isset($_SESSION['edit-user'])) : ?>
 
         <!--- HIDDEN ID --->
         <div class="app__inputs-wrap">
-            <input type="hidden" value="<?= $user['id'] ?>" name="id" placeholder="First Name" class="app__adduser-input">
+            <input type="hidden" value="<?= $user['id'] ?>" name="id" placeholder="First Name" class="app__input">
         </div>
 
 
         <div class="app__inputs-wrap">
             <label class="app__inputs-label">First Name</label>
-            <input value="<?= $user['firstname'] ?>" name="firstname" type="text" placeholder="First Name" class="app__adduser-input">
+            <input value="<?= $user['firstname'] ?>" name="firstname" type="text" placeholder="First Name" class="app__input">
         </div>
 
         <div class="app__inputs-wrap">
             <label class="app__inputs-label">Last Name</label>
-            <input value="<?= $user['lastname'] ?>" name="lastname" type="text" placeholder="Last Name" class="app__adduser-input">
+            <input value="<?= $user['lastname'] ?>" name="lastname" type="text" placeholder="Last Name" class="app__input">
         </div>
 
-        <select class="app__adduser-input" name="selectrole__edituser">
+        <select class="app__input" name="selectrole__edituser">
             <option value="0">Author</option>
             <option value="1">Admin</option>
         </select>

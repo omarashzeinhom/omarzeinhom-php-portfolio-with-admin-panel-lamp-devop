@@ -12,11 +12,11 @@ if (isset($_SESSION['user-id'])) {
 <nav class='app__nav' id="appMainNav">
     <ul class='app__nav-items'>
 
-        <li class='app__nav-item active'><a href="<?= HOME_URL ?>home.php" class="app__nav-link">🏠</a></li>
-        <li class='app__nav-item'><a href='<?= HOME_URL ?>about.php' class="app__nav-link">👤</a></li>
-        <li class='app__nav-item'><a href='<?= HOME_URL ?>contact.php' class="app__nav-link">🤙</a></li>
-        <li class='app__nav-item'><a href='<?= HOME_URL ?>shop.php' class="app__nav-link">🛒</a></li>
-        <li class='app__nav-item'><a href='<?= HOME_URL ?>opensource.php' class="app__nav-link">🆓</a></li>
+        <li class='app__nav-item active'><a href="<?= HOME_URL ?>home.php" class="app__nav-link">🏠Home</a></li>
+        <li class='app__nav-item'><a href='<?= HOME_URL ?>about.php' class="app__nav-link">👤About</a></li>
+        <li class='app__nav-item'><a href='<?= HOME_URL ?>contact.php' class="app__nav-link">🤙Contact Me</a></li>
+        <li class='app__nav-item'><a href='<?= HOME_URL ?>shop.php' class="app__nav-link">🛒Shop</a></li>
+        <li class='app__nav-item'><a href='<?= HOME_URL ?>opensource.php' class="app__nav-link">🆓OpenSource</a></li>
         <!--RESTRICT SIGN IN IF LOGGGED IN SESSION Start -->
         <!--Avatar Start -->
         <?php if (isset($_SESSION['user-id'])) : ?>

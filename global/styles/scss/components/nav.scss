@@ -1,6 +1,5 @@
 //nav
 .app__nav {
-  left: 0;
   width: 100%;
   top: 0;
   background-color: var(--color-pearl-black);
@@ -33,6 +32,7 @@
     float: right;
     font-size: 1.4rem;
     color: var(--color-primary);
+    padding-right: 5rem;
   }
 }
 

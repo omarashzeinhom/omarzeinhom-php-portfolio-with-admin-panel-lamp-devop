@@ -30,7 +30,7 @@ if (isset($_GET['id'])) {
 <section style="overflow: x-auto; margin: auto; max-width: 500px; width:100%; height:100%;">
     <form class="app__form-section" action="<?= HOME_URL ?>edit_post-logic.php" method="POST"
         enctype="multipart/form-data">
-        <select class="app__adduser-input" name="selectrole__edituser">
+        <select class="app__input" name="selectrole__edituser">
 
             <?php while ($single_category = mysqli_fetch_assoc($categories)) : ?>
             <?php
@@ -43,19 +43,18 @@ if (isset($_GET['id'])) {
 
         <!--- HIDDEN ID --->
         <div class="app__inputs-wrap">
-            <input type="hidden" value="<?= $post['id'] ?>" name="id" placeholder="First Name"
-                class="app__adduser-input">
+            <input type="hidden" value="<?= $post['id'] ?>" name="id" placeholder="First Name" class="app__input">
         </div>
         <!-- Title  --->
         <div class="app__inputs-wrap">
             <label class="app__inputs-label" for="title">Title</label>
-            <input name="title" class="app__adduser-input" type="text" id="firstName" value="<?= $post['title'] ?>"
+            <input name="title" class="app__input" type="text" id="firstName" value="<?= $post['title'] ?>"
                 placeholder="Enter Post Title here..." />
         </div>
         <!-- Post Text --->
         <div class="app__inputs-wrap">
             <label class="app__inputs-label" for="body">Body</label>
-            <textarea name="body" class="app__adduser-input" style="resize:none; " rows="8" value="<?= $post['body'] ?>"
+            <textarea name="body" class="app__input" style="resize:none; " rows="8" value="<?= $post['body'] ?>"
                 placeholder="test">
                 <?= $post['body'] ?>
                 </textarea>
@@ -64,7 +63,7 @@ if (isset($_GET['id'])) {
         <div class="app__inputs-wrap">
             <label class="app__inputs-label" for="title">Thumbnail</label>
             <img src="<?= ROOT_URL . 'images/' . $post['thumbnail'] ?>" class="app__thumbnail-avatar" />
-            <input name="thumbnail" class="app__adduser-input" type="file" id="firstName"
+            <input name="thumbnail" class="app__input" type="file" id="firstName"
                 value="<?= ROOT_URL . 'images/' . $post['thumbnail'] ?>" placeholder="Enter Post Thumbnail here." />
         </div>
 

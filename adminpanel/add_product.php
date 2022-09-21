@@ -16,8 +16,8 @@ $products = mysqli_query($connect__db, $query);
 <?php if (isset($SESSION_['add-product-success'])) : ?>
 <div class="app__alert-success">
     <p class="app__alert-success-p">
-        <?= implode($_SESSION['add-product-success']);
-            unset($_SESSION['add-product-success']); ?>
+        <?= $_SESSION['add-product-success'] ?>;
+        <?php unset($_SESSION['add-product-success']); ?>
     </p>
 </div>
 <!-- Add Post Alert success End  -->

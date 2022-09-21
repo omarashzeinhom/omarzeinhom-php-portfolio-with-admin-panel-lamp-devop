@@ -11,7 +11,8 @@
   word-spacing: 1rem;
   border-radius: 0.7rem;
   overflow: hidden;
-
+  bottom: 0;
+  position: static;
 }
 
 .app__footer-small{

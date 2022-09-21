@@ -32,11 +32,17 @@ if (isset($_GET['id'])) {
 
     //TODO CHECK ALL THUMBNAILS OF USER and DELETE Them 
 
-
-
-
-
-
+    $avatar_query = "SELECT thumbnail FROM posts WHERE author_id=$id;";
+    $avatar_results = mysqli_query($connect__db, $avatar_query);
+    if (mysqli_num_rows($avatar_results) > 0) {
+        while ($avatar = mysqli_fetch_assoc($avatar_results)) {
+            $avatar_path = '../images/' . $avatar['avatar'];
+            //DEL Thumbnail
+            if ($avatar_path) {
+                unlink($avatar_path);
+            }
+        }
+    }
 }
 header('location:' . ADMIN_URL . 'manage_users.php');
 die();
@@ -46,20 +52,20 @@ die();
 
 <?php
 if (isset($_SESSION['delete-user'])) : ?>
-    <div class="app__alert-error">
-        <p class="app__alert-p">
-            <?= $_SESSION['delete-user'];
+<div class="app__alert-error">
+    <p class="app__alert-p">
+        <?= $_SESSION['delete-user'];
             unset($_SESSION['delete-user']); ?>
-        </p>
+    </p>
 
-    </div>
-    <!--- DEBUG ERROR MSG IN SESSION  END  --->
+</div>
+<!--- DEBUG ERROR MSG IN SESSION  END  --->
 <?php elseif (isset($_SESSION['delete-user-success'])) : ?>
-    <div class="app__alert-success">
-        <p class="app__alert-success-p">
-            <?= $_SESSION['delete-user-success'];
+<div class="app__alert-success">
+    <p class="app__alert-success-p">
+        <?= $_SESSION['delete-user-success'];
             unset($_SESSION['delete-user-success']); ?>
-        </p>
+    </p>
 
-    </div>
+</div>
 <?php endif; ?>
