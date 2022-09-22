@@ -1,7 +1,6 @@
 <?php
-
-$current_user_id = $_SESSION['user-id'];
-$posts_query = "SELECT * FROM posts WHERE is_featured>=1";
+//$current_user_id = $_SESSION['user-id'];
+$posts_query = "SELECT * FROM posts WHERE is_featured=1";
 $posts_result =  mysqli_query($connect__db, $query);
 $posts = mysqli_fetch_assoc($posts_result);
 $posts_title = $posts['title'];
@@ -9,24 +8,21 @@ $posts_title = $posts['title'];
 
 <?php if (mysqli_num_rows($posts_result) >= 1) : ?>
 
-<?php while ($single_post = $posts) : ?>
+<?php while ($single_post = mysqli_fetch_assoc($posts_result)) : ?>
 <div class="app__col">
-
     <!-- Card Start --->
     <div class="app__card" id="appCardId">
         <div class="app__card-header">
-            <h5 id="postsTitle"><?= $posts_title; ?></h5>
-
             <div class="app__card-img-shadow">
                 <img src="<?= HOME_URL . 'images/' . $single_post['thumbnail'] ?>" class="app__card-img"
-                    alt="<?= $posts_title;; ?>" loading="lazy" />
+                    alt="admin_post_thumbnail" loading="lazy" />
             </div>
+            <h5 id="postsTitle"><?= $single_post['title']; ?></h5>
             <!--- Posts Title  -->
 
             <h6 class="app__td" id="postsBody" maxlength="25">
                 <?= substr($single_post['body'], 0, 25)  . " ..."; ?>
             </h6>
-
         </div>
 
 
