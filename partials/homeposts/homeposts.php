@@ -35,7 +35,7 @@ $posts_result =  mysqli_query($connect__db, $query);
                     $category_title = $category['title'];
                     ?>
             <!--- Posts Category -->
-            <button class="app__btn">
+            <button class="btn__sm">
                 <a href="category-posts.php">
                     <?= $category_title ?? null; ?>
                 </a>

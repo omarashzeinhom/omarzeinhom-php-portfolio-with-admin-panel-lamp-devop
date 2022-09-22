@@ -87,6 +87,16 @@ h6 {
 //main, section for examples
 
 /* ---- Module Rules ---- */
+a{
+  text-decoration: none;
+  color: #3798f8;
+  transition: .3s all ease-in-out;
+}
+
+
+a:hover{
+  color: white;
+}
 
 .btn {
   border-radius: 0.4rem;
@@ -105,6 +115,25 @@ h6 {
   background: var(--color-dark-navyblue);
   color: var(--color-lightest-gray);
 }
+
+.btn__sm {
+  border-radius: 0.4rem;
+  padding: 0.7rem 1rem 0.7rem 1rem;
+  width: 100%;
+  max-width: 7rem;
+  max-height: 4rem;
+  min-height: 2rem;
+  min-width: 2rem;
+  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem var(--color-primary);
+  background: var(--color-lightest-gray);
+  transition: var(--transition-fast);
+}
+
+.btn__sm:hover {
+  background: var(--color-dark-navyblue);
+  color: var(--color-lightest-gray);
+}
+
 
 //app__alert-error
 
@@ -149,3 +178,4 @@ h6 {
   border-radius: 0.7rem;
   overflow: hidden;
 }
+
