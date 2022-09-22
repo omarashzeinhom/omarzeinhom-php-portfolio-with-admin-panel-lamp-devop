@@ -12,7 +12,6 @@
 @media screen and (max-width: 900px) {
   .app__nav {
     display: inline-block;
-    float: right;
   }
   .app__nav .app__nav,
 .app__nav .app__nav-link,
@@ -32,16 +31,17 @@
 }
 @media screen and (max-width: 900px) {
   .app__nav-openBtn {
-    display: block;
+    display: inline-block;
     float: right;
     font-size: 1.4rem;
     color: var(--color-primary);
-    padding-right: 5rem;
+    padding-right: 1rem;
   }
 }
 
 .app__nav-items {
   list-style: none;
+  width: 100%;
 }
 
 .app__nav-item {
@@ -274,9 +274,9 @@
   width: 100%;
   height: 100%;
   padding: 1rem 1rem 1rem 1rem;
-  max-height: 100vh;
-  max-width: 80vw;
-  min-height: 70vh;
+  max-height: 70vh;
+  max-width: 90vw;
+  min-height: 40vh;
   min-width: 80vw;
 }
 
@@ -366,7 +366,7 @@ html {
 body {
   font-family: Arial, Helvetica, sans-serif;
   color: var(--color-primary);
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   width: 100%;
   height: 100%;
 }

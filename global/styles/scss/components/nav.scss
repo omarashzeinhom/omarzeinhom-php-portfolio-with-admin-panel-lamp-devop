@@ -17,11 +17,15 @@
       width: 100%;
     }
     display: inline-block;
-    float: right;
+    
   }
   @media screen and (max-width: 600px) {
     .app__nav.responsive .icon {
       float: right;
+     
+      
+ 
+    
     }
   }
 }
@@ -29,23 +33,24 @@
 .app__nav-openBtn {
   display: none;
   @media screen and (max-width: 900px) {
-    display: block;
+    display: inline-block;
     float: right;
     font-size: 1.4rem;
     color: var(--color-primary);
-    padding-right: 5rem;
+    padding-right: 1rem;
   }
 }
 
 //nav ul
 .app__nav-items {
-  list-style: none;;
+  list-style: none;
+  width: 100%;
+  
 }
 
 //nav li
 .app__nav-item {
   display: inline-block;
-
   font-size: 1.5rem;
   @media screen and (max-width: 900px) {
     font-size: 1.3rem;
@@ -78,4 +83,8 @@
   object-fit: cover;
   background-color: black;
   box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem var(--color-primary);
+}
+
+.-responsive{
+
 }
