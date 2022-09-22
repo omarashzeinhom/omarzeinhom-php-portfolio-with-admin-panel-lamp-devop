@@ -35,19 +35,19 @@ $category_title = $category['title'];
     <div class="app__card" id="appCardId">
         <div class="app__card-header">
             <div class="app__card-img-shadow">
-                <a href="<?= HOME_URL ?>single-post.php?id=<?= $posts['id'] ?>">
-                    <img src="<?= HOME_URL . 'images/' . $posts['thumbnail'] ?>" class="app__card-img"
+                <a href="<?= HOME_URL ?>single-post.php?id=<?= $post['id'] ?>">
+                    <img src="<?= HOME_URL . 'images/' . $post['thumbnail'] ?>" class="app__card-img"
                         alt="admin_post_thumbnail" loading="lazy" />
                 </a>
             </div>
-            <h5 id="postsTitle"> <a href="<?= HOME_URL ?>single-post.php?id=<?= $single_post['id'] ?>">
-                    <?= $posts['title']; ?>
+            <h5 id="postsTitle"> <a href="<?= HOME_URL ?>single-post.php?id=<?= $post['id'] ?>">
+                    <?= $post['title']; ?>
                 </a>
             </h5>
             <!--- Posts Title  -->
 
             <h6 class="app__td" id="postsBody" maxlength="100">
-                <?= substr($posts['body'], 0, 100)  . " ..."; ?>
+                <?= substr($post['body'], 0, 100)  . " ..."; ?>
             </h6>
         </div>
 
@@ -58,7 +58,7 @@ $category_title = $category['title'];
             <div class="app__card-author">
                 <?php
                     //FETCH THE AUTHOR FROM USERS TABLE USING AUTHOR_ID
-                    $author_id = $posts['author_id'];
+                    $author_id = $post['author_id'];
                     $author_query = "SELECT * FROM users WHERE id=$author_id";
                     $author_result = mysqli_query($connect__db, $author_query);
                     $author = mysqli_fetch_assoc($author_result);
