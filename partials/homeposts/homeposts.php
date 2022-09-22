@@ -1,9 +1,7 @@
 <?php
 //$current_user_id = $_SESSION['user-id'];
-$posts_query = "SELECT * FROM posts WHERE is_featured=1";
+$posts_query = "SELECT * FROM posts WHERE is_featured=";
 $posts_result =  mysqli_query($connect__db, $query);
-$posts = mysqli_fetch_assoc($posts_result);
-$posts_title = $posts['title'];
 ?>
 
 <?php if (mysqli_num_rows($posts_result) >= 1) : ?>
