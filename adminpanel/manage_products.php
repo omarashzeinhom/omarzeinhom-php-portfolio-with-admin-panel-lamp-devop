@@ -47,20 +47,21 @@ $categories = mysqli_query($connect__db, $queryc);
         <?php while ($single_product = mysqli_fetch_assoc($products)) : ?>
         <!---LOOP THROUGH AND DISPLAY POSTS -->
         <tr clas="app__tr">
-            <td class="app__td" id="postsTitle"><?= $single_product['title']; ?></td>
+            <td class="app__td" id="postsTitle"><?= $single_product['name']; ?></td>
             <!--- Posts Title  -->
-            <td class="app__td" id="postsBody"> <?= substr($single_product['body'], 0, 50)  . " ..."; ?></td>
+            <td class="app__td" id="postsBody"> <?= substr($single_product['description'], 0, 50)  . " ..."; ?></td>
             <!--- Posts Body -->
             <td class="app__td" id="postsThumbnail"> <img src="<?= ROOT_URL . 'images/' . $single_product['img'] ?>"
                     style="padding-top: 0.4rem;border-radius: 15%; object-fit:cover; box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem gray;"
-                    class="app__thumbnail-avatar" width="50px" height="50px" alt="admin_post_thumbnail" /></td>
+                    class="app__thumbnail-avatar" width="50px" height="50px" alt="<?= $single_product['name']; ?>" />
+            </td>
 
             <!--- TODO: FIX Posts Thumbnail -->
             <td class="app__td" id="postsFeatured"><input type="checkbox" value="" checked disabled /></td>
             <!--- Posts Featured -->
-            <td class="app__td"><a href="<?= ADMIN_URL ?>edit_post.php?id=<?= $single_post['id'] ?? null; ?>"
+            <td class="app__td"><a href="<?= ADMIN_URL ?>edit_product.php?id=<?= $single_product['id'] ?? null; ?>"
                     class="app__link-btn">Edit</a></td>
-            <td class="app__td"><a href="<?= ADMIN_URL ?>delete_post.php?id=<?= $single_post['id'] ?? null; ?>"
+            <td class="app__td"><a href="<?= ADMIN_URL ?>delete_product.php?id=<?= $single_product['id'] ?? null; ?>"
                     class="app__alert-btn-sm">Delete</a></td>
         </tr>
         <?php endwhile; ?>
