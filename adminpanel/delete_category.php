@@ -8,12 +8,16 @@ if (isset($_GET['id'])) {
     //UPDATE CATEGORY ID OF POSTS THAT BELONG TO CATEGORY ID OF UNCATEGORIZED CATEGORIES
     //TODO FOR LATER
     // AFTER HAVING POSTS TABLE 
+    $update_query = "UPDATE posts SET category_id=5 WHERE category_id=$id ";
+    $update_result = mysqli_query($connect__db, $update_query);
 
 
-    //DELTE CATEGORY
-    $query = "DELETE FROM categories WHERE id=$id LIMIT 1";
-    $results = mysqli_query($connect__db, $query);
-    $_SESSION['delete-category-success'] = "Category was deleted succesfully";
+    if (!mysqli_errno($connect__db)) {
+        //DELTE CATEGORY
+        $delcategory_query = "DELETE FROM categories WHERE id=$id LIMIT 1";
+        $results = mysqli_query($connect__db, $query);
+        $_SESSION['delete-category-success'] = "Category was deleted succesfully";
+    }
 }
 header('location:' . HOME_URL . 'manage_categories.php');
 die();
