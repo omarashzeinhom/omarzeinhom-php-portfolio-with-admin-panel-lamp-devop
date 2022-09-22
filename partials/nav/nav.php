@@ -10,6 +10,9 @@ if (isset($_SESSION['user-id'])) {
 ?>
 
 <nav class='app__nav' id="app__main-nav">
+    <a href="<?= HOME_URL ?>" class="app__nav-openBtn icon" style="float: left; padding-top: 3rem;">
+        🏠
+    </a>
     <ul class='app__nav-items'>
 
         <li class='app__nav-item active'><a href="<?= HOME_URL ?>home.php" class="app__nav-link">Home</a></li>
