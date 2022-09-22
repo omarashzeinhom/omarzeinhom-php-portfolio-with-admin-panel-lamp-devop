@@ -3,7 +3,7 @@
 
 if (isset($_SESSION['user-id'])) {
     $id = filter_var($_SESSION['user-id'], FILTER_SANITIZE_NUMBER_INT);
-    $query = "SELECT avatar from users WHERE id=$id";
+    $query = "SELECT * from users WHERE id=$id";
     $result = mysqli_query($connect__db, $query);
     $avatar = mysqli_fetch_assoc($result);
 }
@@ -23,6 +23,7 @@ if (isset($_SESSION['user-id'])) {
         <a href="<?= ADMIN_URL ?>" class="app__nav-link">
             <img alt="avatar" class="app__nav-avatar" loading="lazy"
                 src="<?= HOME_URL . 'images/' . $avatar['avatar'] ?>" />
+            <small><?= $avatar['firstname'] ?></small>
         </a>
 
         <li class='app__nav-item'><a href="<?= HOME_URL ?>logout.php" class="app__nav-link">🧧Logout</a>

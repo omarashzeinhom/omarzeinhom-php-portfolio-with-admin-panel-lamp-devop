@@ -14,8 +14,9 @@
     .app__nav-link,
     .app__nav-items :not(:first-child) {
       display: none;
+      width: 100%;
     }
-    display: block;
+    display: inline-block;
     float: right;
   }
   @media screen and (max-width: 600px) {
@@ -38,7 +39,7 @@
 
 //nav ul
 .app__nav-items {
-  list-style: none;
+  list-style: none;;
 }
 
 //nav li
@@ -59,7 +60,6 @@
   padding: 0.4rem 0.7rem;
   color: var(--color-primary);
   &:hover {
-    /*burgundy red*/
     color: var(--color-secondary);
     background-color: var(--color-darkest-gray);
     box-shadow: 0.1rem 0.1rem 0.4rem 0.1rem var(--color-primary);
@@ -70,7 +70,7 @@
 
 //nav img
 .app__nav-avatar {
-  border-radius: 90%;
+  border-radius: .28rem;
   max-width: 1.5rem;
   max-height: 1.4rem;
   width: 100%;

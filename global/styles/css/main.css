@@ -11,13 +11,14 @@
 }
 @media screen and (max-width: 900px) {
   .app__nav {
-    display: block;
+    display: inline-block;
     float: right;
   }
   .app__nav .app__nav,
 .app__nav .app__nav-link,
 .app__nav .app__nav-items :not(:first-child) {
     display: none;
+    width: 100%;
   }
 }
 @media screen and (max-width: 600px) {
@@ -61,7 +62,6 @@
   color: var(--color-primary);
 }
 .app__nav-link:hover {
-  /*burgundy red*/
   color: var(--color-secondary);
   background-color: var(--color-darkest-gray);
   box-shadow: 0.1rem 0.1rem 0.4rem 0.1rem var(--color-primary);
@@ -70,7 +70,7 @@
 }
 
 .app__nav-avatar {
-  border-radius: 90%;
+  border-radius: 0.28rem;
   max-width: 1.5rem;
   max-height: 1.4rem;
   width: 100%;
@@ -235,33 +235,36 @@
 }
 
 .app__col {
-  float: left;
   width: 100%;
-  padding: 0.5rem;
+  height: 100%;
+  padding: 0.9rem;
+  justify-content: center;
+  display: grid;
 }
 
 .app__cards {
   width: 100%;
-  justify-content: center;
-  display: grid;
-  grid-template-columns: 1fr;
   gap: 1rem;
+  width: 100%;
+  height: 100%;
+  padding: 0.9rem;
+  justify-content: center;
 }
 
 .app__cards::after {
   content: "";
   clear: both;
-  display: table;
 }
 
 .app__card-img {
-  width: 90%;
+  width: 100%;
   height: 100%;
-  max-height: 20vh;
+  max-height: 25vh;
+  max-width: 25vw;
   border-radius: 0.28rem;
   -o-object-fit: cover;
      object-fit: cover;
-  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem gray;
+  box-shadow: 0.1rem 0.2rem 0.3rem 0.1rem gray;
 }
 
 .app__card {
@@ -270,8 +273,8 @@
   width: 100%;
   height: 100%;
   padding: 1rem 1rem 1rem 1rem;
-  max-height: 50vh;
-  max-width: 50vw;
+  max-height: 40vh;
+  max-width: 40vw;
 }
 
 .app__card-header {
