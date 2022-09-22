@@ -1,7 +1,6 @@
 <?php
 include('./partials/header/header.php');
 include('./partials/nav/nav.php');
-$page__title = 'Single Post';
 
 
 if (isset($_GET['id'])) {
@@ -15,10 +14,9 @@ if (isset($_GET['id'])) {
 }
 ?>
 
-<h1><?php echo "$page__title" ?> </h1>
+<h1><?= $post['title']; ?></h1>
 
 
-<h2><?= $post['title']; ?></h2>
 <img src="<?= HOME_URL . 'images/' . $post['thumbnail'] ?>" class="app__card-img" alt="<?= $post['title']; ?>"
     loading="lazy" />
 
