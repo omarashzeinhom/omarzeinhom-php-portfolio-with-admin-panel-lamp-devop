@@ -310,6 +310,12 @@
   color: white;
 }
 
+.app__card-footer {
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
 /* Color Palette */
 :root {
   /**primary**/

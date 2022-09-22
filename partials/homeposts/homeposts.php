@@ -23,32 +23,30 @@ $posts_result =  mysqli_query($connect__db, $query);
             </h6>
         </div>
 
-
-
-    </div>
-
-    <div class="app__card-footer">
-        <!--- Categories -->
-        <?php
-                //fetch categories using category_id of post
-                $category_id = $single_post['category_id'];
-                $category_query = "SELECT * FROM categories WHERE id=$category_id";
-                $category_result = mysqli_query($connect__db, $category_query);
-                $category = mysqli_fetch_assoc($category_result);
-                $category_title = $category['title'];
-                ?>
-        <!--- Posts Category -->
-        <a href="category-posts.php">
+        <div class="app__card-footer">
+            <!-- Card Footer Start --->
+            <!--- Categories -->
+            <?php
+                    //fetch categories using category_id of post
+                    $category_id = $single_post['category_id'];
+                    $category_query = "SELECT * FROM categories WHERE id=$category_id";
+                    $category_result = mysqli_query($connect__db, $category_query);
+                    $category = mysqli_fetch_assoc($category_result);
+                    $category_title = $category['title'];
+                    ?>
+            <!--- Posts Category -->
             <button class="app__btn">
-                <?= $category_title ?? null; ?>
-
+                <a href="category-posts.php">
+                    <?= $category_title ?? null; ?>
+                </a>
             </button>
-        </a>
+        </div><!-- Card Footer End--->
+    </div><!-- Card End--->
 
-    </div>
+
+
 </div>
 </div>
-<!-- Card End--->
 <!-- Btn Wrap  End--->
 </div> <!-- Column End--->
 <?php endwhile; ?>
