@@ -39,6 +39,8 @@ $categories = mysqli_query($connect__db, $queryc);
             <th class="app_th">Product</th>
             <th class="app_th">Thumbnail</th>
             <th class="app_th">Price</th>
+            <th class="app_th">Retail Price</th>
+            <th class="app_th">Quantity</th>
             <th class="app_th">Edit</th>
             <th class="app_th">Delete</th>
         </tr>
@@ -57,8 +59,11 @@ $categories = mysqli_query($connect__db, $queryc);
             </td>
 
             <!--- TODO: FIX Posts Thumbnail -->
-            <td class="app__td" id="postsFeatured"><input type="checkbox" value="" checked disabled /></td>
-            <!--- Posts Featured -->
+            <td class="app__td"><?= $single_product['price']; ?></td>
+            <td class="app__td"><?= $single_product['retailprice']; ?></td>
+            <td class="app__td"><?= $single_product['quantity']; ?></td>
+
+
             <td class="app__td"><a href="<?= ADMIN_URL ?>edit_product.php?id=<?= $single_product['id'] ?? null; ?>"
                     class="app__link-btn">Edit</a></td>
             <td class="app__td"><a href="<?= ADMIN_URL ?>delete_product.php?id=<?= $single_product['id'] ?? null; ?>"
