@@ -1,6 +1,7 @@
 <?php
 $page__title = 'Add Product 🛍️';
 include('./partials/sidenav/sidenav.php');
+//TODO Add PRODUCT LOGIC FIX
 
 //FETCH CATEGORIES FROM DATABASE
 $query = "SELECT * FROM products";

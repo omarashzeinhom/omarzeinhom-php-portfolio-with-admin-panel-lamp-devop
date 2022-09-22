@@ -1,7 +1,7 @@
 <?php
 require './config/database.php';
 
-
+//TODO Add PRODUCT LOGIC FIX
 //GET user form if the submit__newuser button was clicked
 
 if (isset($_POST['submit__newproduct'])) {

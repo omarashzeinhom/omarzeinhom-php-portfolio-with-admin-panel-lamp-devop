@@ -135,7 +135,7 @@
   border-radius: 0.7rem;
   overflow: hidden;
   bottom: 0;
-  position: static;
+  position: fixed;
 }
 
 .app__footer-small {

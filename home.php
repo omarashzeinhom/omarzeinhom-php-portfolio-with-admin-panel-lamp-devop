@@ -9,7 +9,6 @@ $posts = mysqli_query($connect__db, $query);
 <h1><?php echo "$page__title" ?> </h1>
 
 
-<?php while ($single_post = mysqli_fetch_assoc($posts)) : ?>
 <!---LOOP THROUGH AND DISPLAY POSTS -->
 
 <!--- Posts Featured -->
@@ -21,6 +20,7 @@ $posts = mysqli_query($connect__db, $query);
 
     <div class="app__row">
         <div class="app__cards" className="app__cards">
+            <?php while ($single_post = mysqli_fetch_assoc($posts)) : ?>
             <div class="app__col">
 
                 <!-- Card Start --->
@@ -51,19 +51,14 @@ $posts = mysqli_query($connect__db, $query);
             </div>
         </div>
         <!-- Card End--->
-
-
-
-
-
         <!-- Btn Wrap  End--->
-
     </div> <!-- Column End--->
+    <?php endwhile; ?>
 </div> <!-- Row End--->
 </div> <!-- Cards End--->
+
 </div>
 <!--- Container End -->
-<?php endwhile; ?>
 
 
 

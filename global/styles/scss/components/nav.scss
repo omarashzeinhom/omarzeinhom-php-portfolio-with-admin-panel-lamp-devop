@@ -20,7 +20,7 @@
   }
   @media screen and (max-width: 600px) {
     .app__nav.responsive .icon {
-      position: relative;
+      float: right;
     }
   }
 }
@@ -28,7 +28,7 @@
 .app__nav-openBtn {
   display: none;
   @media screen and (max-width: 900px) {
-    display: inline-block;
+    display: block;
     float: right;
     font-size: 1.4rem;
     color: var(--color-primary);
