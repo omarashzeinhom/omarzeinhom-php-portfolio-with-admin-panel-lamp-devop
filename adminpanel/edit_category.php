@@ -29,16 +29,17 @@ if (isset($_GET['id'])) {
 
         <!--- HIDDEN ID  NOT SECURE FIND ALTERNATIVE --->
         <div class="app__inputs-wrap">
-            <input type="hidden" value="<?= $category['id'] ?>" name="id" placeholder="id" class="app__adduser-input">
+            <input type="hidden" value="<?= $category['id'] ?>" name="id" placeholder="id" class="app__input">
         </div>
         <!--- HIDDEN ID  NOT SECURE FIND ALTERNATIVE --->
 
         <div class="app__inputs-wrap">
-            <input type="text" value="<?= $category['title'] ?>" name="title" placeholder="Title" class="app__adduser-input">
+            <input type="text" value="<?= $category['title'] ?>" name="title" placeholder="Title" class="app__input">
         </div>
 
         <div class="app__inputs-wrap">
-            <textarea placeholder="<?= $category['description'] ?>" name='description' rows="4" style="resize: none;" class="app__adduser-input">
+            <textarea placeholder="<?= $category['description'] ?>" name='description' rows="4" style="resize: none;"
+                class="app__input">
             <?= $category['description'] ?>
         </textarea>
         </div>

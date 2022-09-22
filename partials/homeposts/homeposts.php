@@ -12,11 +12,11 @@ $posts_result =  mysqli_query($connect__db, $query);
             <div class="app__card" id="appCardId">
                 <div class="app__card-header">
                     <div class="app__card-img-shadow">
-                        <a href="<?= HOME_URL ?>single-post.php?id<?= $single_post['id'] ?>">
+                        <a href="<?= HOME_URL ?>single-post.php?id=<?= $single_post['id'] ?>">
                             <img src="<?= HOME_URL . 'images/' . $single_post['thumbnail'] ?>" class="app__card-img" alt="admin_post_thumbnail" loading="lazy" />
                         </a>
                     </div>
-                    <h5 id="postsTitle"> <a href="<?= HOME_URL ?>single-post.php?id<?= $single_post['id'] ?>">
+                    <h5 id="postsTitle"> <a href="<?= HOME_URL ?>single-post.php?id=<?= $single_post['id'] ?>">
                             <?= $single_post['title']; ?>
                         </a>
                     </h5>
@@ -40,7 +40,7 @@ $posts_result =  mysqli_query($connect__db, $query);
                     ?>
                     <!--- Posts Category -->
                     <button class="btn__sm">
-                        <a href="<?= HOME_URL ?>category-posts.php?id<?= $category['id'] ?>">
+                        <a href="<?= HOME_URL ?>category-posts.php?id=<?= $category['id'] ?>">
                             <?= $category_title ?? null; ?>
                         </a>
                     </button>
