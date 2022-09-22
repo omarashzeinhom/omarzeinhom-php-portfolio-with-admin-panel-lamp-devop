@@ -1,6 +1,6 @@
 <?php
 //$current_user_id = $_SESSION['user-id'];
-$posts_query = "SELECT * FROM posts WHERE is_featured=";
+$posts_query = "SELECT * FROM posts WHERE is_featured=1";
 $posts_result =  mysqli_query($connect__db, $query);
 ?>
 
