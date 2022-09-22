@@ -46,11 +46,14 @@ $posts_result =  mysqli_query($connect__db, $query);
             <!--- Posts End -->
             <div class="app__card-author">
                 <strong>
-                    <h5></h5>
+                    <h5>
+                        <?= date("F j, Y, G:i:s ", strtotime($single_post['date_time'])) ?>
+                    </h5>
 
                 </strong>
                 <small>
                     <em>
+
                     </em>
                 </small>
 
