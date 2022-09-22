@@ -9,7 +9,7 @@ if (isset($_SESSION['user-id'])) {
 }
 ?>
 
-<nav class='app__nav' id="appMainNav">
+<nav class='app__nav' id="app__main-nav">
     <ul class='app__nav-items'>
 
         <li class='app__nav-item active'><a href="<?= HOME_URL ?>home.php" class="app__nav-link">Home</a></li>
@@ -17,7 +17,6 @@ if (isset($_SESSION['user-id'])) {
         <li class='app__nav-item'><a href='<?= HOME_URL ?>contact.php' class="app__nav-link">Contact Me</a></li>
         <li class='app__nav-item'><a href='<?= HOME_URL ?>shop.php' class="app__nav-link">Shop</a></li>
         <li class='app__nav-item'><a href='<?= HOME_URL ?>opensource.php' class="app__nav-link">OpenSource</a></li>
-        <!--RESTRICT SIGN IN IF LOGGGED IN SESSION Start -->
         <!--Avatar Start -->
         <?php if (isset($_SESSION['user-id'])) : ?>
         <a href="<?= ADMIN_URL ?>" class="app__nav-link">
@@ -25,9 +24,7 @@ if (isset($_SESSION['user-id'])) {
                 src="<?= HOME_URL . 'images/' . $avatar['avatar'] ?>" />
             <small><?= $avatar['firstname'] ?></small>
         </a>
-
         <li class='app__nav-item'><a href="<?= HOME_URL ?>logout.php" class="app__nav-link">🧧Logout</a>
-
             <!--Avatar End -->
             <?php else : ?>
         <li class='app__nav-item'><a href="<?= HOME_URL ?>login.php" class="app__nav-link">🚪</a></li>
@@ -37,18 +34,18 @@ if (isset($_SESSION['user-id'])) {
 
 
     </ul>
-    <!--TODO: FIX IMG NOT SHOWING UP HERE  -->
-
     <a href="javascript:void(0);" class="app__nav-openBtn icon" onclick="openNav()">
         ☰
     </a>
 </nav>
-<!---
-NOTE: < ? = HOME_URL ?> is the same as echo  HOME__URL ?>
--->
+
 <script>
+//TODO: javascriptobfuscator IN PROD
+
+
 function openNav() {
-    var topNav = document.getElementById("appMainNav");
+
+    var topNav = document.getElementById("app__main-nav");
     if (topNav.className === 'app__nav') {
         topNav.className += 'responsive';
     } else {
