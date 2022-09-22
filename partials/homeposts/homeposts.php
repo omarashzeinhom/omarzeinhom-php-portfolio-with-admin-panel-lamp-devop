@@ -15,7 +15,10 @@ $posts_result =  mysqli_query($connect__db, $query);
                 <img src="<?= HOME_URL . 'images/' . $single_post['thumbnail'] ?>" class="app__card-img"
                     alt="admin_post_thumbnail" loading="lazy" />
             </div>
-            <h5 id="postsTitle"><?= $single_post['title']; ?></h5>
+            <h5 id="postsTitle"> <a href="<?= HOME_URL ?>single-post.php?id<?= $single_post['id'] ?>">
+                    <?= $single_post['title']; ?>
+                </a>
+            </h5>
             <!--- Posts Title  -->
 
             <h6 class="app__td" id="postsBody" maxlength="25">
@@ -36,10 +39,23 @@ $posts_result =  mysqli_query($connect__db, $query);
                     ?>
             <!--- Posts Category -->
             <button class="btn__sm">
-                <a href="category-posts.php">
+                <a href="<?= HOME_URL ?>category-posts.php?id<?= $category['id'] ?>">
                     <?= $category_title ?? null; ?>
                 </a>
             </button>
+            <!--- Posts End -->
+            <div class="app__card-author">
+                <strong>
+                    <h5></h5>
+
+                </strong>
+                <small>
+                    <em>
+                    </em>
+                </small>
+
+            </div>
+
         </div><!-- Card Footer End--->
     </div><!-- Card End--->
 
