@@ -38,7 +38,12 @@
 9. [session_start()  Start new or resume existing session](https://www.php.net/manual/en/function.session-start.php)
 10. [mysqli_fetch_assoc() - mysqli_result::fetch_assoc -- mysqli_fetch_assoc — Fetch the next row of a result set as an associative array](https://www.php.net/manual/en/mysqli-result.fetch-assoc.php)
 11. [substr()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
-
+12. [date() date — Format a Unix timestamp - function](https://www.php.net/manual/en/function.date.php)
+13. []()
+14. []()
+15. []()
+16. []()
+17. []()
 - Reserved Variables 
 1. [$_POST](https://www.php.net/manual/en/reserved.variables.post.php)
 2. [$_FILES](https://www.php.net/manual/en/features.file-upload.post-method.php) 

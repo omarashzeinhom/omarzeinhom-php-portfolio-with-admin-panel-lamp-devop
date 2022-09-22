@@ -7,10 +7,10 @@
 .app__col {
   width: 100%;
   height: 100%;
-  padding: 0.9rem;
+  padding: 1rem 10rem 10rem 10rem;
   justify-content: center;
   display: grid;
-  
+  grid-template-columns: 1fr;
 }
 
 .app__cards {
@@ -18,13 +18,11 @@
   width: 100%;
   height: 100%;
   justify-content: center;
-
 }
 
 .app__cards::after {
   content: "";
   clear: both;
-
 }
 
 .app__card-img {
@@ -44,16 +42,16 @@
   border-radius: 0.28rem;
   width: 100%;
   height: 100%;
-  padding: 4rem 1rem 4rem 1rem;
-  max-height: 50vh;
-  max-width: 50vw;
-  min-height: 25vh;
-  min-width: 25vw;
+  padding: 4rem 1rem 1rem 1rem;
+  max-height: 90vh;
+  max-width: 80vw;
+  min-height: 40vh;
+  min-width: 80vw;
 }
 
 .app__card-header {
   text-align: center;
-  font-size: 1.0rem;
+  font-size: 1rem;
 }
 
 .app__card-btnwrap {
@@ -84,7 +82,7 @@
   color: white;
 }
 
-.app__card-footer{
+.app__card-footer {
   justify-content: center;
   text-align: center;
   width: 100%;

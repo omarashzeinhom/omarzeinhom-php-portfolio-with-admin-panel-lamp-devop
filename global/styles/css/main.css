@@ -237,9 +237,10 @@
 .app__col {
   width: 100%;
   height: 100%;
-  padding: 0.9rem;
+  padding: 1rem 10rem 10rem 10rem;
   justify-content: center;
   display: grid;
+  grid-template-columns: 1fr;
 }
 
 .app__cards {
@@ -272,11 +273,11 @@
   border-radius: 0.28rem;
   width: 100%;
   height: 100%;
-  padding: 4rem 1rem 4rem 1rem;
-  max-height: 50vh;
-  max-width: 50vw;
-  min-height: 25vh;
-  min-width: 25vw;
+  padding: 4rem 1rem 1rem 1rem;
+  max-height: 90vh;
+  max-width: 80vw;
+  min-height: 40vh;
+  min-width: 80vw;
 }
 
 .app__card-header {
