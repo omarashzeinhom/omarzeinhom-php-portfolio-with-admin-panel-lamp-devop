@@ -27,7 +27,7 @@ if (isset($_GET['id'])) {
     if (mysqli_errno($connect__db)) {
         $_SESSION['delete-about'] = "'{$about['about_title']}' '{$about['about_body']}' Deletion was not successful ";
     } else {
-        $_SESSION['delete-about-success'] = "'{$about['about_title']}' '{$post['about_body']}' Was Deleted Successfully";
+        $_SESSION['delete-about-success'] = "'{$about['about_title']}' '{$about['about_body']}' Was Deleted Successfully";
     }
 
     //TODO CHECK ALL THUMBNAILS OF USER and DELETE Them 
@@ -46,20 +46,20 @@ die();
 
 <?php
 if (isset($_SESSION['delete-about'])) : ?>
-    <div class="app__alert-error">
-        <p class="app__alert-p">
-            <?= $_SESSION['delete-about'];
+<div class="app__alert-error">
+    <p class="app__alert-p">
+        <?= $_SESSION['delete-about'];
             unset($_SESSION['delete-about']); ?>
-        </p>
+    </p>
 
-    </div>
-    <!--- DEBUG ERROR MSG IN SESSION  END  --->
+</div>
+<!--- DEBUG ERROR MSG IN SESSION  END  --->
 <?php elseif (isset($_SESSION['delete-about-success'])) : ?>
-    <div class="app__alert-success">
-        <p class="app__alert-success-p">
-            <?= $_SESSION['delete-about-success'];
+<div class="app__alert-success">
+    <p class="app__alert-success-p">
+        <?= $_SESSION['delete-about-success'];
             unset($_SESSION['delete-about-success']); ?>
-        </p>
+    </p>
 
-    </div>
+</div>
 <?php endif; ?>

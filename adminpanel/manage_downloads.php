@@ -27,12 +27,12 @@ $downloads = mysqli_query($connect__db, $query);
 </ul>
 <br />
 <?php if (isset($SESSION_['add-download-success'])) : ?>
-<div class="app__alert-success">
-    <p class="app__alert-success-p">
-        <?= $_SESSION['add-download-success'];
+    <div class="app__alert-success">
+        <p class="app__alert-success-p">
+            <?= $_SESSION['add-download-success'];
             unset($_SESSION['add-download-success']); ?>
-    </p>
-</div>
+        </p>
+    </div>
 
 <?php endif; ?>
 
@@ -55,20 +55,18 @@ $downloads = mysqli_query($connect__db, $query);
         <tbody class="app__tbody">
             <!---LOOP THROUGH AND DISPLAY USER -->
             <?php while ($download = mysqli_fetch_assoc($downloads)) : ?>
-            <tr clas="app__tr">
+                <tr clas="app__tr">
 
-                <td class="app__td"><?= " {$download['download_title']} " ?></td>
-                <td class="app__td"><a><?= "{$download['download_link']}" ?></a></td>
-                <td class="app__td"><?= " {$download['download_alt_title']} " ?></td>
-                <td class="app__td"><a><?= "{$download['download_alt_link']}" ?></a></td>
+                    <td class="app__td"><?= " {$download['download_title']} " ?></td>
+                    <td class="app__td"><a><?= "{$download['download_link']}" ?></a></td>
+                    <td class="app__td"><?= " {$download['download_alt_title']} " ?></td>
+                    <td class="app__td"><a><?= "{$download['download_alt_link']}" ?></a></td>
 
-                <td class="app__td"><a href="<?= ADMIN_URL ?>edit_download.php?id=<?= $download['id'] ?>"
-                        class="app__link-btn">Edit</a></td>
-                <td class="app__td"><a href="<?= ADMIN_URL ?>delete_download.php?id=<?= $download['id'] ?>"
-                        class="app__alert-btn-sm">Delete</a>
-                </td>
+                    <td class="app__td"><a href="<?= ADMIN_URL ?>edit_download.php?id=<?= $download['id'] ?>" class="app__link-btn">Edit</a></td>
+                    <td class="app__td"><a href="<?= ADMIN_URL ?>delete_download.php?id=<?= $download['id'] ?>" class="app__alert-btn-sm">Delete</a>
+                    </td>
 
-            </tr>
+                </tr>
 
             <?php endwhile; ?>
 
