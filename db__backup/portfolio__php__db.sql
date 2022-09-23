@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 22, 2022 at 08:56 PM
+-- Generation Time: Sep 23, 2022 at 05:33 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -63,9 +63,9 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `title`, `body`, `thumbnail`, `date_time`, `category_id`, `author_id`, `is_featured`) VALUES
-(1, 'Post 1 Test Update', '                                                                           But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that proasdadadasdasdasdasdadadadasdasdduces no resultant pleasure?&quot;  \r\ntest                                                                              ', '1662568117quran search api with ionic 6 -react-youtube-thumbnail TODO-LIST-APP-1.png', '2022-09-07 16:28:37', 6, 8, 1),
-(2, 'Post 2', '                                                &quot;On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.&quot;                                                                ', '1663807125Duffle bag_01_10_11zon.webp', '2022-09-22 00:38:45', 7, 8, 6),
-(3, 'Post 3', '                In dignissim, justo ac faucibus laoreet, lorem lectus pretium mi, tempor elementum magna ante et nisi. Vestibulum malesuada convallis ligula, id tincidunt arcu aliquet sit amet. Duis iaculis odio vitae sem vulputate finibus. Donec sit amet augue justo. Sed maximus nisi at dui sodales, eu egestas sem ultrices. Nam efficitur odio vitae erat facilisis, non scelerisque nisi maximus. Sed est lorem, convallis a pellentesque vitae, maximus id lacus. Aenean ultricies sodales rhoncus. Ut gravida ultricies nulla, quis accumsan leo malesuada vel. Duis varius felis sed neque tempus porttitor. In turpis urna, lacinia a neque consectetur, accumsan laoreet ligula.                                 ', '1663822171Weight machine_01_3_11zon.webp', '2022-09-22 04:49:31', 6, 8, 1);
+(1, 'Post 1 Test Update', 'But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that proasdadadasdasdasdasdadadadasdasdduces no resultant pleasure?&quot;  \r\ntest                                                                                                                                                                                   ', '1662568117quran search api with ionic 6 -react-youtube-thumbnail TODO-LIST-APP-1.png', '2022-09-07 16:28:37', 6, 8, 6),
+(2, 'Post 2', '                On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.&quot;                                                                                                                ', '1663807125Duffle bag_01_10_11zon.webp', '2022-09-22 00:38:45', 7, 8, 6),
+(3, 'Post 3', '                                                In dignissim, justo ac faucibus laoreet, lorem lectus pretium mi, tempor elementum magna ante et nisi. Vestibulum malesuada convallis ligula, id tincidunt arcu aliquet sit amet. Duis iaculis odio vitae sem vulputate finibus. Donec sit amet augue justo. Sed maximus nisi at dui sodales, eu egestas sem ultrices. Nam efficitur odio vitae erat facilisis, non scelerisque nisi maximus. Sed est lorem, convallis a pellentesque vitae, maximus id lacus. Aenean ultricies sodales rhoncus. Ut gravida ultricies nulla, quis accumsan leo malesuada vel. Duis varius felis sed neque tempus porttitor. In turpis urna, lacinia a neque consectetur, accumsan laoreet ligula.                                                                 ', '1663822171Weight machine_01_3_11zon.webp', '2022-09-22 04:49:31', 6, 8, 7);
 
 -- --------------------------------------------------------
 
@@ -80,7 +80,7 @@ CREATE TABLE `products` (
   `price` decimal(7,2) NOT NULL,
   `retailprice` int(7) NOT NULL,
   `quantity` int(11) NOT NULL,
-  `img` time NOT NULL,
+  `img` varchar(255) NOT NULL,
   `date_added` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -89,9 +89,8 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `description`, `price`, `retailprice`, `quantity`, `img`, `date_added`) VALUES
-(1, 'Proudct Name 1', 'Product Description 1', '25.00', 27, 5, '00:00:00', '2022-09-22 18:38:25'),
-(2, 'Product Title 2 ', '\r\n           Product Description 2   ', '27.00', 0, 0, '00:00:00', '2022-09-22 18:52:15'),
-(3, 'Product Test 3 ', '\r\n         Product Description 3       ', '250.00', 0, 0, '00:00:00', '2022-09-22 18:54:15');
+(1, 'Proudct Name 1', 'Product Description 1', '25.00', 27, 5, '1663871886Gym Bottle_01_6_11zon.webp', '2022-09-22 18:38:25'),
+(4, 'Product Test', 'Product Test 3                                                                                                               ', '47.00', 50, 4, '1663872855Trademill_03_2_11zon.webp', '2022-09-23 02:45:08');
 
 -- --------------------------------------------------------
 
@@ -169,7 +168,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
