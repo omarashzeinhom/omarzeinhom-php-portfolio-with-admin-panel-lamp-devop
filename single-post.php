@@ -12,9 +12,10 @@ if (isset($_GET['id'])) {
     //header('location:' . HOME_URL . 'home.php');
     die();
 }
+$page__title = $post['title'];
 ?>
 
-<h1><?= $post['title']; ?></h1>
+<h1><?php echo $page__title; ?></h1>
 
 
 <img src="<?= HOME_URL . 'images/' . $post['thumbnail'] ?>" class="app__card-img" alt="<?= $post['title']; ?>"
@@ -34,7 +35,7 @@ if (isset($_GET['id'])) {
         <h5>
             By: <?= "{$author['firstname']} {$author['lastname']}"; ?>
         </h5>
-        <img src="./images/<?= $author['avatar'] ?>" class="app__nav-avatar" />
+        <img src="./images/<?= $author['avatar'] ?>" class="app__nav-avatar" alt="<?= $author['avatar'] ?>" />
     </strong>
     <small>
         <em>

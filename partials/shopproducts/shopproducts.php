@@ -14,11 +14,11 @@ $products_result =  mysqli_query($connect__db, $products_query);
     <div class="app__card" id="appCardId">
         <div class="app__card-header">
             <div class="app__card-img-shadow">
-                <a href="<?= HOME_URL ?>single-product.php?id=<?= $product['id'] ?>">
+                <a href="<?= ROOT_URL ?>single-product.php?id=<?= $product['id'] ?>">
 
                 </a>
             </div>
-            <h5 id="postsTitle"> <a href="<?= HOME_URL ?>single-product.php?id=<?= $product['id'] ?>">
+            <h5 id="postsTitle"> <a href="<?= ROOT_URL ?>single-product.php?id=<?= $product['id'] ?>">
                     <?= $product['name']; ?>
                 </a>
             </h5>

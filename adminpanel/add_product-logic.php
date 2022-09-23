@@ -61,7 +61,7 @@ if (isset($_POST['submit__newproduct'])) {
         die();
     } else {
         //insert new posts into posts table 
-        $insert_products_query = "INSERT INTO products SET name='$name', description='$description', price=$price, retailprice=$retailprice=', quantity=$quantity, img=$img_newname'";
+        $insert_products_query = "INSERT INTO products SET name='$name', description='$description', price=$price, retailprice=$retailprice, quantity=$quantity, img='$img_newname'";
         //passing mysqli_query using the insert_posts_query
         $insert_products_results = mysqli_query($connect__db, $insert_products_query);
         if (!mysqli_errno($connect__db)) {

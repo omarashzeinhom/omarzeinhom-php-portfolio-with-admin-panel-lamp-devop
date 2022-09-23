@@ -22,15 +22,16 @@ if (isset($_SESSION['user-id'])) {
         <li class='app__nav-item'><a href='<?= HOME_URL ?>opensource.php' class="app__nav-link">OpenSource</a></li>
         <!--Avatar Start -->
         <?php if (isset($_SESSION['user-id'])) : ?>
-            <a href="<?= ADMIN_URL ?>" class="app__nav-link">
-                <img alt="avatar" class="app__nav-avatar" loading="lazy" src="<?= HOME_URL . 'images/' . $avatar['avatar'] ?>" />
-                <small><?= $avatar['firstname'] ?></small>
-            </a>
-            <li class='app__nav-item'><a href="<?= HOME_URL ?>logout.php" class="app__nav-link">🧧Logout</a>
-                <!--Avatar End -->
+        <a href="<?= ADMIN_URL ?>" class="app__nav-link">
+            <img alt="<?= $avatar['firstname'] ?>" class="app__nav-avatar" loading="lazy"
+                src="<?= HOME_URL . 'images/' . $avatar['avatar'] ?>" />
+            <small><?= $avatar['firstname'] ?></small>
+        </a>
+        <li class='app__nav-item'><a href="<?= HOME_URL ?>logout.php" class="app__nav-link">🧧Logout</a>
+            <!--Avatar End -->
             <?php else : ?>
-            <li class='app__nav-item'><a href="<?= HOME_URL ?>login.php" class="app__nav-link">🚪</a></li>
-            <!--Login end-->
+        <li class='app__nav-item'><a href="<?= HOME_URL ?>login.php" class="app__nav-link">🚪</a></li>
+        <!--Login end-->
         <?php endif; ?>
         <!-- RESTRICT SIGN IN IF LOGGGED IN SESSION End-->
 
@@ -42,15 +43,15 @@ if (isset($_SESSION['user-id'])) {
 </nav>
 
 <script>
-    //TODO: javascriptobfuscator IN PROD
+//TODO: javascriptobfuscator IN PROD
 
 
-    function openNav() {
-        var topNav = document.getElementById("app__main-nav");
-        if (topNav.className === 'app__nav') {
-            topNav.className += '-responsive';
-        } else {
-            topNav.className = 'app__nav';
-        }
+function openNav() {
+    var topNav = document.getElementById("app__main-nav");
+    if (topNav.className === 'app__nav') {
+        topNav.className += '-responsive';
+    } else {
+        topNav.className = 'app__nav';
     }
+}
 </script>
