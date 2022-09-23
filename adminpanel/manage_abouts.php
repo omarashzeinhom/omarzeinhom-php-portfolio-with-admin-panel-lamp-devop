@@ -64,7 +64,7 @@ $abouts = mysqli_query($connect__db, $query);
                         class="app__thumbnail-avatar" width="50px" height="50px" alt="admin_post_thumbnail" /></td>
                 <td class="app__td"><a href="<?= ADMIN_URL ?>edit_about.php?id=<?= $about['id'] ?>"
                         class="app__link-btn">Edit</a></td>
-                <td class="app__td"><a href="<?= ADMIN_URL ?>delete-about.php?id=<?= $about['id'] ?>"
+                <td class="app__td"><a href="<?= ADMIN_URL ?>delete_about.php?id=<?= $about['id'] ?>"
                         class="app__alert-btn-sm">Delete</a>
                 </td>
 
