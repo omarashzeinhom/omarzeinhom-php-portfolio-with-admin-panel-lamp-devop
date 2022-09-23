@@ -5,8 +5,8 @@ include('./partials/sidenav/sidenav.php');
 //FETCH ALL THE OTHER USERS ASIDE FROM THE CURRENT USER
 $current_admin_id = $_SESSION['user-id'];
 
-$query = "SELECT * FROM users WHERE NOT id=$current_admin_id";
-$users = mysqli_query($connect__db, $query);
+$query = "SELECT * FROM downloads";
+$downloads = mysqli_query($connect__db, $query);
 ?>
 
 
@@ -43,26 +43,28 @@ $users = mysqli_query($connect__db, $query);
         <thead class="app__thead">
 
             <tr clas="app__tr">
-                <th class="app_th">Name</th>
-                <th class="app_th">Username</th>
+                <th class="app_th">📥Title</th>
+                <th class="app_th">URI</th>
+                <th class="app_th">Alt</th>
+                <th class="app_th">AltURI</th>
                 <th class="app_th">Edit</th>
                 <th class="app_th">Delete</th>
-                <th class="app_th">Admin</th>
             </tr>
 
         </thead>
         <tbody class="app__tbody">
             <!---LOOP THROUGH AND DISPLAY USER -->
-            <?php while ($user = mysqli_fetch_assoc($users)) : ?>
+            <?php while ($download = mysqli_fetch_assoc($downloads)) : ?>
                 <tr clas="app__tr">
 
-                    <td class="app__td"><?= " {$user['firstname']} {$user['lastname']}" ?></td>
-                    <td class="app__td"><?= "{$user['username']}" ?></td>
+                    <td class="app__td"><?= " {$download['download_title']} " ?></td>
+                    <td class="app__td"><a><?= "{$download['download_link']}" ?></a></td>
+                    <td class="app__td"><?= " {$download['download_title']} " ?></td>
+                    <td class="app__td"><a><?= "{$download['download_link']}" ?></a></td>
 
-                    <td class="app__td"><a href="<?= ADMIN_URL ?>edit_user.php?id=<?= $user['id'] ?>" class="app__link-btn">Edit</a></td>
-                    <td class="app__td"><a href="<?= ADMIN_URL ?>delete-user.php?id=<?= $user['id'] ?>" class="app__alert-btn-sm">Delete</a>
+                    <td class="app__td"><a href="<?= ADMIN_URL ?>edit_download.php?id=<?= $download['id'] ?>" class="app__link-btn">Edit</a></td>
+                    <td class="app__td"><a href="<?= ADMIN_URL ?>delete_download.php?id=<?= $download['id'] ?>" class="app__alert-btn-sm">Delete</a>
                     </td>
-                    <td class="app__td"><?= $user['is_admin'] ? 'Yes' : 'No' ?></td>
 
                 </tr>
 
