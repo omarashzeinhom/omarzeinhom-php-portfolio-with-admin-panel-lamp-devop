@@ -1,10 +1,9 @@
 <?php
-$page__title = 'Add Post 📝';
+$page__title = 'Add About 👤📝';
 include('./partials/sidenav/sidenav.php');
 
 //FETCH CATEGORIES FROM DATABASE
-$query = "SELECT * FROM categories";
-$categories = mysqli_query($connect__db, $query);
+
 
 ?>
 
@@ -13,33 +12,35 @@ $categories = mysqli_query($connect__db, $query);
 
 <!-- Add Post Alert success start -->
 
-<?php if (isset($SESSION_['add-post-success'])) : ?>
-    <div class="app__alert-success">
-        <p class="app__alert-success-p">
-            <?= $_SESSION['add-post-success'];
-            unset($_SESSION['add-post-success']); ?>
-        </p>
-    </div>
-    <!-- Add Post Alert success End  -->
+<?php if (isset($SESSION_['add-about-success'])) : ?>
+<div class="app__alert-success">
+    <p class="app__alert-success-p">
+        <?= $_SESSION['add-about-success'];
+            unset($_SESSION['add-about-success']); ?>
+    </p>
+</div>
+<!-- Add Post Alert success End  -->
 
-    <!-- Add Post Alert Failed  start -->
+<!-- Add Post Alert Failed  start -->
 
-<?php elseif (isset($_SESSION['add-post'])) : ?>
-    <div class="app__alert-error">
-        <p class="app__alert-p">
-            <?= $_SESSION['add-post'];
-            unset($_SESSION['add-post']); ?>
+<?php elseif (isset($_SESSION['add-about'])) : ?>
+<div class="app__alert-error">
+    <p class="app__alert-p">
+        <?= $_SESSION['add-about'];
+            unset($_SESSION['add-about']); ?>
 
-        </p>
-    </div>
-    <!-- Add Post Alert Failed  End -->
+    </p>
+</div>
+<!-- Add Post Alert Failed  End -->
 <?php endif; ?>
 
 
-
+<?php
+if (isset($_SESSION['user_is_admin'])) : ?>
 
 <!-- App Add User Start  -->
-<form class="app__adduser-form" action="<?= HOME_URL ?>add_post-logic.php" enctype="multipart/form-data" method="POST" style=" width: 90vw; margin-left : 5vw;">
+<form class="app__adduser-form" action="<?= HOME_URL ?>add_about-logic.php" enctype="multipart/form-data" method="POST"
+    style=" width: 90vw; margin-left : 5vw;">
     <div class="row">
         <!-- Row Start   --->
 
@@ -49,12 +50,15 @@ $categories = mysqli_query($connect__db, $query);
             <!-- Title  --->
             <div class="app__inputs-wrap">
                 <label class="app__inputs-label" for="title">Title</label>
-                <input name="title" class="app__input" type="text" id="firstName" placeholder="Enter Post Title here..." />
+                <input name="about_title" class="app__input" type="text" id="firstName"
+                    placeholder="Enter About Title here..." />
             </div>
             <!-- Post Text --->
             <div class="app__inputs-wrap">
-                <label class="app__inputs-label" for="body">Body</label>
-                <textarea name="body" class="app__input" id="postcontent" style="resize:none; padding-bottom: 7rem; color:white;" rows="8" placeholder="Enter Post Body here..." required maxlength="500000" autofocus>
+                <label class="app__inputs-label" for="about_body">Body</label>
+                <textarea name="about_body" class="app__input" id="postcontent"
+                    style="resize:none; padding-bottom: 5rem; color:white;" rows="8"
+                    placeholder="Enter About Body here..." required maxlength="500000" autofocus>
                 </textarea>
             </div>
 
@@ -62,42 +66,16 @@ $categories = mysqli_query($connect__db, $query);
             <!-- Post Thumbnail --->
             <div class="app__inputs-wrap">
                 <label class="app__inputs-label" for="thumbnail">Thumbnail</label>
-                <input name="thumbnail" class="app__input" type="file" id="avatar" />
+                <input name="about_thumbnail" class="app__input" type="file" id="avatar" />
                 <!-- TODO AFTER FINISHING PROJECT ADD DEFAULT AVATAR IMAGES TO SELECT FROM-->
                 <br />
                 <small>
                     Make sure your image is less than 0.5mb use an image converter
                 </small>
             </div>
-            <br />
-            <!-- Author or Admin Options  --->
-            <?php
-            if (isset($_SESSION['user_is_admin'])) : ?>
-                <!-- Is Featured? --->
-                <div class="app__inputs-wrap">
-                    <label class="app__inputs-label" for="is_featured">Featured</label>
-                    <input name="is_featured" value="" class="app__input" type="checkbox" id="isFeatured" checked />
-                </div>
-            <?php endif; ?>
-
-            <!-- Author or Admin Options  --->
-            <br />
-
-            <div class="app__inputs-wrap">
-                <!-- Post Categories Options  Start  --->
-                <label class="app__inputs-label" for="avatar">Category</label>
-                <select name="category" class="app__input">
-                    <?php while ($category = mysqli_fetch_assoc($categories)) : ?>
-                        <option value="<?= $category['id']; ?>" label="<?= $category['title']; ?>">
-                        </option>
-                    <?php endwhile; ?>
-                </select>
-            </div>
-            <!-- Post Categories Options  End --->
-
             <!-- Add new user Button key of name -->
-            <button class="btn" name="submit__newpost">
-                Add New Post
+            <button class="btn" name="submit__newabout">
+                Add New About
             </button>
             <!-- Add new user Button -->
 
@@ -105,6 +83,7 @@ $categories = mysqli_query($connect__db, $query);
     </div> <!-- Row End  -->
 </form>
 
+<?php endif; ?>
 
 <?php
 include('./partials/footer/footer.php');

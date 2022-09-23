@@ -45,6 +45,7 @@ $abouts = mysqli_query($connect__db, $query);
             <tr clas="app__tr">
                 <th class="app_th">Title</th>
                 <th class="app_th">Body</th>
+                <th class="app_th">Thumbnail</th>
                 <th class="app_th">Edit</th>
                 <th class="app_th">Delete</th>
             </tr>
@@ -57,6 +58,10 @@ $abouts = mysqli_query($connect__db, $query);
 
                 <td class="app__td"><?= " {$about['about_title']}"; ?></td>
                 <td class="app__td"><?= "{$about['about_body']}"; ?></td>
+                <td class="app__td" id="aboutThumbnail"> <img
+                        src="<?= ROOT_URL . 'images/' . $about['about_thumbnail'] ?>"
+                        style="padding-top: 0.4rem;border-radius: 15%; object-fit:cover; box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem gray;"
+                        class="app__thumbnail-avatar" width="50px" height="50px" alt="admin_post_thumbnail" /></td>
                 <td class="app__td"><a href="<?= ADMIN_URL ?>edit_about.php?id=<?= $about['id'] ?>"
                         class="app__link-btn">Edit</a></td>
                 <td class="app__td"><a href="<?= ADMIN_URL ?>delete-about.php?id=<?= $about['id'] ?>"
