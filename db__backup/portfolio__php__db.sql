@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 23, 2022 at 10:37 PM
+-- Generation Time: Sep 23, 2022 at 11:07 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 SET
@@ -53,8 +53,8 @@ INSERT INTO
 VALUES
   (
     1,
-    'About Test 1 test',
-    '                          About 1 Body     test                  ',
+    'CSS3',
+    '       CSS3        ',
     '1663964736Smart watch and Hand_02_9_11zon.webp'
   );
 
@@ -76,6 +76,18 @@ INSERT INTO
 VALUES
   (6, 'JavaScript  ', 'JavaScript Posts '),
   (7, 'TypeScript  ', 'TypeScript Posts');
+
+-- --------------------------------------------------------
+--
+-- Table structure for table `downloads`
+--
+CREATE TABLE `downloads` (
+  `id` int(100) UNSIGNED NOT NULL,
+  `download_title` varchar(255) NOT NULL,
+  `download_link` text NOT NULL,
+  `download_alt_title` varchar(255) NOT NULL,
+  `download_alt_link` text NOT NULL
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
 
 -- --------------------------------------------------------
 --
@@ -262,6 +274,14 @@ ADD
   KEY `id` (`id`);
 
 --
+-- Indexes for table `downloads`
+--
+ALTER TABLE
+  `downloads`
+ADD
+  PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `posts`
 --
 ALTER TABLE
@@ -299,7 +319,7 @@ ALTER TABLE
   `abouts`
 MODIFY
   `id` int(8) UNSIGNED NOT NULL AUTO_INCREMENT,
-  AUTO_INCREMENT = 2;
+  AUTO_INCREMENT = 3;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -309,6 +329,14 @@ ALTER TABLE
 MODIFY
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   AUTO_INCREMENT = 8;
+
+--
+-- AUTO_INCREMENT for table `downloads`
+--
+ALTER TABLE
+  `downloads`
+MODIFY
+  `id` int(100) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `posts`
