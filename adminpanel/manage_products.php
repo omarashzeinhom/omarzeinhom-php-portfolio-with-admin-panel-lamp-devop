@@ -35,14 +35,14 @@ $categories = mysqli_query($connect__db, $queryc);
 <table class="app__table" style="overflow: x-auto; margin: auto; max-width: 1700px; width:100%; height:100%;">
     <thead class="app__thead">
         <tr clas="app__tr">
-            <th class="app_th">Title</th>
-            <th class="app_th">Product</th>
-            <th class="app_th">Thumbnail</th>
-            <th class="app_th">Price</th>
-            <th class="app_th">Retail Price</th>
-            <th class="app_th">Quantity</th>
+            <th class="app_th">Name</th>
+            <th class="app_th">Description</th>
+            <th class="app_th">Img</th>
+            <th class="app_th">$</th>
+            <th class="app_th">$Retail</th>
+            <th class="app_th">Quan</th>
             <th class="app_th">Edit</th>
-            <th class="app_th">Delete</th>
+            <th class="app_th">Del</th>
         </tr>
     </thead>
     <tbody class="app__tbody">
@@ -57,13 +57,9 @@ $categories = mysqli_query($connect__db, $queryc);
                     style="padding-top: 0.4rem;border-radius: 15%; object-fit:cover; box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem gray;"
                     class="app__thumbnail-avatar" width="50px" height="50px" alt="<?= $single_product['name']; ?>" />
             </td>
-
-            <!--- TODO: FIX Posts Thumbnail -->
             <td class="app__td"><?= $single_product['price']; ?></td>
             <td class="app__td"><?= $single_product['retailprice']; ?></td>
             <td class="app__td"><?= $single_product['quantity']; ?></td>
-
-
             <td class="app__td"><a href="<?= ADMIN_URL ?>edit_product.php?id=<?= $single_product['id'] ?? null; ?>"
                     class="app__link-btn">Edit</a></td>
             <td class="app__td"><a href="<?= ADMIN_URL ?>delete_product.php?id=<?= $single_product['id'] ?? null; ?>"
