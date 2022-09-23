@@ -2,27 +2,26 @@
 require('./config/database.php');
 
 
-if (isset($_POST['submit__editpost'])) {
+if (isset($_POST['submit__editabout'])) {
     $id = filter_var($_POST['id'], FILTER_SANITIZE_NUMBER_INT);
-    $title = filter_var($_POST['title'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $body = filter_var($_POST['body'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $is_featured = filter_var($_POST['selectrole__edituser'], FILTER_SANITIZE_NUMBER_INT);
+    $about_title = filter_var($_POST['about_title'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $about_body = filter_var($_POST['about_body'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     //CHECK THE VALID INPUTS
-    if (!$title || !$body) {
-        $_SESSION['edit-post'] = "Invalid Form Input on edit page.";
+    if (!$about_title || !$about_body) {
+        $_SESSION['edit-about'] = "Invalid Form Input on edit page.";
     } else {
         // UPDATE THE USER
-        $query = "UPDATE posts SET title='$title', body='$body', is_featured=$is_featured WHERE id=$id LIMIT 1";
+        $query = "UPDATE abouts SET about_title='$about_title', about_body='$about_body' WHERE id=$id LIMIT 1";
         //DOUBLE CHECK 
         $result = mysqli_query($connect__db, $query);
 
         if (mysqli_errno($connect__db)) {
-            $_SESSION['edit-post'] = "Updating post failed, please try again";
+            $_SESSION['edit-about'] = "Updating about failed, please try again";
         } else {
-            $_SESSION['edit-post-success'] = "User $firstname $lastname was updated successfully !";
+            $_SESSION['edit-about-success'] = "$about_title Was updated successfully !";
         }
     }
 }
 
-header('location:' . ADMIN_URL . 'manage_posts.php');
+header('location:' . ADMIN_URL . 'manage_abouts.php');
 die();
