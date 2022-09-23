@@ -13,19 +13,19 @@ $description = $_SESSION['add-category-data']['description'] ?? null;
 
 
 <?php if (isset($_SESSION['user_is_admin'])) : ?>
-    <section style=" width: 50vw; margin-left : 25vw;">
-        <form action="add_category-logic.php" method="POST">
-            <label class="app__inputs-label"></label>
-            <input name='title' placeholder="Title" type="text" class="app__adduser-input" />
-            <br />
-            <textarea name='description' rows="4" placeholder="Description" style="resize: none;" class="app__adduser-input">
+<section style=" width: 50vw; margin-left : 25vw;">
+    <form action="add_category-logic.php" method="POST">
+        <label class="app__inputs-label"></label>
+        <input name='title' placeholder="Title" type="text" class="app__input" />
+        <br />
+        <textarea name='description' rows="4" placeholder="Description" style="resize: none;" class="app__input">
 </textarea>
-            <br />
-            <button name="submit__addcategory" class="btn" type="submit">
-                Add New Category
-            </button>
-        </form>
-    </section>
+        <br />
+        <button name="submit__addcategory" class="btn" type="submit">
+            Add New Category
+        </button>
+    </form>
+</section>
 <?php endif; ?>
 
 
