@@ -1,14 +1,7 @@
 <?php
-$page__title = 'Edit Prdouct 📝';
+$page__title = 'Edit Product 🛍️';
 //header already included in nav which is included in sidenav
 include('./partials/sidenav/sidenav.php');
-
-$query = "SELECT * FROM products";
-$products = mysqli_query($connect__db, $query);
-//$queryc = "SELECT * FROM categories";
-//$categories = mysqli_query($connect__db, $queryc);
-
-$img__query = "UPDATE product img";
 
 ?>
 
@@ -28,7 +21,8 @@ if (isset($_GET['id'])) {
 
 
 <section style="overflow: x-auto; margin: auto; max-width: 500px; width:100%; height:100%;">
-    <form class="app__form-section" action="<?= HOME_URL ?>edit_product-logic.php" method="POST" enctype="multipart/form-data">
+    <form class="app__form-section" action="<?= HOME_URL ?>edit_product-logic.php" method="POST"
+        enctype="multipart/form-data">
 
         <!--- While Loop For Category End  --->
 
@@ -39,12 +33,14 @@ if (isset($_GET['id'])) {
         <!-- Title  --->
         <div class="app__inputs-wrap">
             <label class="app__inputs-label" for="name">Product Name</label>
-            <input name="name" class="app__input" type="text" id="firstName" value="<?= $product['name'] ?>" placeholder="Enter Post Title here..." />
+            <input name="name" class="app__input" type="text" id="firstName" value="<?= $product['name'] ?>"
+                placeholder="Enter Post Title here..." />
         </div>
         <!-- Product Description Start  --->
         <div class="app__inputs-wrap">
-            <label class="app__inputs-label" for="body">Body</label>
-            <textarea name="body" class="app__input" style="resize:none; " rows="8" value="<?= $product['description'] ?>" placeholder="test">
+            <label class="app__inputs-label" for="body">Description</label>
+            <textarea name="description" class="app__input" style="resize:none; " rows="8"
+                value="<?= $product['description'] ?>" placeholder="test">
                 <?= $product['description'] ?>
                 </textarea>
         </div>

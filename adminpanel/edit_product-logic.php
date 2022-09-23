@@ -9,14 +9,14 @@ if (isset($_POST['submit__editproduct'])) {
     $price = filter_var($_POST['price'], FILTER_SANITIZE_NUMBER_FLOAT);
     $retailprice = filter_var($_POST['retailprice'], FILTER_SANITIZE_NUMBER_FLOAT);
     $quantity = filter_var($_POST['quantity'], FILTER_SANITIZE_NUMBER_FLOAT);
-    $img = $_FILES['img'];
+    //$img = $_FILES['img'];
 
     //CHECK THE VALID INPUTS
     if (!$name  || !$description || !$price || !$retailprice || !$quantity) {
         $_SESSION['edit-product'] = "Invalid Form Input on edit page.";
     } else {
         // UPDATE THE USER
-        $query = "UPDATE products SET name='$name', description='$description', price=$price, retailprice=$retailprice, quantity=$quantity, WHERE id=$id LIMIT 1";
+        $query = "UPDATE products SET name = '$name', description = '$description', price = $price, retailprice = $retailprice, quantity = $quantity WHERE id=$id LIMIT 1;";
         //DOUBLE CHECK 
         $result = mysqli_query($connect__db, $query);
 

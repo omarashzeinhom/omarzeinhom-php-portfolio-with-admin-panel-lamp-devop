@@ -27,12 +27,12 @@ if (!isset($_SESSION['user-id'])) {
 
     <?php
     if (isset($_SESSION['user_is_admin'])) : ?>
-        <li class='app__sidenav-item'><a href="<?= ADMIN_URL ?>manage_users.php" class="app__sidenav-itemLink">👥</a>
+    <li class='app__sidenav-item'><a href="<?= ADMIN_URL ?>manage_users.php" class="app__sidenav-itemLink">👥</a>
 
-        <li class='app__sidenav-item'><a href="<?= ADMIN_URL  ?>manage_categories.php" class="app__sidenav-itemLink">✨</a>
-        </li>
-        <li class='app__sidenav-item'><a href="<?= ADMIN_URL  ?>manage_products.php" class="app__sidenav-itemLink">🛍️ </a>
-        </li>
+    <li class='app__sidenav-item'><a href="<?= ADMIN_URL  ?>manage_categories.php" class="app__sidenav-itemLink">✨</a>
+    </li>
+    <li class='app__sidenav-item'><a href="<?= ADMIN_URL  ?>manage_products.php" class="app__sidenav-itemLink">🛍️</a>
+    </li>
 
     <?php endif; ?>
     <!-- Admin User Options End -->
@@ -42,22 +42,23 @@ if (!isset($_SESSION['user-id'])) {
 
     <!--RESTRICT SIGN IN IF LOGGGED IN SESSION Start -->
     <?php if (isset($_SESSION['user-id'])) : ?>
-        <li class='app__sidenav-item'>
-            <a href="<?= ROOT_URL ?>logout.php" class="app__sidenav-itemLink"><small>
-                    <i> Logout</i>
-                </small>
-                <img alt="avatar" class="app__admin__nav-avatar" loading="lazy" src="<?= ROOT_URL . 'images/' . $avatar['avatar'] ?>" />
-            </a>
+    <li class='app__sidenav-item'>
+        <a href="<?= ROOT_URL ?>logout.php" class="app__sidenav-itemLink"><small>
+                <i> Logout</i>
+            </small>
+            <img alt="avatar" class="app__admin__nav-avatar" loading="lazy"
+                src="<?= ROOT_URL . 'images/' . $avatar['avatar'] ?>" />
+        </a>
 
-        </li>
+    </li>
 
 
-        <!--Login end-->
+    <!--Login end-->
 
     <?php else : ?>
-        <!--Login start-->
-        <li class='app__sidenav-item'><a href="<?= ROOT_URL ?>login.php" class="app__sidenav-itemLink">🚪</a>
-        </li>
+    <!--Login start-->
+    <li class='app__sidenav-item'><a href="<?= ROOT_URL ?>login.php" class="app__sidenav-itemLink">🚪</a>
+    </li>
 
 
     <?php endif; ?>
