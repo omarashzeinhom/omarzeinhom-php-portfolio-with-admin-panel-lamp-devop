@@ -36,11 +36,11 @@ $categories = mysqli_query($connect__db, $queryc);
     <thead class="app__thead">
         <tr clas="app__tr">
             <th class="app_th">Name</th>
-            <th class="app_th">Description</th>
+            <th class="app_th">Desc</th>
             <th class="app_th">Img</th>
-            <th class="app_th">$</th>
-            <th class="app_th">$Retail</th>
-            <th class="app_th">Quan</th>
+            <th class="app_th">Og$</th>
+            <th class="app_th">Retail$</th>
+            <th class="app_th">Units</th>
             <th class="app_th">Edit</th>
             <th class="app_th">Del</th>
         </tr>

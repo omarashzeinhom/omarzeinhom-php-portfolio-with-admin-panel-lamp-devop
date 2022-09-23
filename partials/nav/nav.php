@@ -19,7 +19,7 @@ if (isset($_SESSION['user-id'])) {
         <li class='app__nav-item'><a href='<?= HOME_URL ?>about.php' class="app__nav-link">About</a></li>
         <li class='app__nav-item'><a href='<?= HOME_URL ?>contact.php' class="app__nav-link">Contact Me</a></li>
         <li class='app__nav-item'><a href='<?= HOME_URL ?>shop.php' class="app__nav-link">Shop</a></li>
-        <li class='app__nav-item'><a href='<?= HOME_URL ?>opensource.php' class="app__nav-link">OpenSource</a></li>
+        <li class='app__nav-item'><a href='<?= HOME_URL ?>download.php' class="app__nav-link">Download</a></li>
         <!--Avatar Start -->
         <?php if (isset($_SESSION['user-id'])) : ?>
         <a href="<?= ADMIN_URL ?>" class="app__nav-link">

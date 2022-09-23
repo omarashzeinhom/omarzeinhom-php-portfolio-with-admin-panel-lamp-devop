@@ -23,6 +23,16 @@ include('./partials/sidenav/sidenav.php');
         <?php
         if (isset($_SESSION['user_is_admin'])) : ?>
             <div class="app__dashboard-icon">
+                <a href="<?= HOME_URL ?>manage_abouts.php" class="app__dashboard-link">
+                    👤 Abouts
+                </a>
+            </div>
+            <div class="app__dashboard-icon">
+                <a href="<?= HOME_URL ?>manage_downloads.php" class="app__dashboard-link">
+                    📥Downloads
+                </a>
+            </div>
+            <div class="app__dashboard-icon">
                 <a href="<?= HOME_URL ?>manage_users.php" class="app__dashboard-link">
                     👥 Users
                 </a>
