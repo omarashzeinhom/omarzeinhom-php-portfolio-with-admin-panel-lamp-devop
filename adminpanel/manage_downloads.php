@@ -1,5 +1,5 @@
 <?php
-$page__title = 'Manage Users👥';
+$page__title = 'Manage Downloads📥';
 include('./partials/sidenav/sidenav.php');
 
 //FETCH ALL THE OTHER USERS ASIDE FROM THE CURRENT USER
@@ -21,16 +21,16 @@ $users = mysqli_query($connect__db, $query);
 <br />
 <!--- User Options --->
 <ul>
-    <li class='app__sidenav-item'><a href="<?= HOME_URL ?>add_user.php" class="app__link-btn">Add
-            User👥</a></li>
+    <li class='app__sidenav-item'><a href="<?= HOME_URL ?>add_download.php" class="app__link-btn">Add
+            Download📥</a></li>
 
 </ul>
 <br />
-<?php if (isset($SESSION_['add-user-success'])) : ?>
+<?php if (isset($SESSION_['add-download-success'])) : ?>
     <div class="app__alert-success">
         <p class="app__alert-success-p">
-            <?= $_SESSION['add-user-success'];
-            unset($_SESSION['add-user-success']); ?>
+            <?= $_SESSION['add-download-success'];
+            unset($_SESSION['add-download-success']); ?>
         </p>
     </div>
 

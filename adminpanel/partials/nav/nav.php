@@ -31,7 +31,9 @@ if (!isset($_SESSION['user-id'])) {
 
     <li class='app__sidenav-item'><a href="<?= ADMIN_URL  ?>manage_categories.php" class="app__sidenav-itemLink">✨</a>
     </li>
-    <li class='app__sidenav-item'><a href="<?= ADMIN_URL  ?>manage_products.php" class="app__sidenav-itemLink">🛍️</a>
+    <li class='app__sidenav-item'><a href="<?= ADMIN_URL  ?>manage_abouts.php" class="app__sidenav-itemLink"> 👤</a>
+    </li>
+    <li class='app__sidenav-item'><a href="<?= ADMIN_URL  ?>manage_downloads.php" class="app__sidenav-itemLink">📥</a>
     </li>
 
     <?php endif; ?>

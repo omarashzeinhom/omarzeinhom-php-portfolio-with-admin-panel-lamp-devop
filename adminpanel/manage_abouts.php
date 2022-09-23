@@ -1,12 +1,12 @@
 <?php
-$page__title = 'Manage Users👥';
+$page__title = 'Manage Abouts 👤📝';
 include('./partials/sidenav/sidenav.php');
 
 //FETCH ALL THE OTHER USERS ASIDE FROM THE CURRENT USER
 $current_admin_id = $_SESSION['user-id'];
 
-$query = "SELECT * FROM users WHERE NOT id=$current_admin_id";
-$users = mysqli_query($connect__db, $query);
+$query = "SELECT * FROM abouts";
+$abouts = mysqli_query($connect__db, $query);
 ?>
 
 
@@ -21,18 +21,18 @@ $users = mysqli_query($connect__db, $query);
 <br />
 <!--- User Options --->
 <ul>
-    <li class='app__sidenav-item'><a href="<?= HOME_URL ?>add_user.php" class="app__link-btn">Add
-            User👥</a></li>
+    <li class='app__sidenav-item'><a href="<?= HOME_URL ?>add_about.php" class="app__link-btn">Add
+            About 👤📝</a></li>
 
 </ul>
 <br />
-<?php if (isset($SESSION_['add-user-success'])) : ?>
-    <div class="app__alert-success">
-        <p class="app__alert-success-p">
-            <?= $_SESSION['add-user-success'];
-            unset($_SESSION['add-user-success']); ?>
-        </p>
-    </div>
+<?php if (isset($SESSION_['add-about-success'])) : ?>
+<div class="app__alert-success">
+    <p class="app__alert-success-p">
+        <?= $_SESSION['add-about-success'];
+            unset($_SESSION['add-about-success']); ?>
+    </p>
+</div>
 
 <?php endif; ?>
 
@@ -43,28 +43,27 @@ $users = mysqli_query($connect__db, $query);
         <thead class="app__thead">
 
             <tr clas="app__tr">
-                <th class="app_th">Name</th>
-                <th class="app_th">Username</th>
+                <th class="app_th">Title</th>
+                <th class="app_th">Body</th>
                 <th class="app_th">Edit</th>
                 <th class="app_th">Delete</th>
-                <th class="app_th">Admin</th>
             </tr>
 
         </thead>
         <tbody class="app__tbody">
             <!---LOOP THROUGH AND DISPLAY USER -->
-            <?php while ($user = mysqli_fetch_assoc($users)) : ?>
-                <tr clas="app__tr">
+            <?php while ($about = mysqli_fetch_assoc($abouts)) : ?>
+            <tr clas="app__tr">
 
-                    <td class="app__td"><?= " {$user['firstname']} {$user['lastname']}" ?></td>
-                    <td class="app__td"><?= "{$user['username']}" ?></td>
+                <td class="app__td"><?= " {$about['about_title']}"; ?></td>
+                <td class="app__td"><?= "{$about['about_body']}"; ?></td>
+                <td class="app__td"><a href="<?= ADMIN_URL ?>edit_about.php?id=<?= $about['id'] ?>"
+                        class="app__link-btn">Edit</a></td>
+                <td class="app__td"><a href="<?= ADMIN_URL ?>delete-about.php?id=<?= $about['id'] ?>"
+                        class="app__alert-btn-sm">Delete</a>
+                </td>
 
-                    <td class="app__td"><a href="<?= ADMIN_URL ?>edit_user.php?id=<?= $user['id'] ?>" class="app__link-btn">Edit</a></td>
-                    <td class="app__td"><a href="<?= ADMIN_URL ?>delete-user.php?id=<?= $user['id'] ?>" class="app__alert-btn-sm">Delete</a>
-                    </td>
-                    <td class="app__td"><?= $user['is_admin'] ? 'Yes' : 'No' ?></td>
-
-                </tr>
+            </tr>
 
             <?php endwhile; ?>
 
