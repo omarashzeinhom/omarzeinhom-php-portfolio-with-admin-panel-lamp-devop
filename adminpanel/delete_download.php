@@ -10,7 +10,7 @@ if (isset($_GET['id'])) {
     // var_dump($download);
 
     $delete__download__query = "DELETE FROM downloads WHERE id=$id";
-    $delete__download__result = mysqli_query($connect__db, $delete__about__query);
+    $delete__download__result = mysqli_query($connect__db, $delete__download__query);
     if (mysqli_errno($connect__db)) {
         $_SESSION['delete-download'] = "'{$download['download_title']}' '{$download['download_link']}'  '{$download['download_alt_title']}' '{$download['download_alt_link']}' Was Not Deleted! Please Try Again";
     } else {
@@ -25,20 +25,20 @@ die();
 
 <?php
 if (isset($_SESSION['delete-download'])) : ?>
-    <div class="app__alert-error">
-        <p class="app__alert-p">
-            <?= $_SESSION['delete-download'];
+<div class="app__alert-error">
+    <p class="app__alert-p">
+        <?= $_SESSION['delete-download'];
             unset($_SESSION['delete-download']); ?>
-        </p>
+    </p>
 
-    </div>
-    <!--- DEBUG ERROR MSG IN SESSION  END  --->
+</div>
+<!--- DEBUG ERROR MSG IN SESSION  END  --->
 <?php elseif (isset($_SESSION['delete-download-success'])) : ?>
-    <div class="app__alert-success">
-        <p class="app__alert-success-p">
-            <?= $_SESSION['delete-download-success'];
+<div class="app__alert-success">
+    <p class="app__alert-success-p">
+        <?= $_SESSION['delete-download-success'];
             unset($_SESSION['delete-download-success']); ?>
-        </p>
+    </p>
 
-    </div>
+</div>
 <?php endif; ?>

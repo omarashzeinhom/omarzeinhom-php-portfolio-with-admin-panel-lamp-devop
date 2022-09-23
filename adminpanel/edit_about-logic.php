@@ -21,7 +21,9 @@ if (isset($_POST['submit__editabout'])) {
             $_SESSION['edit-about-success'] = "$about_title Was updated successfully !";
         }
     }
+} else {
+    header('location:' . ADMIN_URL . 'manage_abouts.php');
+    die();
 }
-
 header('location:' . ADMIN_URL . 'manage_abouts.php');
 die();
