@@ -4,7 +4,7 @@ $page__title = 'Edit Prdouct 📝';
 include('./partials/sidenav/sidenav.php');
 
 $query = "SELECT * FROM products";
-$posts = mysqli_query($connect__db, $query);
+$products = mysqli_query($connect__db, $query);
 //$queryc = "SELECT * FROM categories";
 //$categories = mysqli_query($connect__db, $queryc);
 
@@ -22,14 +22,13 @@ if (isset($_GET['id'])) {
     $result = mysqli_query($connect__db, $query);
     $product = mysqli_fetch_assoc($result);
 } else {
-    header('location:' . ADMIN_URL . 'manage_posts.php');
+    header('location:' . ADMIN_URL . 'manage_products.php');
     die("");
 }; ?>
 
 
 <section style="overflow: x-auto; margin: auto; max-width: 500px; width:100%; height:100%;">
-    <form class="app__form-section" action="<?= HOME_URL ?>edit_post-logic.php" method="POST"
-        enctype="multipart/form-data">
+    <form class="app__form-section" action="<?= HOME_URL ?>edit_product-logic.php" method="POST" enctype="multipart/form-data">
 
         <!--- While Loop For Category End  --->
 
@@ -40,14 +39,12 @@ if (isset($_GET['id'])) {
         <!-- Title  --->
         <div class="app__inputs-wrap">
             <label class="app__inputs-label" for="name">Product Name</label>
-            <input name="name" class="app__input" type="text" id="firstName" value="<?= $product['name'] ?>"
-                placeholder="Enter Post Title here..." />
+            <input name="name" class="app__input" type="text" id="firstName" value="<?= $product['name'] ?>" placeholder="Enter Post Title here..." />
         </div>
         <!-- Product Description Start  --->
         <div class="app__inputs-wrap">
             <label class="app__inputs-label" for="body">Body</label>
-            <textarea name="body" class="app__input" style="resize:none; " rows="8"
-                value="<?= $product['description'] ?>" placeholder="test">
+            <textarea name="body" class="app__input" style="resize:none; " rows="8" value="<?= $product['description'] ?>" placeholder="test">
                 <?= $product['description'] ?>
                 </textarea>
         </div>
