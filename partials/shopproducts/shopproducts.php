@@ -36,8 +36,17 @@ $products_result = mysqli_query($connect__db, $products_query);
         </div><!-- Card Footer End--->
 
 
+        <button>
+            <a href="add_product_to_cart.php">
+                Add To Cart
+            </a>
+
+        </button>
+
     </div><!-- Card End--->
 
     <!-- Btn Wrap  End--->
 </div> <!-- Column End--->
+
+
 <?php endwhile; ?>
