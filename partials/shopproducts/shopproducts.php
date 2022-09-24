@@ -9,9 +9,10 @@ $products_result = mysqli_query($connect__db, $products_query);
     <div class="app__card" id="appCardId">
         <div class="app__card-header">
             <div class="app__card-img-shadow">
-                <img src="<?= 'images/' . $product['img'] ?>" class="app__card-img" class="app__thumbnail-avatar"
-                    width="50px" height="50px" alt="<?= $product['name']; ?>" />
-
+                <a href="<?= HOME_URL ?>single-product.php?id=<?= $product['id'] ?>">
+                    <img src="<?= 'images/' . $product['img'] ?>" class="app__card-img" class="app__thumbnail-avatar"
+                        width="50px" height="50px" alt="<?= $product['name']; ?>" />
+                </a>
             </div>
 
             <h3> <?= $product['name']; ?>
