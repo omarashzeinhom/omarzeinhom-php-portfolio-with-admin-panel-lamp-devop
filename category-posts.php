@@ -44,8 +44,7 @@ $category_title = $category['title'];
         </div>
         <!-- Card Header End--->
         <a href="<?= HOME_URL ?>single-post.php?id=<?= $category_post['id'] ?>">
-            <img src="<?= HOME_URL . 'images/' . $category_post['thumbnail'] ?>" class="app__card-img"
-                alt="admin_post_thumbnail" loading="lazy" />
+            <img src="<?= HOME_URL . 'images/' . $category_post['thumbnail'] ?>" class="app__card-img" alt="admin_post_thumbnail" loading="lazy" />
         </a>
         <!-- Card Footer Start --->
         <div class="app__card-footer">
@@ -91,11 +90,11 @@ $category_title = $category['title'];
     <?php
     while ($category = mysqli_fetch_assoc($all_categories_result)) :
     ?>
-    <button class="btn__sm">
-        <a href="<?= HOME_URL ?>category-posts.php?id=<?= $category['id'] ?>">
-            <?= $category['title'] ?? null; ?>
-        </a>
-    </button>
+        <button class="btn__sm">
+            <a href="<?= HOME_URL ?>category-posts.php?id=<?= $category['id'] ?>">
+                <?= $category['title'] ?? null; ?>
+            </a>
+        </button>
     <?php endwhile; ?>
 </div>
 <!--- All Categories End --->

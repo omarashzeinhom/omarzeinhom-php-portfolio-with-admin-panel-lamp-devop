@@ -10,7 +10,7 @@ if (isset($_POST['submit__newproduct'])) {
     $description = filter_var($_POST['description'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $price = filter_var($_POST['price'], FILTER_SANITIZE_NUMBER_FLOAT);
     $retailprice = filter_var($_POST['retailprice'], FILTER_SANITIZE_NUMBER_FLOAT);
-    $quantity = filter_var($_POST['quantity'], FILTER_SANITIZE_NUMBER_FLOAT);
+    $quantity = filter_var($_POST['quantity'], FILTER_SANITIZE_NUMBER_INT);
     $img = $_FILES['img'];
     //DEBUG Inputs
     //var_dump($name, $description, $price, $retailprice, $quantity, $img);

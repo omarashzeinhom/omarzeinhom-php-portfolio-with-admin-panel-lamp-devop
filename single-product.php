@@ -16,8 +16,7 @@ $page__title = $product['name'];
 ?>
 <div class="app__card-lg">
     <h1><?php echo $page__title; ?></h1>
-    <img class="app__card-img" src="<?= 'images/' . $product['img']; ?>" alt="<?= $product['name']; ?>"
-        loading="lazy" />
+    <img class="app__card-img" src="<?= 'images/' . $product['img']; ?>" alt="<?= $product['name']; ?>" loading="lazy" />
     <p style="font-size:medium;">
         Description:
         <?= $product['description']; ?>
@@ -34,7 +33,7 @@ $page__title = $product['name'];
     </div>
 
     <button class="app__btn">
-        <a href="add_product_to_cart.php?id=<?= $product['id'] ?>">
+        <a href="cart.php?id=<?= $product['id'] ?>">
             Add To Cart
         </a>
 
