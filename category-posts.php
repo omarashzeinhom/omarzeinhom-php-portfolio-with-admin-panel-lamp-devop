@@ -35,11 +35,18 @@ $category_title = $category['title'];
     <div class="app__card" id="appCardId">
         <!-- Card Header Start --->
         <div class="app__card-header">
-            <h2><?= $category_post['title']; ?></h2>
+
+            <h2>
+                <a href="<?= HOME_URL ?>single-post.php?id=<?= $category_post['id'] ?>">
+                    <?= $category_post['title']; ?>
+                </a>
+            </h2>
         </div>
         <!-- Card Header End--->
-        <img src="<?= HOME_URL . 'images/' . $category_post['thumbnail'] ?>" class="app__card-img" alt="admin_post_thumbnail" loading="lazy" />
-
+        <a href="<?= HOME_URL ?>single-post.php?id=<?= $category_post['id'] ?>">
+            <img src="<?= HOME_URL . 'images/' . $category_post['thumbnail'] ?>" class="app__card-img"
+                alt="admin_post_thumbnail" loading="lazy" />
+        </a>
         <!-- Card Footer Start --->
         <div class="app__card-footer">
             <button class="btn__sm">
@@ -84,11 +91,11 @@ $category_title = $category['title'];
     <?php
     while ($category = mysqli_fetch_assoc($all_categories_result)) :
     ?>
-        <button class="btn__sm">
-            <a href="<?= HOME_URL ?>category-posts.php?id=<?= $category['id'] ?>">
-                <?= $category['title'] ?? null; ?>
-            </a>
-        </button>
+    <button class="btn__sm">
+        <a href="<?= HOME_URL ?>category-posts.php?id=<?= $category['id'] ?>">
+            <?= $category['title'] ?? null; ?>
+        </a>
+    </button>
     <?php endwhile; ?>
 </div>
 <!--- All Categories End --->
