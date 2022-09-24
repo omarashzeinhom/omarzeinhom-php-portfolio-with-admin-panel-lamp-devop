@@ -15,6 +15,7 @@ include('partials/seo/seo.php');
 
     <meta name="description" content="<?php echo $page__description; ?>" />
     <?php
+    $page__robots = "";
     if ($page__robots) {
         echo
         '<meta name="robots" content="' . $page__robots;
