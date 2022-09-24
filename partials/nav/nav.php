@@ -25,7 +25,7 @@ if (isset($_SESSION['user-id'])) {
         <!--Avatar Start -->
         <?php if (isset($_SESSION['user-id'])) : ?>
         <a href="<?= ADMIN_URL ?>" class="app__nav-link">
-            <img alt="<?= $avatar['firstname'] ?>" class="app__nav-avatar" loading="lazy"
+            <img alt="useravatar" class="app__nav-avatar" loading="lazy"
                 src="<?= HOME_URL . 'images/' . $avatar['avatar'] ?>" />
             <small><?= $avatar['firstname'] ?></small>
         </a>
@@ -39,9 +39,9 @@ if (isset($_SESSION['user-id'])) {
 
 
     </ul>
-    <a href="javascript:void(0);" class="app__nav-openBtn icon" onclick="openNav()">
+    <span href="javascript:void(0);" class="app__nav-openBtn icon" onclick="openNav()">
         ☰
-    </a>
+    </span>
 </nav>
 
 <script>

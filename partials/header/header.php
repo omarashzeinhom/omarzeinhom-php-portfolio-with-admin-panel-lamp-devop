@@ -5,6 +5,9 @@
 require('./config/database.php');
 //Seo VARS
 include('partials/seo/seo.php');
+
+
+
 ?>
 
 <head>
@@ -13,7 +16,11 @@ include('partials/seo/seo.php');
     <meta name="viewport" content="width=device-width ,initial-scale=1.0" />
     <!--- DYNAMIC SEO TAGS ---->
 
-    <meta name="description" content="<?php echo $page__description; ?>" />
+    <meta name="description" lang="en" content="<?php if (isset($page__title)) {
+                                                    echo "$page__title";
+                                                } else {
+                                                    echo "@OmarZeinhom2023";
+                                                }; ?>" />
     <?php
     $page__robots = "";
     if ($page__robots) {
