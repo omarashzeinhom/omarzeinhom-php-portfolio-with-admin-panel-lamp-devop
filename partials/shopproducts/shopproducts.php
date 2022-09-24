@@ -8,15 +8,13 @@ $products_result = mysqli_query($connect__db, $products_query);
         <!-- Card Start --->
         <div class="app__card" id="appCardId">
             <div class="app__card-header">
-                <div class="app__card-img-shadow">
-                    <a href="<?= ROOT_URL ?>single-product.php?id=<?= $product['id'] ?>">
-
-                    </a>
-                </div>
-                <h5 id="postsTitle"> <a href="<?= ROOT_URL ?>single-product.php?id=<?= $product['id'] ?>">
-                        <?= $product['name']; ?>
-                    </a>
+                <h3> <?= $product['name']; ?>
+                </h3>
+                <h4> <?= $product['price']; ?>
+                </h4>
+                <h5> <?= $product['retailprice']; ?>
                 </h5>
+
                 <!--- Posts Title  -->
                 <h6 class="" id="postsBody" maxlength="100">
                     <?= substr($product['description'], 0, 100)  . " ..."; ?>
@@ -25,8 +23,6 @@ $products_result = mysqli_query($connect__db, $products_query);
 
             <div class="app__card-footer">
                 <!-- Card Footer Start --->
-                <?= $product['price']; ?>
-                <?= $product['retailprice']; ?>
 
             </div><!-- Card Footer End--->
         </div><!-- Card End--->
