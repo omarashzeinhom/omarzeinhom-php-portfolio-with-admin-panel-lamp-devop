@@ -53,7 +53,8 @@ $categories = mysqli_query($connect__db, $queryc);
                 <!--- Posts Title  -->
                 <td class="app__td" id="postsBody"> <?= substr($single_product['description'], 0, 50)  . " ..."; ?></td>
                 <!--- Posts Body -->
-                <td class="app__td" id="postsThumbnail"> <img src="<?= ROOT_URL . 'images/' . $single_product['img'] ?>" style="padding-top: 0.4rem;border-radius: 15%; object-fit:cover; box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem gray;" class="app__thumbnail-avatar" width="50px" height="50px" alt="<?= $single_product['name']; ?>" />
+                <td class="app__td" id="postsThumbnail">
+                    <img src="<?= ROOT_URL . 'images/' . $single_product['img'] ?>" style="padding-top: 0.4rem;border-radius: 15%; object-fit:cover; box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem gray;" class="app__thumbnail-avatar" width="50px" height="50px" alt="<?= $single_product['name']; ?>" loading="lazy" />
                 </td>
                 <td class="app__td"><?= $single_product['price']; ?></td>
                 <td class="app__td"><?= $single_product['retailprice']; ?></td>
