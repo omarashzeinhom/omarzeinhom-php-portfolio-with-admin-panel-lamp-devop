@@ -19,9 +19,21 @@ $page__title = $product['name'];
     <img class="app__card-img" src="<?= 'images/' . $product['img']; ?>" alt="<?= $product['name']; ?>"
         loading="lazy" />
     <p style="font-size:medium;">
+        Description:
         <?= $product['description']; ?>
     </p>
+    <div class="app__card-footer">
+        <h2> <?= $product['retailprice'] . "$"; ?>
+        </h2>
+        <h3> Quantity Available :</h3>
+        <select>
+            <option> <?= $product['quantity']; ?>
+            </option>
+        </select>
 
+    </div>
+
+    <button class="app__btn"> Add to Cart </button>
 
 </div>
 

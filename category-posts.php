@@ -5,7 +5,7 @@ include('./partials/nav/nav.php');
 
 if (isset($_GET['id'])) {
     $id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
-    $query = "SELECT * FROM posts WHERE category_id=$id ";
+    $query = "SELECT * FROM posts WHERE category_id=$id";
     $result = mysqli_query($connect__db, $query);
     $posts = mysqli_fetch_assoc($result);
 } else {
@@ -40,7 +40,8 @@ $category_id = $category['id'];
                         alt="admin_post_thumbnail" loading="lazy" />
                 </a>
             </div>
-            <h5 id="postsTitle"> <a href="<?= HOME_URL ?>single-post.php?id=<?= $post['id'] ?>">
+            <h5 id="postsTitle">
+                <a href="<?= HOME_URL ?>single-post.php?id=<?= $post['id'] ?>">
                     <?= $post['title']; ?>
                 </a>
             </h5>
@@ -74,10 +75,7 @@ $category_id = $category['id'];
             </div>
         </div><!-- Card Footer End--->
     </div><!-- Card End--->
-</div>
-</div>
-<!-- Btn Wrap  End--->
-</div> <!-- Column End--->
+</div><!-- Column End--->
 <?php endwhile; ?>
 
 

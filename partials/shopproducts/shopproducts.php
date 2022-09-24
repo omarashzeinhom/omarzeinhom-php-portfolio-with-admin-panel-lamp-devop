@@ -15,7 +15,9 @@ $products_result = mysqli_query($connect__db, $products_query);
                 </a>
             </div>
 
-            <h3> <?= $product['name']; ?>
+            <h3> <a href="<?= HOME_URL ?>single-product.php?id=<?= $product['id'] ?>">
+                    <?= $product['name']; ?>
+                </a>
             </h3>
             <!--- Posts Title  -->
             <h6 class="" id="postsBody" maxlength="100">
