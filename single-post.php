@@ -31,7 +31,8 @@ $page__title = $post['title'];
             <h5>
                 By: <?= "{$author['firstname']} {$author['lastname']}"; ?>
             </h5>
-            <img src="./images/<?= $author['avatar'] ?>" class="app__nav-avatar" alt="<?= $author['avatar'] ?>" />
+            <img src="./images/<?= $author['avatar'] ?>" class="app__nav-avatar" alt="<?= $author['avatar'] ?>"
+                loading="lazy" />
         </strong>
         <small>
             <em>
