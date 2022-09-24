@@ -40,11 +40,9 @@ if (!isset($_SESSION['user-id'])) {
         <?php endif; ?>
         <!-- Admin User Options End -->
 
-    <li class='app__sidenav-item'><a href="http://localhost/portfolio/home.php" class="app__sidenav-itemLink">↩️
-        </a>
-    </li>
-    <!--RESTRICT SIGN IN IF LOGGGED IN SESSION Start -->
-    <?php if (isset($_SESSION['user-id'])) : ?>
+
+        <!--RESTRICT SIGN IN IF LOGGGED IN SESSION Start -->
+        <?php if (isset($_SESSION['user-id'])) : ?>
     <li class='app__sidenav-item'>
         <a href="<?= ROOT_URL ?>logout.php" class="app__sidenav-itemLink"><small>
                 <i> Logout</i>
