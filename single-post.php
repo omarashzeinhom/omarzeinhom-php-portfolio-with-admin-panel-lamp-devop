@@ -16,8 +16,7 @@ $page__title = $post['title'];
 ?>
 <div class="app__card-lg">
     <h1><?php echo $page__title; ?></h1>
-    <img src="<?= HOME_URL . 'images/' . $post['thumbnail'] ?>" class="app__card-img" alt="<?= $post['title']; ?>"
-        loading="lazy" />
+    <img src="<?= HOME_URL . 'images/' . $post['thumbnail'] ?>" class="app__card-img" alt="<?= $post['title']; ?>" loading="lazy" />
     <div class="app__card-author">
         <?php
         //FETCH THE AUTHOR FROM USERS TABLE USING AUTHOR_ID
@@ -31,8 +30,7 @@ $page__title = $post['title'];
             <h5>
                 By: <?= "{$author['firstname']} {$author['lastname']}"; ?>
             </h5>
-            <img src="./images/<?= $author['avatar'] ?>" class="app__nav-avatar" alt="<?= $author['avatar'] ?>"
-                loading="lazy" />
+            <img src="./images/<?= $author['avatar'] ?>" class="app__nav-avatar" alt="<?= $author['avatar'] ?>" loading="lazy" />
         </strong>
         <small>
             <em>
@@ -63,12 +61,12 @@ $page__title = $post['title'];
 
     while ($category = mysqli_fetch_assoc($all_categories_result)) :
     ?>
-    <button class="btn__sm">
-        <a href="<?= HOME_URL ?>category-posts.php?id=<?= $category['id'] ?>">
-            <?= $category['title'] ?? null; ?>
-        </a>
+        <button class="btn__sm">
+            <a href="<?= HOME_URL ?>category-posts.php?id=<?= $category['id'] ?>">
+                <?= $category['title'] ?? null; ?>
+            </a>
 
-    </button>
+        </button>
     <?php endwhile; ?>
 </div>
 <!--- All Categories End --->
