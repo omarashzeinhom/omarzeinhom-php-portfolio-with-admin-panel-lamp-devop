@@ -14,31 +14,57 @@ if (isset($_GET['id'])) {
 }
 $page__title = $product['name'];
 ?>
+
 <div class="app__card-lg">
     <h1><?php echo $page__title; ?></h1>
-    <img class="app__card-img" src="<?= 'images/' . $product['img']; ?>" alt="<?= $product['name']; ?>"
-        loading="lazy" />
+
+
+
+    <img class="app__card-img" src="<?= 'images/' . $product['img']; ?>" alt="<?= $product['name']; ?>" loading="lazy" />
     <p style="font-size:medium;">
         Description:
         <?= $product['description']; ?>
     </p>
+
+
+
     <div class="app__card-footer">
-        <h2> <?= $product['retailprice'] . "$"; ?>
+
+        <h2>
+            <?php if ($product['retailprice'] > 0) : ?>
+                <?= $product['retailprice'] . "$"; ?>
+            <?php endif; ?>
+
         </h2>
-        <h3> Quantity Available :</h3>
-        <select>
-            <option> <?= $product['quantity']; ?>
-            </option>
-        </select>
+
+        <!--Add Product to Cart -->
+        <form action="cart.php" method="POST">
+            <!--Add Quantity to Cart -->
+
+
+            <!--Add Product to Cart -->
+            <input name="id" value="<?= $product['id']; ?>" type="hidden" />
+            <!--Add Quantity of Product to Cart -->
+            <label> Quantity Available :</label>
+            <input name="quantity" value="1" min="1" max="<?= $product['quantity']; ?>" type="number" placeholder="Quantity" />
+
+            <button class="app__btn">
+                <a href="cart.php?id=<?= $product['id'] ?>">
+                    Add To Cart
+                </a>
+
+            </button>
+
+            <!---
+                        <input name="submit_singleproduct" type="submit" value="Add to Cart">
+
+            ---->
+
+        </form>
+
 
     </div>
 
-    <button class="app__btn">
-        <a href="cart.php?id=<?= $product['id'] ?>">
-            Add To Cart
-        </a>
-
-    </button>
 
 </div>
 

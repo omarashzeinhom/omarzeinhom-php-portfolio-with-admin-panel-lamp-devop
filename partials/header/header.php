@@ -15,7 +15,6 @@ include('partials/seo/seo.php');
     <link rel='stylesheet' href='global/styles/css/main.css'>
     <meta name="viewport" content="width=device-width ,initial-scale=1.0" />
     <!--- DYNAMIC SEO TAGS ---->
-
     <meta name="description" lang="en" content="<?php if (isset($page__title)) {
                                                     echo "$page__title";
                                                 } else {

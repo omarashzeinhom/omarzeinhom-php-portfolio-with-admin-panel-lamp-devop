@@ -61,10 +61,10 @@ if (isset($_GET['id'])) {
                     loading="lazy" />
             </td>
             <td class="app__td"><?= $single_product['retailprice']; ?></td>
-            <td class="app__td"><select>
-                    <option value="1" min="1" max="<?= $single_product['quantity']; ?>">
-                        <?= $single_product['quantity']; ?></option>
-                </select></td>
+            <td class="app__td">
+                <input name="quantity" value="1" min="1" max="<?= $single_product['quantity']; ?>" type="number"
+                    placeholder="Quantity" />
+            </td>
 
             <td class="app__td"><a href="delete_cart.php?id=<?= $single_product['id'] ?? null; ?>"
                     class="app__alert-btn-sm">Delete</a></td>
