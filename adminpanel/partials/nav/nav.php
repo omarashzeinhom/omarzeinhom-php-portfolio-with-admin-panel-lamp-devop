@@ -18,32 +18,33 @@ if (!isset($_SESSION['user-id'])) {
 ?>
 
 <div class="app__sidenav-closed">
-    <li class='app__sidenav-item'><a href="<?= ADMIN_URL ?>dashboard.php" class="app__sidenav-itemLink"> 🏠</a></li>
 
+    <!-- Admin User Options Start -->
+    <li class='app__sidenav-item'><a href="<?= ADMIN_URL ?>dashboard.php" class="app__sidenav-itemLink"> 🏠</a></li>
     <li class='app__sidenav-item'><a href="<?= ADMIN_URL ?>manage_posts.php" class="app__sidenav-itemLink">📝</a>
     </li>
 
-    <!-- Admin User Options Start -->
-
     <?php
     if (isset($_SESSION['user_is_admin'])) : ?>
-    <li class='app__sidenav-item'><a href="<?= ADMIN_URL ?>manage_users.php" class="app__sidenav-itemLink">👥</a>
-
-    <li class='app__sidenav-item'><a href="<?= ADMIN_URL  ?>manage_categories.php" class="app__sidenav-itemLink">✨</a>
-    </li>
     <li class='app__sidenav-item'><a href="<?= ADMIN_URL  ?>manage_abouts.php" class="app__sidenav-itemLink"> 👤</a>
+    </li>
+    <li class='app__sidenav-item'><a href="<?= ADMIN_URL  ?>manage_categories.php" class="app__sidenav-itemLink">✨</a>
     </li>
     <li class='app__sidenav-item'><a href="<?= ADMIN_URL  ?>manage_downloads.php" class="app__sidenav-itemLink">📥</a>
     </li>
+    <li class='app__sidenav-item'><a href="<?= ADMIN_URL  ?>manage_products.php" class="app__sidenav-itemLink">🛍️</a>
+    </li>
+    <li class='app__sidenav-item'><a href="<?= ADMIN_URL ?>manage_users.php" class="app__sidenav-itemLink">👥</a>
+        <?php endif; ?>
+        <!-- Admin User Options End -->
 
-    <?php endif; ?>
-    <!-- Admin User Options End -->
 
 
 
 
-    <!--RESTRICT SIGN IN IF LOGGGED IN SESSION Start -->
-    <?php if (isset($_SESSION['user-id'])) : ?>
+
+        <!--RESTRICT SIGN IN IF LOGGGED IN SESSION Start -->
+        <?php if (isset($_SESSION['user-id'])) : ?>
     <li class='app__sidenav-item'>
         <a href="<?= ROOT_URL ?>logout.php" class="app__sidenav-itemLink"><small>
                 <i> Logout</i>
