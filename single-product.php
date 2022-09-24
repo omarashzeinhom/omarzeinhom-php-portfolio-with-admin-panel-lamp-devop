@@ -33,7 +33,12 @@ $page__title = $product['name'];
 
     </div>
 
-    <button class="app__btn"> Add to Cart </button>
+    <button class="app__btn">
+        <a href="add_product_to_cart.php?id=<?= $product['id'] ?>">
+            Add To Cart
+        </a>
+
+    </button>
 
 </div>
 
