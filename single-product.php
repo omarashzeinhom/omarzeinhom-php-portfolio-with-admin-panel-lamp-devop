@@ -9,14 +9,15 @@ if (isset($_GET['id'])) {
     $result = mysqli_query($connect__db, $query);
     $product = mysqli_fetch_assoc($result);
 } else {
-    //header('location:' . HOME_URL . 'home.php');
+    header('location:' . HOME_URL . 'shop.php');
     die();
 }
 $page__title = $product['name'];
 ?>
 <div class="app__card-lg">
     <h1><?php echo $page__title; ?></h1>
-    <img class="app__card-img" src="<?= 'images/' . $product['img']; ?>" alt="<?= $product['name']; ?>" loading="lazy" />
+    <img class="app__card-img" src="<?= 'images/' . $product['img']; ?>" alt="<?= $product['name']; ?>"
+        loading="lazy" />
     <p style="font-size:medium;">
         Description:
         <?= $product['description']; ?>

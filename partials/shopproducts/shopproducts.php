@@ -1,6 +1,7 @@
 <?php
-$products_query = "SELECT * FROM products";
+$products_query = "SELECT * FROM products ORDER BY date_added DESC LIMIT 4";
 $products_result = mysqli_query($connect__db, $products_query);
+
 ?>
 
 <?php while ($product = mysqli_fetch_assoc($products_result)) : ?>
@@ -34,12 +35,7 @@ $products_result = mysqli_query($connect__db, $products_query);
             <h5> <?= $product['retailprice']; ?>
             </h5>
 
-            <button class="app__btn">
-                <a href="cart.php?id=<?= $product['id'] ?>">
-                    Add To Cart
-                </a>
 
-            </button>
         </div><!-- Card Footer End--->
 
 
