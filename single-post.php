@@ -71,3 +71,7 @@ $page__title = $post['title'];
     <?php endwhile; ?>
 </div>
 <!--- All Categories End --->
+
+<?php
+include('./partials/footer/footer.php');
+?>

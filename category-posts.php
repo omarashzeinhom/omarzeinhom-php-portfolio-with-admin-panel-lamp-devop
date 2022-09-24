@@ -5,7 +5,7 @@ include('./partials/nav/nav.php');
 
 if (isset($_GET['id'])) {
     $id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
-    $query = "SELECT * FROM posts WHERE category_id=$id ORDER BY date_time DESC";
+    $query = "SELECT * FROM posts WHERE category_id=$id ";
     $result = mysqli_query($connect__db, $query);
     $posts = mysqli_fetch_assoc($result);
 } else {
@@ -97,3 +97,6 @@ $category_title = $category['title'];
     <?php endwhile; ?>
 </div>
 <!--- All Categories End --->
+<?php
+include('./partials/footer/footer.php');
+?>

@@ -23,12 +23,12 @@ $categories = mysqli_query($connect__db, $queryc);
 <br />
 <!-- Add Post Alert success Start -->
 <?php if (isset($SESSION_['add-post-success'])) : ?>
-<div class="app__alert-success">
-    <p class="app__alert-success-p">
-        <?= $_SESSION['add-post-success'];
+    <div class="app__alert-success">
+        <p class="app__alert-success-p">
+            <?= $_SESSION['add-post-success'];
             unset($_SESSION['add-post-success']); ?>
-    </p>
-</div>
+        </p>
+    </div>
 <?php endif; ?>
 <!-- Add Post Alert success End  -->
 
@@ -47,24 +47,20 @@ $categories = mysqli_query($connect__db, $queryc);
     </thead>
     <tbody class="app__tbody">
         <?php while ($single_product = mysqli_fetch_assoc($products)) : ?>
-        <!---LOOP THROUGH AND DISPLAY POSTS -->
-        <tr clas="app__tr">
-            <td class="app__td" id="postsTitle"><?= $single_product['name']; ?></td>
-            <!--- Posts Title  -->
-            <td class="app__td" id="postsBody"> <?= substr($single_product['description'], 0, 50)  . " ..."; ?></td>
-            <!--- Posts Body -->
-            <td class="app__td" id="postsThumbnail"> <img src="<?= ROOT_URL . 'images/' . $single_product['img'] ?>"
-                    style="padding-top: 0.4rem;border-radius: 15%; object-fit:cover; box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem gray;"
-                    class="app__thumbnail-avatar" width="50px" height="50px" alt="<?= $single_product['name']; ?>" />
-            </td>
-            <td class="app__td"><?= $single_product['price']; ?></td>
-            <td class="app__td"><?= $single_product['retailprice']; ?></td>
-            <td class="app__td"><?= $single_product['quantity']; ?></td>
-            <td class="app__td"><a href="<?= ADMIN_URL ?>edit_product.php?id=<?= $single_product['id'] ?? null; ?>"
-                    class="app__link-btn">Edit</a></td>
-            <td class="app__td"><a href="<?= ADMIN_URL ?>delete_product.php?id=<?= $single_product['id'] ?? null; ?>"
-                    class="app__alert-btn-sm">Delete</a></td>
-        </tr>
+            <!---LOOP THROUGH AND DISPLAY POSTS -->
+            <tr clas="app__tr">
+                <td class="app__td" id="postsTitle"><?= $single_product['name']; ?></td>
+                <!--- Posts Title  -->
+                <td class="app__td" id="postsBody"> <?= substr($single_product['description'], 0, 50)  . " ..."; ?></td>
+                <!--- Posts Body -->
+                <td class="app__td" id="postsThumbnail"> <img src="<?= ROOT_URL . 'images/' . $single_product['img'] ?>" style="padding-top: 0.4rem;border-radius: 15%; object-fit:cover; box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem gray;" class="app__thumbnail-avatar" width="50px" height="50px" alt="<?= $single_product['name']; ?>" />
+                </td>
+                <td class="app__td"><?= $single_product['price']; ?></td>
+                <td class="app__td"><?= $single_product['retailprice']; ?></td>
+                <td class="app__td"><?= $single_product['quantity']; ?></td>
+                <td class="app__td"><a href="<?= ADMIN_URL ?>edit_product.php?id=<?= $single_product['id'] ?? null; ?>" class="app__link-btn">Edit</a></td>
+                <td class="app__td"><a href="<?= ADMIN_URL ?>delete_product.php?id=<?= $single_product['id'] ?? null; ?>" class="app__alert-btn-sm">Delete</a></td>
+            </tr>
         <?php endwhile; ?>
     </tbody>
 </table>

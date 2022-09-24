@@ -1,15 +1,12 @@
 <?php
-$page__title = 'About👤';
+$page__title = 'Courses📖';
 include('./partials/header/header.php');
 include('./partials/nav/nav.php');
 ?>
 
-<h1><?php echo "$page__title" ?> </h1>
 
-<?php
+<h1><?php echo "$page__title" ?></h1>
 
-include('./partials/aboutcards/aboutscards.php');
-?>
 
 
 <?php

@@ -1,5 +1,5 @@
 <?php
-$page__title = 'Shop';
+$page__title = 'Shop🛒';
 include('./partials/header/header.php');
 include('./partials/nav/nav.php');
 ?>
