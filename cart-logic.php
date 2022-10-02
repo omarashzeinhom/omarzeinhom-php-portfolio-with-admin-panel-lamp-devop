@@ -38,7 +38,7 @@ if (isset($_POST['add__cart'])) {
 
         foreach ($_POST as $t => $v) {
             if (strpos($t, '.&quantity-') !== false && is_numeric($v)) {
-                $id= str_replace('.&quantity-', '', $t);
+                $id = str_replace('.&quantity-', '', $t);
                 $product_quantity = (int)$v;
                 //CHECKS AND VALIDATION 
                 if (is_numeric(($id) && isset($_SESSION['cart'][$id]) && $product_quantity > 0)) {
@@ -49,18 +49,16 @@ if (isset($_POST['add__cart'])) {
         };
         header('location: cart.php');
         die();
-    
     };
 
     if (isset($_POST['placeorder']) && isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
         header('location:'  . 'placeorder.php');
         die();
     };
-    
-    
-   
+
+
+
     var_dump($product_id, $product_quantity);
 
-    var_dump('ID is:'. $product['id'], 'Product name is' . $product['name'], 'Product Quantity is' . $product_quantity);
-
+    var_dump('ID is:' . $product['id'], 'Product name is' . $product['name'], 'Product Quantity is' . $product_quantity);
 };
