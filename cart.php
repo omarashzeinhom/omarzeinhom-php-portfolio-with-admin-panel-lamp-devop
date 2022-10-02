@@ -17,10 +17,11 @@ include('./partials/nav/nav.php');
 <?php
 
 
-//ADD PROUDCT TO CART 
+// TODO ADD PROUDCT TO CART 
 
 if (isset($_POST['submit__add__product__to__cart'])) {
     $product_id = filter_var($_POST['id'], FILTER_SANITIZE_NUMBER_INT);
+    var_dump($product_id);
     $product_quantity = filter_var($_POST['quantity'], FILTER_SANITIZE_NUMBER_INT);
     $product_query = "SELECT* FROM products WHERE id=$product_id";
     $product_result = mysqli_query($connect__db, $product_query);
@@ -38,7 +39,7 @@ if (isset($_POST['submit__add__product__to__cart'])) {
     };
 
 
-    //REMOVE PROUDCT TO CART 
+    //REMOVE PROUDCT FROM CART 
 
     if (isset($_GET['remove__product__from__cart'])) {
         unset($_SESSION['cart'][$_GET['remove__product__from__cart']]);
@@ -81,10 +82,10 @@ if (isset($_POST['submit__add__product__to__cart'])) {
             $subtotal += (float)$product_cart_final['price'] * (int)$products_in_cart_final[$product_cart_final['id']];
         };
     };
-
-    //var_dump($product_id, $product_quantity,);
+    echo $product ;
+    var_dump($product_id, $product_quantity,);
     header('location:' . 'cart.php');
-    die();
+
     exit();
 };
 
@@ -106,8 +107,7 @@ $subtotal = 0.00;
 
 
 
-<form action="./cart.php" method="POST">
-
+<form action="cart.php" method="POST">
     <table class="app__table" style="overflow: x-auto; margin: auto; max-width: 1700px; width:100%; height:100%;">
         <thead class="app__thead">
             <tr clas="app__tr">
@@ -120,11 +120,8 @@ $subtotal = 0.00;
             </tr>
         </thead>
         <tbody class="app__tbody">
-            <?php if (empty($products)) : ?>
-            <tr>
-                <td colspan="5" style="text-align:center;">You have no products added in your Shopping Cart</td>
-            </tr>
-            <?php else : ?>
+            <?php if (!empty($products)) : ?>
+    
             <?php foreach ($products as $single_product) : ?>
             <!---LOOP THROUGH AND DISPLAY POSTS -->
             <tr clas="app__tr">
@@ -150,6 +147,15 @@ $subtotal = 0.00;
                 <td class="app__td"><button type="submit" name="remove__product__from__cart"></button></td>
             </tr>
             <?php endforeach; ?>
+
+            <?php elseif(empty($products)) : ?>
+                <tr>
+                <td colspan="5" style="text-align:center;">You have no products added in your Shopping Cart</td>
+            </tr>
+
+
+
+
             <?php endif; ?>
         </tbody>
     </table>

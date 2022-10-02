@@ -10,7 +10,7 @@ if (isset($_SESSION['user-id'])) {
 ?>
 
 <nav class='app__nav' id="app__main-nav">
-    <a href="<?= HOME_URL ?>" class="app__nav-openBtn icon" style="float: left; padding-top: 3rem;">
+    <a href="<?= HOME_URL ?>" class="app__nav-openBtn icon" style="float: left; padding-top: 3rem; cursor: pointer;">
         🏠
     </a>
     <ul class='app__nav-items'>
@@ -38,7 +38,7 @@ if (isset($_SESSION['user-id'])) {
 
 
     </ul>
-    <span href="javascript:void(0);" class="app__nav-openBtn icon" onclick="openNav()">
+    <span href="javascript:void(0);" class="app__nav-openBtn icon" onclick="openNav()"  style="cursor: pointer;">
         ☰
     </span>
 </nav>

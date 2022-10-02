@@ -2,6 +2,7 @@
 $products_query = "SELECT * FROM products ORDER BY date_added DESC LIMIT 4";
 $products_result = mysqli_query($connect__db, $products_query);
 
+
 ?>
 
 <?php while ($product = mysqli_fetch_assoc($products_result)) : ?>
@@ -28,14 +29,8 @@ $products_result = mysqli_query($connect__db, $products_query);
 
         <div class="app__card-footer">
             <!-- Card Footer Start --->
-
-
-            <h4> <?= $product['price']; ?>
-            </h4>
-            <h5> <?= $product['retailprice']; ?>
-            </h5>
-
-
+            <h4> <?= $product['price']; ?></h4>
+            <h5> <?= $product['retailprice']; ?></h5>
         </div><!-- Card Footer End--->
 
 

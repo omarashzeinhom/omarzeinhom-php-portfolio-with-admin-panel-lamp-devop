@@ -16,6 +16,16 @@
 7. [(Loncan,T 2013) - PHP SEO: Page-Level Titles, Meta Descriptions & More](https://www.bounteous.com/insights/2013/02/19/php-seo-page-level-titles-meta-descriptions-more/)
 8. [W3Schools-Fixed-Footer](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_fixed_footer)
 9. [pakainfo - php limit string to 50 characters – 3 Ways to display first 50 characters from text filed](https://www.pakainfo.com/php-limit-string-to-50-characters/)
+10. [Fabian Ros - E-commerce Site In PHP With Source Code](https://code-projects.org/e-commerce-site-in-php-with-source-code/)
+11. []()
+12. []()
+13. []()
+14. []()
+15. []()
+16. []()
+17. []()
+18. []()
+19. []()
 
 ### gists 
 
