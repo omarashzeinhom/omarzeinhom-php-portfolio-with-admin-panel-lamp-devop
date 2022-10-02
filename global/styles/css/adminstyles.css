@@ -6,7 +6,7 @@
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   background-color: black;
   box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem var(--color-primary);
 }
@@ -33,7 +33,6 @@
   font-size: 1.7rem;
   color: var(--color-pictonblue);
 }
-
 @media screen and (max-width: 900px) {
   .app__sidenav-openBtn {
     position: absolute;
@@ -70,7 +69,6 @@
   padding-top: 1.5rem;
   transition: 0.4s ease-in-out;
 }
-
 @media screen and (max-width: 720px) {
   .app__sidenav {
     height: 100%;
@@ -223,7 +221,6 @@
   max-width: 100vw;
   max-height: 100vh;
 }
-
 @media screen and (max-width: 900px) {
   .app__table {
     font-size: 0.8rem;
@@ -240,7 +237,6 @@
   font-size: 1rem;
   color: var(--color-primary);
 }
-
 @media screen and (max-width: 900px) {
   .app_th {
     font-size: 0.9rem;
@@ -256,7 +252,6 @@
 .app__td {
   font-size: 1.3rem;
 }
-
 @media screen and (max-width: 900px) {
   .app__td {
     font-size: 0.8rem;
@@ -290,7 +285,6 @@
 .app__alert-p {
   font-size: 2rem;
 }
-
 @media screen and (max-width: 900px) {
   .app__alert-p {
     font-size: 1.4rem;
@@ -392,7 +386,6 @@
   padding: 0.7rem;
   border-radius: 0.8rem;
 }
-
 .app__input:hover {
   color: var(--color-white);
   background-color: var(--color-blackpearl);
@@ -406,7 +399,7 @@
   padding-top: 0.4rem;
   border-radius: 15%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem gray;
 }
 
@@ -444,13 +437,11 @@
   /* gray start */
   --color-medium-gray: #7d8184;
   --color-dark-gray: #5e6164;
-  --color-darkest-gray: #111111;
-  /* very dark shade of gray.*/
+  --color-darkest-gray: #111111; /* very dark shade of gray.*/
   --color-light-gray: #a9a9a9;
   --color-lightest-gray: #d3d3d3;
   /* gray end */
-  --color-dark-pearl: #00070e;
-  /**/
+  --color-dark-pearl: #00070e; /**/
   --color-dark-navyblue: #00162a;
   --color-white: #ffffff;
   /*Red*/

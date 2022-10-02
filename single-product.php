@@ -13,7 +13,9 @@ if (isset($_GET['id'])) {
     header('location:' . HOME_URL . 'shop.php');
     die();
 }
+
 $page__title = $product['name'];
+
 ?>
 
 <div class="app__card-lg">
@@ -31,19 +33,18 @@ $page__title = $product['name'];
             <?php endif; ?>
         </h2>
         <!--Add Product to Cart -->
-        <form action="cart.php" method="POST">
+        <form action="./cart-logic.php" method="POST">
             <!--Add Quantity to Cart -->
             <!--Add Product ID to Cart -->
             <input name="id" value="<?= $product['id']; ?>" type="hidden" />
             <!--Add Quantity of Product to Cart -->
             <label> Quantity Available :</label>
-            <?php $q="1" || $q="2" ?>
-            <input name="quantity" value="<?php echo $q;?>" min="1" max="<?= $product['quantity']; ?>" type="number"
+            <input type="number" name="quantity" min="1" maxlength="10" max="<?= $product['quantity']; ?>" 
                 placeholder="Quantity" />
-            <button class="app__btn" name="submit__add__product__to__cart" >
-                <a href="<?= HOME_URL?>cart.php?id=<?= $product['id']?>?q=<?php echo $q;?>">
+                <small>Units Available:<em><?= $product['quantity']; ?></em></small>
+            <button class="btn__sm" name="add__cart" >
+                <a href="<?= HOME_URL?>cart.php?id=<?= $product['id'];?>">
                 Add New Product to Cart
-            <?php $_SESSION['cart']?>
                 </a>
             </button>
         </form>

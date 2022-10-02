@@ -5,20 +5,25 @@
 
 :root {
   /**primary**/
-  --color-primary: #3798f8; /*cornflower*/
-  --color-primary-dark: #002950; /*cornflower*/
+  --color-primary: #3798f8;
+  /*cornflower*/
+  --color-primary-dark: #002950;
+  /*cornflower*/
   --color-secondary: #553d62;
-  --color-dark-charchoal: #2b4353; /*faux charchoal*/
+  --color-dark-charchoal: #2b4353;
+  /*faux charchoal*/
   /*black*/
   --color-black: black;
   /* gray start */
   --color-medium-gray: #7d8184;
   --color-dark-gray: #5e6164;
-  --color-darkest-gray: #111111; /* very dark shade of gray.*/
+  --color-darkest-gray: #111111;
+  /* very dark shade of gray.*/
   --color-light-gray: #a9a9a9;
   --color-lightest-gray: #d3d3d3;
   /* gray end */
-  --color-dark-pearl: #00070e; /**/
+  --color-dark-pearl: #00070e;
+  /**/
   --color-dark-navyblue: #00162a;
   --color-white: #ffffff;
 
@@ -31,22 +36,16 @@
   --transition-fast: all 0.3s ease-in-out;
 
   /**backgrounds**/
-  --background-light: linear-gradient(
-    to left var(--color-lightest-gray),
-    var(--color-white)
-  );
-  --background-dark: linear-gradient(
-    to left var(--color-dark-pearl),
-    var(--color-white)
-  );
+  --background-light: linear-gradient(to left var(--color-lightest-gray),
+      var(--color-white));
+  --background-dark: linear-gradient(to left var(--color-dark-pearl),
+      var(--color-white));
 }
 
 /* ---- Base Rules ---- */
 html {
-  background: linear-gradient(
-    var(--color-dark-pearl),
-    var(--color-dark-navyblue)
-  );
+  background: linear-gradient(var(--color-dark-pearl),
+      var(--color-dark-navyblue));
 
   background-repeat: repeat;
   width: 100%;
@@ -66,11 +65,11 @@ body {
 
 
 .section__center {
-  overflow: x-auto; 
-  margin: auto; 
-  max-width: 1700px; 
-  width:100%; 
-  height:100%; 
+  overflow: x-auto;
+  margin: auto;
+  max-width: 1700px;
+  width: 100%;
+  height: 100%;
 }
 
 
@@ -85,21 +84,22 @@ h6 {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-p{
+p {
   font-family: "Courier New", Courier, monospace;
 }
+
 /* ---- Layout Rules ---- */
 //main, section for examples
 
 /* ---- Module Rules ---- */
-a{
+a {
   text-decoration: none;
   color: #3798f8;
   transition: .3s all ease-in-out;
 }
 
 
-a:hover{
+a:hover {
   color: white;
 }
 
@@ -139,6 +139,24 @@ a:hover{
   color: var(--color-lightest-gray);
 }
 
+.btn__sm-error {
+  border-radius: 0.4rem;
+  padding: 0.7rem 1rem 0.7rem 1rem;
+  width: 100%;
+  max-width: 7rem;
+  max-height: 4rem;
+  min-height: 2rem;
+  min-width: 2rem;
+  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem var(--color-primary);
+  background: var(--color-red);
+  transition: var(--transition-fast);
+  color: var(--color-lightest-gray);
+}
+
+.btn__sm-error:hover {
+  background: var(--color-dark-navyblue);
+  color: var(--color-lightest-gray);
+}
 
 //app__alert-error
 
@@ -151,6 +169,7 @@ a:hover{
 
 .app__alert-p {
   font-size: 2rem;
+
   @media screen and (max-width: 900px) {
     font-size: 1.4rem;
   }
@@ -183,4 +202,3 @@ a:hover{
   border-radius: 0.7rem;
   overflow: hidden;
 }
-
