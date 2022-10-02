@@ -4,6 +4,7 @@ $page__title = 'Add to Cart 🛒';
 include('./partials/header/header.php');
 include('./partials/nav/nav.php');
 $product_id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
+$product_name = filter_var($_GET['id'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
 
 // TODO ADD PROUDCT TO CART 
@@ -18,7 +19,6 @@ $products = $product_result;
 
 //CHECK SESSIONS VARIABLE FOR PRODUCTS IN CART
 $products_in_cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
-$products = array(); // 
 $subtotal = 0.00;
 if ($products_in_cart) {
     //THERE ARE NO PRODUCTS IN CART ADD THEM
@@ -75,7 +75,7 @@ if (isset($_SESSION['cart'])) : ?>
 
                     <?php foreach ($products as $product) :
 
-                        var_dump($product['name']);
+                        var_dump($product['name'] ?? null );
 
                     ?>
 
@@ -87,17 +87,16 @@ if (isset($_SESSION['cart'])) : ?>
                             <td class="app__td" id="postsBody"> <?= substr($product['description'], 0, 50)  . " ..."; ?></td>
                             <!--- Products Image -->
                             <td class="app__td" id="postsThumbnail">
-                                <img src="<?= 'images/' . $product['img'] ?>" style="padding-top: 0.4rem;border-radius: 15%; object-fit:cover; box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem gray;" class="app__thumbnail-avatar" width="50px" height="50px" alt="<?= $single_product['name']; ?>" loading="lazy" />
+                                <img src="<?= 'images/' . $product['img'] ?? null ?>" style="padding-top: 0.4rem;border-radius: 15%; object-fit:cover; box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem gray;" class="app__thumbnail-avatar" width="50px" height="50px" alt="<?= $single_product['name']; ?>" loading="lazy" />
                             </td>
                             <!--- Products Retail Price -->
-                            <td class="app__td"><?= $product['price'] * (int)$products_in_cart[$product['id']] . "$"; ?></td>
+                            <td class="app__td"><?= $product['price'] ?? null * (int)$products_in_cart[$product['id']] . "$"; ?></td>
                             <!--- Products Quantity -->
                             <td class="app__td">
-                                <input type="number" name="quantity" min="1" max="<?= $product['quantity']; ?>" placeholder="Quantity" />
+                                <input type="number" name=".&quantity-<?=$product['id']  ?? null ?> " min="1" max="<?= $product['quantity']; ?>" placeholder="Quantity" />
                             </td>
 
-                            <td class="app__td"><button class="btn__sm-error" type="submit" name="delete__cart">Delete From Cart<?php
-                                                                                                                                var_dump($product['id']) ?></button></td>
+                            <td class="app__td"><button class="btn__sm-error" type="submit" name="delete__cart">Delete From Cart</button></td>
                         </tr>
                     <?php endforeach; ?>
 
