@@ -43,7 +43,7 @@ $page__title = $product['name'];
                 placeholder="Quantity" />
                 <small>Units Available:<em><?= $product['quantity']; ?></em></small>
             <button class="btn__sm" name="add__cart" >
-                <a href="<?= HOME_URL?>cart.php?id=<?= $product['id'];?>">
+                <a href="<?= HOME_URL?>cart.php?id=<?= $product['id'];?>.&quantity-<?=$product['quantity'] ;?>">
                 Add New Product to Cart
                 </a>
             </button>
