@@ -1,4 +1,5 @@
 <?php
+
 //$current_user_id = $_SESSION['user-id'];
 $posts_query = "SELECT * FROM posts WHERE is_featured=1";
 $posts_result =  mysqli_query($connect__db, $posts_query);
@@ -9,7 +10,7 @@ $posts_result =  mysqli_query($connect__db, $posts_query);
 <?php while ($single_post = mysqli_fetch_assoc($posts_result)) : ?>
 <div class="app__col">
     <!-- Card Start --->
-    <div class="app__card" id="appCardId">
+    <div class="app__card app__js-scroll app__js-scrollelm fade-in" id="appCardId">
         <!-- Card Header Start --->
         <div class="app__card-header">
             <!--- Posts Image Shadow Start   -->
@@ -80,5 +81,11 @@ $posts_result =  mysqli_query($connect__db, $posts_query);
     </div><!-- Card End--->
 </div> <!-- Column End--->
 
+
+
 <?php endwhile; ?>
 <?php endif; ?>
+
+
+<script src="global/js/scrollAnimations.js">
+    </script>

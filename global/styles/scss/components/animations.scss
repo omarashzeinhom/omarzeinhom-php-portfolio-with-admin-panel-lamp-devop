@@ -1,0 +1,24 @@
+// BASED ON https://webdesign.tutsplus.com/tutorials/animate-on-scroll-with-javascript--cms-36671
+
+.app__js-scroll{
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.app__js-scrollelm ,
+.app__js-scrollcaption{
+    width: 50%;
+}
+
+.app__js-scrollelm{
+    min-height: 20rem;
+    height: 100%;
+}
+
+.app__js-scroll.scrolled{
+    opacity: 1;
+}
+
+.scrolled.fade-in{
+    animation: fade-in 1s ease-in-out both;
+}

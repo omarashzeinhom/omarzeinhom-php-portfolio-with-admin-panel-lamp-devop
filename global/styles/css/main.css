@@ -327,6 +327,30 @@
   width: 100%;
 }
 
+.app__js-scroll {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.app__js-scrollelm,
+.app__js-scrollcaption {
+  width: 50%;
+}
+
+.app__js-scrollelm {
+  min-height: 20rem;
+  height: 100%;
+}
+
+.app__js-scroll.scrolled {
+  opacity: 1;
+}
+
+.scrolled.fade-in {
+  -webkit-animation: fade-in 1s ease-in-out both;
+          animation: fade-in 1s ease-in-out both;
+}
+
 /* Color Palette */
 :root {
   /**primary**/
