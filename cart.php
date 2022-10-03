@@ -3,36 +3,32 @@
 $page__title = 'Add to Cart 🛒';
 include('./partials/header/header.php');
 include('./partials/nav/nav.php');
-$product_id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
-$product_name = filter_var($_GET['id'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+if (isset($_GET['id'])) {
+    $product_id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
+    $product_name = filter_var($_GET['id'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $product_query = "SELECT * FROM products WHERE id=$product_id";
+    $product_result = mysqli_query($connect__db, $product_query);
+    $products = $product_result;
+    $products_array = mysqli_fetch_assoc($product_result);
+    //var_dump($products_array);
+}else {
+    echo "No Product Added";
+}
 
+$products_in_cart = array(
+    $products_id=$product_id ??null,
+    $products_name=$product_name ??null,
+
+);
+
+var_dump($products_in_cart);
 
 // TODO ADD PROUDCT TO CART 
 $subtotal = 0.00;
-var_dump($product_id);
 
 
-$product_query = "SELECT * FROM products WHERE id=$product_id";
-$product_result = mysqli_query($connect__db, $product_query);
-$products = $product_result;
 
 
-//CHECK SESSIONS VARIABLE FOR PRODUCTS IN CART
-$products_in_cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
-$subtotal = 0.00;
-if ($products_in_cart) {
-    //THERE ARE NO PRODUCTS IN CART ADD THEM
-    //PRDOUCT IN CART ARRAA TO QUESTION MARK STRING ARAAAY , SQL STATEMNET NEEDS TO ICNLUDE (?,?,?,...ETC);
-    $array_to_question_marks = implode(',', array_fill(0, count($products_in_cart), '?'));
-    $products_in_cart_query = "SELECT * FROM products WHERE id=$product_id";
-    
-    $products_in_cart_result = mysqli_query($connect__db, $products_in_cart_query);
-    $products = mysqli_fetch_all($products_in_cart_result);
-    foreach ($products as $product) {
-        var_dump($product);
-        $subtotal += $product['price'] * $products_in_cart[$product['id']];
-    };
-};
 
 ?>
 
@@ -73,11 +69,7 @@ if (isset($_SESSION['cart'])) : ?>
             <tbody class="app__tbody">
                 <?php if (!empty($products)) : ?>
 
-                    <?php foreach ($products as $product) :
-
-                        var_dump($product['name'] ?? null );
-
-                    ?>
+                    <?php foreach ($products as $product) : ?>
 
                         <!---LOOP THROUGH AND DISPLAY POSTS -->
                         <tr clas="app__tr">
@@ -90,17 +82,21 @@ if (isset($_SESSION['cart'])) : ?>
                                 <img src="<?= 'images/' . $product['img'] ?? null ?>" style="padding-top: 0.4rem;border-radius: 15%; object-fit:cover; box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem gray;" class="app__thumbnail-avatar" width="50px" height="50px" alt="<?= $single_product['name']; ?>" loading="lazy" />
                             </td>
                             <!--- Products Retail Price -->
-                            <td class="app__td"><?= $product['price'] ?? null * (int)$products_in_cart[$product['id']] . "$"; ?></td>
+                            <?php
+                            //TODO GET USER SELECTED QUANTITY DYNAMICALLY
+                            $user_selected_quantity = (int)$product['quantity']
+                            ;?>
+                            <td class="app__td"><?= $product['price']  * $user_selected_quantity . '$' ; ?></td>
                             <!--- Products Quantity -->
                             <td class="app__td">
-                                <input type="number" name=".&quantity-<?=$product['id']  ?? null ?> " min="1" max="<?= $product['quantity']; ?>" placeholder="Quantity" />
+                                <input type="number" name=".&quantity-<?= $product['id']  ?? null ?> " min="1" max="<?= $product['quantity']; ?>" placeholder="Quantity" />
                             </td>
 
                             <td class="app__td"><button class="btn__sm-error" type="submit" name="delete__cart">Delete From Cart</button></td>
                         </tr>
                     <?php endforeach; ?>
 
-                <?php elseif (empty($products)) : ?>
+                <?php else : ?>
                     <tr>
                         <td colspan="5" style="text-align:center;">You have no products added in your Shopping Cart</td>
                     </tr>

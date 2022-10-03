@@ -1,12 +1,11 @@
 <?php
 include('./partials/header/header.php');
 
-echo "test";
+
 
 // TODO ADD PROUDCT TO CART 
 
-if (isset($_POST['add__cart'])) {
-
+if (isset($_POST['add_cart'])) {
     $product_id = filter_var($_POST['id'], FILTER_SANITIZE_NUMBER_INT);
     //debug
     var_dump($product_id);
@@ -45,10 +44,29 @@ if (isset($_POST['add__cart'])) {
                     //UPDATE THE NEW QUANTITY
                     $_SESSION['cart'][$id] = $product_quantity;
                 };
+
             };
         };
         header('location: cart.php');
         die();
+    };
+    //CHECK SESSIONS VARIABLE FOR PRODUCTS IN CART
+    $products_in_cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
+    $subtotal = 0.00;
+    if (!$products_in_cart) {
+        //THERE ARE NO PRODUCTS IN CART ADD THEM
+        //PRDOUCT IN CART ARRAA TO QUESTION MARK STRING ARAAAY , SQL STATEMNET NEEDS TO ICNLUDE (?,?,?,...ETC);
+        $array_to_question_marks = implode(',', array_fill(0, count($products_in_cart), '?'));
+        $products_in_cart_query = "SELECT * FROM products WHERE id=$product_id";
+
+        $products_in_cart_result = mysqli_query($connect__db, $products_in_cart_query);
+        $products = mysqli_fetch_all($products_in_cart_result);
+        foreach ($products as $product) {
+            var_dump($product);
+            $subtotal += $product['price'] * $products_in_cart[$product['id']];
+        };
+        header('location: cart.php');
+
     };
 
     if (isset($_POST['placeorder']) && isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
@@ -56,6 +74,7 @@ if (isset($_POST['add__cart'])) {
         die();
     };
 
+    header('location: cart.php');
 
 
     var_dump($product_id, $product_quantity);

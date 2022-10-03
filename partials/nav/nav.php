@@ -24,10 +24,14 @@ if (isset($_SESSION['user-id'])) {
 
         <!--Avatar Start -->
         <?php if (isset($_SESSION['user-id'])) : ?>
+
+            <li class='app__nav-item'><a href='<?= HOME_URL ?>cart.php' class="app__nav-link">🛒</a></li>
+
             <a href="<?= ADMIN_URL ?>" class="app__nav-link">
                 <img alt="useravatar" class="app__nav-avatar" loading="lazy" src="<?= HOME_URL . 'images/' . $avatar['avatar'] ?>" />
                 <small><?= $avatar['firstname'] ?></small>
             </a>
+            
             <li class='app__nav-item'><a href="<?= HOME_URL ?>logout.php" class="app__nav-link">🧧Logout</a>
                 <!--Avatar End -->
             <?php else : ?>
