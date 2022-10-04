@@ -8,5 +8,6 @@ mix.sass('global/styles/scss/main.scss', '/').setPublicPath('global/styles/css')
 mix.sass('./adminpanel/globals/styles/scss/adminstyles.scss', '/');
 
 
+
 mix.browserSync('http://localhost/portfolio');
 //https://laravel-mix.com/docs/6.0/browsersync

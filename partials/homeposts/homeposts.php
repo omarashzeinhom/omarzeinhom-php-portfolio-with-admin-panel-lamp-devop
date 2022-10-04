@@ -87,5 +87,4 @@ $posts_result =  mysqli_query($connect__db, $posts_query);
 <?php endif; ?>
 
 
-<script src="global/js/scrollAnimations.js">
-    </script>
+<script src="global/js/scrollAnimations.js"></script>

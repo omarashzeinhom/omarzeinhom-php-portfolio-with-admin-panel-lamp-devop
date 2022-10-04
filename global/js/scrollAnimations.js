@@ -1,6 +1,6 @@
 console.log("Scroll Animations Mini Library is Loaded Succesfully!😄👍");
 
-const scrollElms = document.querySelectorAll("app__js-scroll");
+const scrollElms = document.querySelectorAll(".app__js-scroll");
 console.log(scrollElms);
 
 const elmInView = (elm, dividend = 1) => {
@@ -9,10 +9,12 @@ const elmInView = (elm, dividend = 1) => {
     return (
         topElm <= (
             window.innerHeight ||
-            document.documentElement.clientHeight //dividend
+            document.documentElement.clientHeight /dividend
         )
     )
 };
+
+console.log(elmInView);
 
 
 const elmOutOfView = (elm,) => {
