@@ -8,7 +8,7 @@ $products_result = mysqli_query($connect__db, $products_query);
 <?php while ($product = mysqli_fetch_assoc($products_result)) : ?>
 <div class="app__col">
     <!-- Card Start --->
-    <div class="app__card" id="appCardId">
+    <div class="app__card app__js-scroll app__js-scrollelm fade-in" id="appCardId">
         <div class="app__card-header">
             <div class="app__card-img-shadow">
                 <a href="<?= HOME_URL ?>single-product.php?id=<?= $product['id'] ?>">
@@ -43,3 +43,6 @@ $products_result = mysqli_query($connect__db, $products_query);
 
 
 <?php endwhile; ?>
+
+
+<script src="global/js/scrollAnimations.js"></script>
